@@ -1,0 +1,25 @@
+PODS:
+  - Alamofire (3.1.3)
+  - p2.OAuth2 (2.1):
+    - SwiftKeychain (~> 0.1.5)
+  - SwiftDate (2.0.2)
+  - SwiftKeychain (0.1.5)
+  - SwiftyJSON (2.3.1)
+  - XCGLogger (3.1.1)
+
+DEPENDENCIES:
+  - Alamofire (~> 3.1)
+  - p2.OAuth2
+  - SwiftDate
+  - SwiftyJSON (~> 2.3)
+  - XCGLogger (~> 3.1)
+
+SPEC CHECKSUMS:
+  Alamofire: 9f93b56389e48def9220dd57d1f44b1927229a5a
+  p2.OAuth2: 78da70ba63515176a4f5273fad960f36bbeac6d9
+  SwiftDate: b4f4d0962afe48365ad2800c9850a6626deb9359
+  SwiftKeychain: 1387edad8b56c659daa93d9ffc99526bac5b0088
+  SwiftyJSON: 592b53bee5ef3dd9b3bebc6b9cb7ee35426ae8c3
+  XCGLogger: e111a313f609432394c3ae378d99511634fd2e3c
+
+COCOAPODS: 0.39.0

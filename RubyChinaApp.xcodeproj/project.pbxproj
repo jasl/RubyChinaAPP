@@ -1,0 +1,658 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 47;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D1D66AB42571BAF9B02057D /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 253395CDF7C6B183C52F0F86 /* Pods.framework */; };
+		231DF028085B5F7FEC822465 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231DF190A69DCA8527914458 /* SecondViewController.swift */; };
+		231DF083F8D7AEA97E3A07E3 /* Alamofire-SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231DF2B2C34F600AE82770CB /* Alamofire-SwiftyJSON.swift */; };
+		231DF0B27301D9F5B7C4C70A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 231DF9A5B576027BBD6ADC38 /* LaunchScreen.storyboard */; };
+		231DF0C9E04F39E6FB98AE0F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231DF5EE10C04C7D61695AC7 /* User.swift */; };
+		231DF20B184C8E0C4667DE14 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231DFCD7A04A2B6FE984C601 /* Util.swift */; };
+		231DF2EBC158B7ABFE847EA9 /* RestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231DF155D83F29648B73D95D /* RestClient.swift */; };
+		231DF4EC0611FFB817390AA3 /* Ability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231DF69A0BA185B9D027ED3E /* Ability.swift */; };
+		231DF5E691A86D908A8CE26F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 231DFC6F4E49594C5D8E63F3 /* Main.storyboard */; };
+		231DF9BC5E5C962FB01CA017 /* GlobalConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231DF7E28829ED774FE9F9E3 /* GlobalConstant.swift */; };
+		231DFA1A19C5011B9B4679CF /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231DF1962EC2499EB3374649 /* Topic.swift */; };
+		231DFC1935D67575003229D5 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231DF936033E22F103D80F2D /* FirstViewController.swift */; };
+		231DFF354C88937B882F3E23 /* SwiftyJSONMappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231DF698D6E96E9D32AF0798 /* SwiftyJSONMappable.swift */; };
+		C441C03E1C1468180035AD6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C441C03D1C1468180035AD6E /* AppDelegate.swift */; };
+		C441C0471C1468180035AD6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C441C0461C1468180035AD6E /* Assets.xcassets */; };
+		C441C0551C1468180035AD6E /* RubyChinaAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C441C0541C1468180035AD6E /* RubyChinaAppTests.swift */; };
+		C441C0601C1468180035AD6E /* RubyChinaAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C441C05F1C1468180035AD6E /* RubyChinaAppUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C441C0511C1468180035AD6E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C441C0321C1468180035AD6E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C441C0391C1468180035AD6E;
+			remoteInfo = RubyChinaApp;
+		};
+		C441C05C1C1468180035AD6E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C441C0321C1468180035AD6E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C441C0391C1468180035AD6E;
+			remoteInfo = RubyChinaApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		231DF155D83F29648B73D95D /* RestClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestClient.swift; sourceTree = "<group>"; };
+		231DF190A69DCA8527914458 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		231DF1962EC2499EB3374649 /* Topic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Topic.swift; sourceTree = "<group>"; };
+		231DF2B2C34F600AE82770CB /* Alamofire-SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Alamofire-SwiftyJSON.swift"; sourceTree = "<group>"; };
+		231DF49DBF02A951A1C9F907 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = RubyChinaApp/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
+		231DF5EE10C04C7D61695AC7 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		231DF698D6E96E9D32AF0798 /* SwiftyJSONMappable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSONMappable.swift; sourceTree = "<group>"; };
+		231DF69A0BA185B9D027ED3E /* Ability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ability.swift; sourceTree = "<group>"; };
+		231DF71CFAE15DE92E1BF5CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = RubyChinaApp/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
+		231DF7E28829ED774FE9F9E3 /* GlobalConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalConstant.swift; sourceTree = "<group>"; };
+		231DF936033E22F103D80F2D /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		231DFCD7A04A2B6FE984C601 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		253395CDF7C6B183C52F0F86 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		490432762AA9EB16F5679865 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		B4C7C3327D2AF7205A9E4CF0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		C441C03A1C1468180035AD6E /* RubyChinaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RubyChinaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C441C03D1C1468180035AD6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C441C0461C1468180035AD6E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C441C04B1C1468180035AD6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C441C0501C1468180035AD6E /* RubyChinaAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RubyChinaAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C441C0541C1468180035AD6E /* RubyChinaAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubyChinaAppTests.swift; sourceTree = "<group>"; };
+		C441C0561C1468180035AD6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C441C05B1C1468180035AD6E /* RubyChinaAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RubyChinaAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C441C05F1C1468180035AD6E /* RubyChinaAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubyChinaAppUITests.swift; sourceTree = "<group>"; };
+		C441C0611C1468180035AD6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C441C0371C1468180035AD6E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D1D66AB42571BAF9B02057D /* Pods.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C441C04D1C1468180035AD6E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C441C0581C1468180035AD6E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		231DF173354D34CB754E9E6B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				231DF69A0BA185B9D027ED3E /* Ability.swift */,
+				231DF1962EC2499EB3374649 /* Topic.swift */,
+				231DF5EE10C04C7D61695AC7 /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		231DF46BD9FF2D35A668DFC7 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				231DF2B2C34F600AE82770CB /* Alamofire-SwiftyJSON.swift */,
+				231DFCD7A04A2B6FE984C601 /* Util.swift */,
+				231DF698D6E96E9D32AF0798 /* SwiftyJSONMappable.swift */,
+				231DF155D83F29648B73D95D /* RestClient.swift */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		231DF500ECB4E1A69FDBC94B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				231DF936033E22F103D80F2D /* FirstViewController.swift */,
+				231DF190A69DCA8527914458 /* SecondViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		231DFED5EF52071DF32EA780 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				231DFC6F4E49594C5D8E63F3 /* Main.storyboard */,
+				231DF9A5B576027BBD6ADC38 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7DE4E05643485AB50109DE6B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				490432762AA9EB16F5679865 /* Pods.debug.xcconfig */,
+				B4C7C3327D2AF7205A9E4CF0 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C441C0311C1468180035AD6E = {
+			isa = PBXGroup;
+			children = (
+				C441C03C1C1468180035AD6E /* RubyChinaApp */,
+				C441C0531C1468180035AD6E /* RubyChinaAppTests */,
+				C441C05E1C1468180035AD6E /* RubyChinaAppUITests */,
+				C441C03B1C1468180035AD6E /* Products */,
+				7DE4E05643485AB50109DE6B /* Pods */,
+				F567E92F272F96D915869D42 /* Frameworks */,
+			);
+			indentWidth = 4;
+			sourceTree = "<group>";
+			tabWidth = 4;
+			usesTabs = 0;
+		};
+		C441C03B1C1468180035AD6E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C441C03A1C1468180035AD6E /* RubyChinaApp.app */,
+				C441C0501C1468180035AD6E /* RubyChinaAppTests.xctest */,
+				C441C05B1C1468180035AD6E /* RubyChinaAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C441C03C1C1468180035AD6E /* RubyChinaApp */ = {
+			isa = PBXGroup;
+			children = (
+				C441C03D1C1468180035AD6E /* AppDelegate.swift */,
+				C441C0461C1468180035AD6E /* Assets.xcassets */,
+				C441C04B1C1468180035AD6E /* Info.plist */,
+				231DF173354D34CB754E9E6B /* Model */,
+				231DF46BD9FF2D35A668DFC7 /* Library */,
+				231DF7E28829ED774FE9F9E3 /* GlobalConstant.swift */,
+				231DF500ECB4E1A69FDBC94B /* Controller */,
+				231DFED5EF52071DF32EA780 /* View */,
+			);
+			path = RubyChinaApp;
+			sourceTree = "<group>";
+		};
+		C441C0531C1468180035AD6E /* RubyChinaAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				C441C0541C1468180035AD6E /* RubyChinaAppTests.swift */,
+				C441C0561C1468180035AD6E /* Info.plist */,
+			);
+			path = RubyChinaAppTests;
+			sourceTree = "<group>";
+		};
+		C441C05E1C1468180035AD6E /* RubyChinaAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C441C05F1C1468180035AD6E /* RubyChinaAppUITests.swift */,
+				C441C0611C1468180035AD6E /* Info.plist */,
+			);
+			path = RubyChinaAppUITests;
+			sourceTree = "<group>";
+		};
+		F567E92F272F96D915869D42 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				253395CDF7C6B183C52F0F86 /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C441C0391C1468180035AD6E /* RubyChinaApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C441C0641C1468180035AD6E /* Build configuration list for PBXNativeTarget "RubyChinaApp" */;
+			buildPhases = (
+				B1FC4A290435CBBC59C79DD5 /* Check Pods Manifest.lock */,
+				C441C0361C1468180035AD6E /* Sources */,
+				C441C0371C1468180035AD6E /* Frameworks */,
+				C441C0381C1468180035AD6E /* Resources */,
+				208268FB0659266A0704CCFE /* Embed Pods Frameworks */,
+				2D8632C6A623AF0364726D1A /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RubyChinaApp;
+			productName = RubyChinaApp;
+			productReference = C441C03A1C1468180035AD6E /* RubyChinaApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C441C04F1C1468180035AD6E /* RubyChinaAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C441C0671C1468180035AD6E /* Build configuration list for PBXNativeTarget "RubyChinaAppTests" */;
+			buildPhases = (
+				C441C04C1C1468180035AD6E /* Sources */,
+				C441C04D1C1468180035AD6E /* Frameworks */,
+				C441C04E1C1468180035AD6E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C441C0521C1468180035AD6E /* PBXTargetDependency */,
+			);
+			name = RubyChinaAppTests;
+			productName = RubyChinaAppTests;
+			productReference = C441C0501C1468180035AD6E /* RubyChinaAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C441C05A1C1468180035AD6E /* RubyChinaAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C441C06A1C1468180035AD6E /* Build configuration list for PBXNativeTarget "RubyChinaAppUITests" */;
+			buildPhases = (
+				C441C0571C1468180035AD6E /* Sources */,
+				C441C0581C1468180035AD6E /* Frameworks */,
+				C441C0591C1468180035AD6E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C441C05D1C1468180035AD6E /* PBXTargetDependency */,
+			);
+			name = RubyChinaAppUITests;
+			productName = RubyChinaAppUITests;
+			productReference = C441C05B1C1468180035AD6E /* RubyChinaAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C441C0321C1468180035AD6E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = RubyChina;
+				TargetAttributes = {
+					C441C0391C1468180035AD6E = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+					C441C04F1C1468180035AD6E = {
+						CreatedOnToolsVersion = 7.1.1;
+						TestTargetID = C441C0391C1468180035AD6E;
+					};
+					C441C05A1C1468180035AD6E = {
+						CreatedOnToolsVersion = 7.1.1;
+						TestTargetID = C441C0391C1468180035AD6E;
+					};
+				};
+			};
+			buildConfigurationList = C441C0351C1468180035AD6E /* Build configuration list for PBXProject "RubyChinaApp" */;
+			compatibilityVersion = "Xcode 6.3";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C441C0311C1468180035AD6E;
+			productRefGroup = C441C03B1C1468180035AD6E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C441C0391C1468180035AD6E /* RubyChinaApp */,
+				C441C04F1C1468180035AD6E /* RubyChinaAppTests */,
+				C441C05A1C1468180035AD6E /* RubyChinaAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C441C0381C1468180035AD6E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C441C0471C1468180035AD6E /* Assets.xcassets in Resources */,
+				231DF5E691A86D908A8CE26F /* Main.storyboard in Resources */,
+				231DF0B27301D9F5B7C4C70A /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C441C04E1C1468180035AD6E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C441C0591C1468180035AD6E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		208268FB0659266A0704CCFE /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2D8632C6A623AF0364726D1A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B1FC4A290435CBBC59C79DD5 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C441C0361C1468180035AD6E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C441C03E1C1468180035AD6E /* AppDelegate.swift in Sources */,
+				231DF083F8D7AEA97E3A07E3 /* Alamofire-SwiftyJSON.swift in Sources */,
+				231DF20B184C8E0C4667DE14 /* Util.swift in Sources */,
+				231DFF354C88937B882F3E23 /* SwiftyJSONMappable.swift in Sources */,
+				231DF2EBC158B7ABFE847EA9 /* RestClient.swift in Sources */,
+				231DF9BC5E5C962FB01CA017 /* GlobalConstant.swift in Sources */,
+				231DF4EC0611FFB817390AA3 /* Ability.swift in Sources */,
+				231DFA1A19C5011B9B4679CF /* Topic.swift in Sources */,
+				231DF0C9E04F39E6FB98AE0F /* User.swift in Sources */,
+				231DFC1935D67575003229D5 /* FirstViewController.swift in Sources */,
+				231DF028085B5F7FEC822465 /* SecondViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C441C04C1C1468180035AD6E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C441C0551C1468180035AD6E /* RubyChinaAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C441C0571C1468180035AD6E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C441C0601C1468180035AD6E /* RubyChinaAppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C441C0521C1468180035AD6E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C441C0391C1468180035AD6E /* RubyChinaApp */;
+			targetProxy = C441C0511C1468180035AD6E /* PBXContainerItemProxy */;
+		};
+		C441C05D1C1468180035AD6E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C441C0391C1468180035AD6E /* RubyChinaApp */;
+			targetProxy = C441C05C1C1468180035AD6E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		231DF9A5B576027BBD6ADC38 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				231DF71CFAE15DE92E1BF5CF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		231DFC6F4E49594C5D8E63F3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				231DF49DBF02A951A1C9F907 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C441C0621C1468180035AD6E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C441C0631C1468180035AD6E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C441C0651C1468180035AD6E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 490432762AA9EB16F5679865 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = RubyChinaApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = RubyChina.RubyChinaApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		C441C0661C1468180035AD6E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B4C7C3327D2AF7205A9E4CF0 /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = RubyChinaApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = RubyChina.RubyChinaApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		C441C0681C1468180035AD6E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = RubyChinaAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = RubyChina.RubyChinaAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RubyChinaApp.app/RubyChinaApp";
+			};
+			name = Debug;
+		};
+		C441C0691C1468180035AD6E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = RubyChinaAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = RubyChina.RubyChinaAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RubyChinaApp.app/RubyChinaApp";
+			};
+			name = Release;
+		};
+		C441C06B1C1468180035AD6E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = RubyChinaAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = RubyChina.RubyChinaAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = RubyChinaApp;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		C441C06C1C1468180035AD6E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = RubyChinaAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = RubyChina.RubyChinaAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = RubyChinaApp;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C441C0351C1468180035AD6E /* Build configuration list for PBXProject "RubyChinaApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C441C0621C1468180035AD6E /* Debug */,
+				C441C0631C1468180035AD6E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C441C0641C1468180035AD6E /* Build configuration list for PBXNativeTarget "RubyChinaApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C441C0651C1468180035AD6E /* Debug */,
+				C441C0661C1468180035AD6E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C441C0671C1468180035AD6E /* Build configuration list for PBXNativeTarget "RubyChinaAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C441C0681C1468180035AD6E /* Debug */,
+				C441C0691C1468180035AD6E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C441C06A1C1468180035AD6E /* Build configuration list for PBXNativeTarget "RubyChinaAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C441C06B1C1468180035AD6E /* Debug */,
+				C441C06C1C1468180035AD6E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C441C0321C1468180035AD6E /* Project object */;
+}

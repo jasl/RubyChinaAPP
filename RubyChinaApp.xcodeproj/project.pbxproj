@@ -20,6 +20,7 @@
 		231DFA1A19C5011B9B4679CF /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231DF1962EC2499EB3374649 /* Topic.swift */; };
 		231DFC1935D67575003229D5 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231DF936033E22F103D80F2D /* FirstViewController.swift */; };
 		231DFD05D20D5C36BFF6EC86 /* CustomDebugStringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231DFA90FC2C300FD007C2FD /* CustomDebugStringConvertible.swift */; };
+		231DFD9928EE58ECE1136122 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231DFA0DD99841201D825416 /* String.swift */; };
 		231DFF354C88937B882F3E23 /* SwiftyJSONMappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231DF698D6E96E9D32AF0798 /* SwiftyJSONMappable.swift */; };
 		C441C03E1C1468180035AD6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C441C03D1C1468180035AD6E /* AppDelegate.swift */; };
 		C441C0471C1468180035AD6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C441C0461C1468180035AD6E /* Assets.xcassets */; };
@@ -56,6 +57,7 @@
 		231DF71CFAE15DE92E1BF5CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = RubyChinaApp/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		231DF7E28829ED774FE9F9E3 /* GlobalConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalConstant.swift; sourceTree = "<group>"; };
 		231DF936033E22F103D80F2D /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		231DFA0DD99841201D825416 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		231DFA90FC2C300FD007C2FD /* CustomDebugStringConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomDebugStringConvertible.swift; sourceTree = "<group>"; };
 		231DFCD7A04A2B6FE984C601 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		253395CDF7C6B183C52F0F86 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,7 +118,7 @@
 				231DFCD7A04A2B6FE984C601 /* Util.swift */,
 				231DF698D6E96E9D32AF0798 /* SwiftyJSONMappable.swift */,
 				231DF155D83F29648B73D95D /* RestClient.swift */,
-				231DFD64D08DB90BA60E47AF /* extensions */,
+				231DFD64D08DB90BA60E47AF /* Extension */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -130,12 +132,13 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		231DFD64D08DB90BA60E47AF /* extensions */ = {
+		231DFD64D08DB90BA60E47AF /* Extension */ = {
 			isa = PBXGroup;
 			children = (
 				231DFA90FC2C300FD007C2FD /* CustomDebugStringConvertible.swift */,
+				231DFA0DD99841201D825416 /* String.swift */,
 			);
-			path = extensions;
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		231DFED5EF52071DF32EA780 /* View */ = {
@@ -416,6 +419,7 @@
 				231DFC1935D67575003229D5 /* FirstViewController.swift in Sources */,
 				231DF028085B5F7FEC822465 /* SecondViewController.swift in Sources */,
 				231DFD05D20D5C36BFF6EC86 /* CustomDebugStringConvertible.swift in Sources */,
+				231DFD9928EE58ECE1136122 /* String.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

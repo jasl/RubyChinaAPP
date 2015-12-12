@@ -56,4 +56,3 @@ func debugDescriptionFor<T>(object: T) -> String {
 
     return str
 }
-

@@ -9,9 +9,9 @@
 /* Begin PBXBuildFile section */
 		1D1D66AB42571BAF9B02057D /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 253395CDF7C6B183C52F0F86 /* Pods.framework */; };
 		231DF028085B5F7FEC822465 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231DF190A69DCA8527914458 /* SecondViewController.swift */; };
-		231DF083F8D7AEA97E3A07E3 /* Alamofire-SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231DF2B2C34F600AE82770CB /* Alamofire-SwiftyJSON.swift */; };
 		231DF0B27301D9F5B7C4C70A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 231DF9A5B576027BBD6ADC38 /* LaunchScreen.storyboard */; };
 		231DF0C9E04F39E6FB98AE0F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231DF5EE10C04C7D61695AC7 /* User.swift */; };
+		231DF115E5F225C27C66702B /* Alamofire-SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231DF8E277CE1434B62D2759 /* Alamofire-SwiftyJSON.swift */; };
 		231DF20B184C8E0C4667DE14 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231DFCD7A04A2B6FE984C601 /* Util.swift */; };
 		231DF2EBC158B7ABFE847EA9 /* RestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231DF155D83F29648B73D95D /* RestClient.swift */; };
 		231DF4EC0611FFB817390AA3 /* Ability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231DF69A0BA185B9D027ED3E /* Ability.swift */; };
@@ -49,13 +49,13 @@
 		231DF155D83F29648B73D95D /* RestClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestClient.swift; sourceTree = "<group>"; };
 		231DF190A69DCA8527914458 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		231DF1962EC2499EB3374649 /* Topic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Topic.swift; sourceTree = "<group>"; };
-		231DF2B2C34F600AE82770CB /* Alamofire-SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Alamofire-SwiftyJSON.swift"; sourceTree = "<group>"; };
 		231DF49DBF02A951A1C9F907 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = RubyChinaApp/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		231DF5EE10C04C7D61695AC7 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		231DF698D6E96E9D32AF0798 /* SwiftyJSONMappable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSONMappable.swift; sourceTree = "<group>"; };
 		231DF69A0BA185B9D027ED3E /* Ability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ability.swift; sourceTree = "<group>"; };
 		231DF71CFAE15DE92E1BF5CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = RubyChinaApp/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		231DF7E28829ED774FE9F9E3 /* GlobalConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalConstant.swift; sourceTree = "<group>"; };
+		231DF8E277CE1434B62D2759 /* Alamofire-SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Alamofire-SwiftyJSON.swift"; sourceTree = "<group>"; };
 		231DF936033E22F103D80F2D /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		231DFA0DD99841201D825416 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		231DFA90FC2C300FD007C2FD /* CustomDebugStringConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomDebugStringConvertible.swift; sourceTree = "<group>"; };
@@ -114,7 +114,6 @@
 		231DF46BD9FF2D35A668DFC7 /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				231DF2B2C34F600AE82770CB /* Alamofire-SwiftyJSON.swift */,
 				231DFCD7A04A2B6FE984C601 /* Util.swift */,
 				231DF698D6E96E9D32AF0798 /* SwiftyJSONMappable.swift */,
 				231DF155D83F29648B73D95D /* RestClient.swift */,
@@ -137,6 +136,7 @@
 			children = (
 				231DFA90FC2C300FD007C2FD /* CustomDebugStringConvertible.swift */,
 				231DFA0DD99841201D825416 /* String.swift */,
+				231DF8E277CE1434B62D2759 /* Alamofire-SwiftyJSON.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -408,7 +408,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C441C03E1C1468180035AD6E /* AppDelegate.swift in Sources */,
-				231DF083F8D7AEA97E3A07E3 /* Alamofire-SwiftyJSON.swift in Sources */,
 				231DF20B184C8E0C4667DE14 /* Util.swift in Sources */,
 				231DFF354C88937B882F3E23 /* SwiftyJSONMappable.swift in Sources */,
 				231DF2EBC158B7ABFE847EA9 /* RestClient.swift in Sources */,
@@ -420,6 +419,7 @@
 				231DF028085B5F7FEC822465 /* SecondViewController.swift in Sources */,
 				231DFD05D20D5C36BFF6EC86 /* CustomDebugStringConvertible.swift in Sources */,
 				231DFD9928EE58ECE1136122 /* String.swift in Sources */,
+				231DF115E5F225C27C66702B /* Alamofire-SwiftyJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

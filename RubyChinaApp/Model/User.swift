@@ -21,9 +21,4 @@ struct User: CustomDebugStringConvertible, SwiftyJSONMappable {
         name = json["name"].string
         avatar_url = NSURL(string: json["avatar_url"].stringValue)!
     }
-
-    //TODO: extract this to a protocol after swift 2.0 released
-    var debugDescription: String {
-        return debugDescriptionFor(self)
-    }
 }

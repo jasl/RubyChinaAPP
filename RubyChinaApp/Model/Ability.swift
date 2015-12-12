@@ -16,9 +16,4 @@ struct Ability: CustomDebugStringConvertible, SwiftyJSONMappable {
         canUpdate = json["update"].boolValue
         canDestroy = json["destroy"].boolValue
     }
-
-    //TODO: extract this to a protocol after swift 2.0 released
-    var debugDescription: String {
-        return debugDescriptionFor(self)
-    }
 }

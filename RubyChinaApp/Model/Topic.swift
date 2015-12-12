@@ -65,9 +65,4 @@ struct Topic: CustomDebugStringConvertible, SwiftyJSONMappable {
         user = User(byJSON: json["user"])!
         abilities = Ability(byJSON: json["abilities"])!
     }
-
-    //TODO: extract this to a protocol after swift 2.0 released
-    var debugDescription: String {
-        return debugDescriptionFor(self)
-    }
 }

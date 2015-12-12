@@ -101,53 +101,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		231DF173354D34CB754E9E6B /* Model */ = {
+		231DF173354D34CB754E9E6B /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				231DF69A0BA185B9D027ED3E /* Ability.swift */,
 				231DF1962EC2499EB3374649 /* Topic.swift */,
 				231DF5EE10C04C7D61695AC7 /* User.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
-		231DF46BD9FF2D35A668DFC7 /* Library */ = {
+		231DF46BD9FF2D35A668DFC7 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
 				231DFCD7A04A2B6FE984C601 /* Util.swift */,
 				231DF698D6E96E9D32AF0798 /* SwiftyJSONMappable.swift */,
 				231DF155D83F29648B73D95D /* RestClient.swift */,
-				231DFD64D08DB90BA60E47AF /* Extension */,
+				231DFD64D08DB90BA60E47AF /* Extensions */,
 			);
-			path = Library;
+			path = Libraries;
 			sourceTree = "<group>";
 		};
-		231DF500ECB4E1A69FDBC94B /* Controller */ = {
+		231DF500ECB4E1A69FDBC94B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				231DF936033E22F103D80F2D /* FirstViewController.swift */,
 				231DF190A69DCA8527914458 /* SecondViewController.swift */,
 			);
-			path = Controller;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
-		231DFD64D08DB90BA60E47AF /* Extension */ = {
+		231DFD64D08DB90BA60E47AF /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				231DFA90FC2C300FD007C2FD /* CustomDebugStringConvertible.swift */,
 				231DFA0DD99841201D825416 /* String.swift */,
 				231DF8E277CE1434B62D2759 /* Alamofire-SwiftyJSON.swift */,
 			);
-			path = Extension;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
-		231DFED5EF52071DF32EA780 /* View */ = {
+		231DFED5EF52071DF32EA780 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				231DFC6F4E49594C5D8E63F3 /* Main.storyboard */,
 				231DF9A5B576027BBD6ADC38 /* LaunchScreen.storyboard */,
 			);
-			path = View;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		7DE4E05643485AB50109DE6B /* Pods */ = {
@@ -190,11 +190,11 @@
 				C441C03D1C1468180035AD6E /* AppDelegate.swift */,
 				C441C0461C1468180035AD6E /* Assets.xcassets */,
 				C441C04B1C1468180035AD6E /* Info.plist */,
-				231DF173354D34CB754E9E6B /* Model */,
-				231DF46BD9FF2D35A668DFC7 /* Library */,
+				231DF173354D34CB754E9E6B /* Models */,
+				231DF46BD9FF2D35A668DFC7 /* Libraries */,
 				231DF7E28829ED774FE9F9E3 /* GlobalConstant.swift */,
-				231DF500ECB4E1A69FDBC94B /* Controller */,
-				231DFED5EF52071DF32EA780 /* View */,
+				231DF500ECB4E1A69FDBC94B /* Controllers */,
+				231DFED5EF52071DF32EA780 /* Views */,
 			);
 			path = RubyChinaApp;
 			sourceTree = "<group>";

@@ -6,7 +6,7 @@ use_frameworks!
 
 # networking
 pod 'Alamofire', '~> 3.1'
-# pod 'Moya/RxSwift', git: 'https://github.com/jasl/Moya.git'
+# pod 'Moya', '~> 5.1'
 
 # serializing
 pod 'SwiftyJSON', '~> 2.3'

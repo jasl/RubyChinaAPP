@@ -17,6 +17,7 @@
 		231DFED9CD6A1B1E6F6CEEAE /* Plugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231DFF7FAB33E474EE6C4648 /* Plugin.swift */; };
 		C4BBE16D1C1DF7B20029C7C4 /* NetworkAbstraction.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4BBE1621C1DF7B20029C7C4 /* NetworkAbstraction.framework */; };
 		C4BBE1721C1DF7B20029C7C4 /* NetworkAbstractionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BBE1711C1DF7B20029C7C4 /* NetworkAbstractionTests.swift */; };
+		C4C009161C1ED02F003226BC /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4C009151C1ED02F003226BC /* Pods.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,7 @@
 		C4BBE16C1C1DF7B20029C7C4 /* NetworkAbstractionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetworkAbstractionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4BBE1711C1DF7B20029C7C4 /* NetworkAbstractionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAbstractionTests.swift; sourceTree = "<group>"; };
 		C4BBE1731C1DF7B20029C7C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C4C009151C1ED02F003226BC /* Pods.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods.framework; path = "/Users/jasl/Workspace/swift/RubyChinaAPP/Pods/../build/Debug-iphoneos/Pods.framework"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4C009161C1ED02F003226BC /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +79,7 @@
 		C4BBE1581C1DF7B20029C7C4 = {
 			isa = PBXGroup;
 			children = (
+				C4C009151C1ED02F003226BC /* Pods.framework */,
 				C4BBE1641C1DF7B20029C7C4 /* NetworkAbstraction */,
 				C4BBE1701C1DF7B20029C7C4 /* NetworkAbstractionTests */,
 				C4BBE1631C1DF7B20029C7C4 /* Products */,

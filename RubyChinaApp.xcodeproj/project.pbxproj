@@ -14,6 +14,7 @@
 		231DF20B184C8E0C4667DE14 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231DFCD7A04A2B6FE984C601 /* Util.swift */; };
 		231DF4EC0611FFB817390AA3 /* Ability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231DF69A0BA185B9D027ED3E /* Ability.swift */; };
 		231DF5DB6CAC43AF31CD9775 /* RubyChinaV3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231DFA679F950A01DC35AC23 /* RubyChinaV3.swift */; };
+		231DF6043F8154E3CEE8673E /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231DFDE495210C9069AC1990 /* Error.swift */; };
 		231DF9BC5E5C962FB01CA017 /* GlobalConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231DF7E28829ED774FE9F9E3 /* GlobalConstant.swift */; };
 		231DFA1A19C5011B9B4679CF /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231DF1962EC2499EB3374649 /* Topic.swift */; };
 		231DFC1935D67575003229D5 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231DF936033E22F103D80F2D /* FirstViewController.swift */; };
@@ -61,6 +62,7 @@
 		231DFA90FC2C300FD007C2FD /* CustomDebugStringConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomDebugStringConvertible.swift; sourceTree = "<group>"; };
 		231DFCD7A04A2B6FE984C601 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		231DFD0EA6F48001E6B4E49D /* Response+mapSwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Response+mapSwiftyJSON.swift"; sourceTree = "<group>"; };
+		231DFDE495210C9069AC1990 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		253395CDF7C6B183C52F0F86 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		490432762AA9EB16F5679865 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		B4C7C3327D2AF7205A9E4CF0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				231DF69A0BA185B9D027ED3E /* Ability.swift */,
 				231DF1962EC2499EB3374649 /* Topic.swift */,
 				231DF5EE10C04C7D61695AC7 /* User.swift */,
+				231DFDE495210C9069AC1990 /* Error.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -436,6 +439,7 @@
 				231DF13DA4A78C3CC1937377 /* Response+mapSwiftyJSON.swift in Sources */,
 				231DFE21DA482EB20732B290 /* SwiftyJSONMappable.swift in Sources */,
 				231DFC6CC70D378E5AEA3D54 /* Topics.swift in Sources */,
+				231DF6043F8154E3CEE8673E /* Error.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,7 +16,7 @@ class FirstViewController: UIViewController {
         super.viewDidLoad()
 
         let provider = APIProvider()
-        provider.request(RubyChinaV3.Topics.Index()) { result in
+        provider.request(RubyChinaV3.Topics.Listing(type: .Excellent)) { result in
             switch result {
             case let .Success(response):
                 //dump(response)
@@ -27,6 +27,20 @@ class FirstViewController: UIViewController {
                 }
 
                 dump(topics)
+            case let .Failure(error):
+                dump(error)
+            }
+        }
+
+        provider.request(RubyChinaV3.Topics.Show(id: "28230")) { result in
+            switch result {
+            case let .Success(response):
+                //dump(response)
+                let json = response.mapSwiftyJSON()
+
+                let topic = Topic(byJSON: json["topic"])!
+
+                dump(topic)
             case let .Failure(error):
                 dump(error)
             }

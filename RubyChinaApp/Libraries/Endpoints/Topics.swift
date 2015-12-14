@@ -13,7 +13,7 @@ extension RubyChinaV3 {
 }
 
 extension RubyChinaV3.Topics {
-    struct Index: TargetType {
+    struct Listing: TargetType {
         enum TypeFieldValue: String {
             case LastActived = "last_actived"
             case Recent = "recent"
@@ -55,5 +55,18 @@ extension RubyChinaV3.Topics {
 
             return parameters
         }
+    }
+
+    struct Show: TargetType {
+        var id: String
+
+        init(id: String) {
+            self.id = id
+        }
+
+        var baseURL: NSURL { return RubyChinaV3.BaseURL }
+        var path: String { return "\(Path)/\(id)" }
+        var method: NetworkAbstraction.Method { return .GET }
+        var parameters: [String: AnyObject]? { return nil }
     }
 }

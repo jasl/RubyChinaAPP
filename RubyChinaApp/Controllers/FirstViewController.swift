@@ -9,42 +9,41 @@
 import UIKit
 
 import NetworkAbstraction
+import p2_OAuth2
 
 class FirstViewController: UIViewController {
 
+    let provider = RubyChinaV3Provider(clientID: GlobalConstant.clientId, clientSecret: GlobalConstant.clientSecret, redirect_uris: GlobalConstant.redirectURIs)
+
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
 
-        let provider = APIProvider()
-        provider.request(RubyChinaV3.Topics.Listing(type: .Excellent)) { result in
+    @IBAction func SignOut(sender: UIButton) {
+        provider.resetAuthorize()
+    }
+    
+    @IBAction func SendHello(sender: UIButton) {
+        self.provider.request(RubyChinaV3.Hello()) { result in
             switch result {
             case let .Success(response):
                 //dump(response)
                 let json = response.mapSwiftyJSON()
 
-                let topics: [Topic] = json["topics"].arrayValue.map {
-                    return Topic(byJSON: $0)!
-                }
-
-                dump(topics)
+                dump(json)
             case let .Failure(error):
                 dump(error)
             }
         }
-
-        provider.request(RubyChinaV3.Topics.Show(id: "28230")) { result in
-            switch result {
-            case let .Success(response):
-                //dump(response)
-                let json = response.mapSwiftyJSON()
-
-                let topic = Topic(byJSON: json["topic"])!
-
-                dump(topic)
-            case let .Failure(error):
-                dump(error)
-            }
-        }
+    }
+    
+    @IBAction func signInEmbedded(sender: UIButton) {
+        signIn(sender)
+    }
+    
+    func signIn(sender: UIButton) {
+        provider.authorizeContext = self
+        provider.authorize()
     }
 
     override func didReceiveMemoryWarning() {

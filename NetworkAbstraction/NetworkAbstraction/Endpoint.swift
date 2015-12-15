@@ -51,6 +51,10 @@ public class Endpoint {
 // Extension for converting an Endpoint into an NSURLRequest.
 extension Endpoint {
     public var urlRequest: NSURLRequest {
+        return mutableURLRequest
+    }
+
+    public var mutableURLRequest: NSMutableURLRequest {
         let request: NSMutableURLRequest = NSMutableURLRequest(URL: NSURL(string: URL)!)
         request.HTTPMethod = method.rawValue
         request.allHTTPHeaderFields = httpHeaderFields

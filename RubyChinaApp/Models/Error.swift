@@ -7,11 +7,11 @@ import Foundation
 import SwiftyJSON
 
 struct Error: CustomDebugStringConvertible, SwiftyJSONMappable {
-    let message: String
+    let error: String
 
     init?(byJSON json: JSON) {
         if json.type == .Null { return nil }
 
-        message = json["message"].stringValue
+        error = json["error"].stringValue
     }
 }

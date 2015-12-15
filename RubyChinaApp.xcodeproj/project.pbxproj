@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1D1D66AB42571BAF9B02057D /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 253395CDF7C6B183C52F0F86 /* Pods.framework */; };
-		231DF028085B5F7FEC822465 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231DF190A69DCA8527914458 /* SecondViewController.swift */; };
 		231DF0C9E04F39E6FB98AE0F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231DF5EE10C04C7D61695AC7 /* User.swift */; };
 		231DF13DA4A78C3CC1937377 /* Response+mapSwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231DFD0EA6F48001E6B4E49D /* Response+mapSwiftyJSON.swift */; };
 		231DF20B184C8E0C4667DE14 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231DFCD7A04A2B6FE984C601 /* Util.swift */; };
@@ -22,13 +21,14 @@
 		231DFD05D20D5C36BFF6EC86 /* CustomDebugStringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231DFA90FC2C300FD007C2FD /* CustomDebugStringConvertible.swift */; };
 		231DFD9928EE58ECE1136122 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231DFA0DD99841201D825416 /* String.swift */; };
 		231DFE21DA482EB20732B290 /* SwiftyJSONMappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231DF0253D5F58432452BC0D /* SwiftyJSONMappable.swift */; };
+		31A9D906AD995A2EDD558B0D /* Hello.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9D12781FB0997905874A1 /* Hello.swift */; };
+		C418B1CF1C20A5A6001FB849 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C418B1CE1C20A5A6001FB849 /* Main.storyboard */; };
 		C441C03E1C1468180035AD6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C441C03D1C1468180035AD6E /* AppDelegate.swift */; };
 		C441C0471C1468180035AD6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C441C0461C1468180035AD6E /* Assets.xcassets */; };
 		C441C0551C1468180035AD6E /* RubyChinaAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C441C0541C1468180035AD6E /* RubyChinaAppTests.swift */; };
 		C441C0601C1468180035AD6E /* RubyChinaAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C441C05F1C1468180035AD6E /* RubyChinaAppUITests.swift */; };
 		C4BBE17D1C1DFDA00029C7C4 /* NetworkAbstraction.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4BBE17C1C1DFDA00029C7C4 /* NetworkAbstraction.framework */; };
 		C4C009131C1ECEEA003226BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4C009111C1ECEEA003226BC /* LaunchScreen.storyboard */; };
-		C4C009141C1ECEEA003226BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4C009121C1ECEEA003226BC /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +51,6 @@
 /* Begin PBXFileReference section */
 		231DF0253D5F58432452BC0D /* SwiftyJSONMappable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSONMappable.swift; sourceTree = "<group>"; };
 		231DF1591B7761CA1D5664FA /* Topics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Topics.swift; sourceTree = "<group>"; };
-		231DF190A69DCA8527914458 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		231DF1962EC2499EB3374649 /* Topic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Topic.swift; sourceTree = "<group>"; };
 		231DF5EE10C04C7D61695AC7 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		231DF69A0BA185B9D027ED3E /* Ability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ability.swift; sourceTree = "<group>"; };
@@ -64,8 +63,10 @@
 		231DFD0EA6F48001E6B4E49D /* Response+mapSwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Response+mapSwiftyJSON.swift"; sourceTree = "<group>"; };
 		231DFDE495210C9069AC1990 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		253395CDF7C6B183C52F0F86 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		31A9D12781FB0997905874A1 /* Hello.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hello.swift; sourceTree = "<group>"; };
 		490432762AA9EB16F5679865 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		B4C7C3327D2AF7205A9E4CF0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		C418B1CE1C20A5A6001FB849 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		C441C03A1C1468180035AD6E /* RubyChinaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RubyChinaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C441C03D1C1468180035AD6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C441C0461C1468180035AD6E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -78,7 +79,6 @@
 		C441C0611C1468180035AD6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4BBE17C1C1DFDA00029C7C4 /* NetworkAbstraction.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkAbstraction.framework; path = "NetworkAbstraction/NetworkAbstraction/build/Debug-iphoneos/NetworkAbstraction.framework"; sourceTree = "<group>"; };
 		C4C009111C1ECEEA003226BC /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		C4C009121C1ECEEA003226BC /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,7 +135,6 @@
 			isa = PBXGroup;
 			children = (
 				231DF936033E22F103D80F2D /* FirstViewController.swift */,
-				231DF190A69DCA8527914458 /* SecondViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -144,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				231DF1591B7761CA1D5664FA /* Topics.swift */,
+				31A9D12781FB0997905874A1 /* Hello.swift */,
 			);
 			path = Endpoints;
 			sourceTree = "<group>";
@@ -162,7 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				C4C009111C1ECEEA003226BC /* LaunchScreen.storyboard */,
-				C4C009121C1ECEEA003226BC /* Main.storyboard */,
+				C418B1CE1C20A5A6001FB849 /* Main.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -351,8 +351,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C441C0471C1468180035AD6E /* Assets.xcassets in Resources */,
-				C4C009141C1ECEEA003226BC /* Main.storyboard in Resources */,
 				C4C009131C1ECEEA003226BC /* LaunchScreen.storyboard in Resources */,
+				C418B1CF1C20A5A6001FB849 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,7 +432,6 @@
 				231DFA1A19C5011B9B4679CF /* Topic.swift in Sources */,
 				231DF0C9E04F39E6FB98AE0F /* User.swift in Sources */,
 				231DFC1935D67575003229D5 /* FirstViewController.swift in Sources */,
-				231DF028085B5F7FEC822465 /* SecondViewController.swift in Sources */,
 				231DFD05D20D5C36BFF6EC86 /* CustomDebugStringConvertible.swift in Sources */,
 				231DFD9928EE58ECE1136122 /* String.swift in Sources */,
 				231DF5DB6CAC43AF31CD9775 /* RubyChinaV3.swift in Sources */,
@@ -440,6 +439,7 @@
 				231DFE21DA482EB20732B290 /* SwiftyJSONMappable.swift in Sources */,
 				231DFC6CC70D378E5AEA3D54 /* Topics.swift in Sources */,
 				231DF6043F8154E3CEE8673E /* Error.swift in Sources */,
+				31A9D906AD995A2EDD558B0D /* Hello.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

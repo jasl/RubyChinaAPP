@@ -56,8 +56,8 @@ public class APIProvider {
     // Closure that resolves an Endpoint into an NSURLRequest.
     public typealias RequestClosure = (Endpoint, NSURLRequest -> Void) -> Void
 
-    public let endpointClosure: EndpointClosure
-    public let requestClosure: RequestClosure
+    public var endpointClosure: EndpointClosure
+    public var requestClosure: RequestClosure
     public let manager: Manager
 
     // A list of plugins

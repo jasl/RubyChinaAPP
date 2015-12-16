@@ -13,8 +13,6 @@ import p2_OAuth2
 
 class FirstViewController: UIViewController {
 
-    let provider = SharedProvider.instance
-
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -24,13 +22,14 @@ class FirstViewController: UIViewController {
     }
     
     @IBAction func SendHello(sender: UIButton) {
-        self.provider.request(RubyChinaV3.Hello()) { result in
+        provider.request(RubyChinaV3.Hello()) { result in
             switch result {
             case let .Success(response):
                 //dump(response)
                 let json = response.mapSwiftyJSON()
+                let user = User(byJSON: json["user"])
 
-                dump(json)
+                dump(user)
             case let .Failure(error):
                 dump(error)
             }

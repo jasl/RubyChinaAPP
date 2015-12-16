@@ -50,7 +50,7 @@ class Provider {
 
         provider = APIProvider(requestClosure: { (endpoint: Endpoint, done: NSURLRequest -> Void) in
             self.signingRequest(endpoint, done: done)
-        })
+        }, plugins: plugins)
 
         oauthClient.authConfig.authorizeEmbedded = authorizeEmbedded
     }

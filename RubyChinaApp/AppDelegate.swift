@@ -7,13 +7,9 @@
 //
 
 import UIKit
-import XCGLogger
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-    let logger = XCGLogger.defaultInstance()
-
     var window: UIWindow?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -26,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
         dump(url)
 
-        SharedProvider.instance.handleRedirectURL(url)
+        provider.handleRedirectURL(url)
 
         return true
     }

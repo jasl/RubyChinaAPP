@@ -21,8 +21,9 @@
 		231DFD05D20D5C36BFF6EC86 /* CustomDebugStringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231DFA90FC2C300FD007C2FD /* CustomDebugStringConvertible.swift */; };
 		231DFD9928EE58ECE1136122 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231DFA0DD99841201D825416 /* String.swift */; };
 		231DFE21DA482EB20732B290 /* SwiftyJSONMappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231DF0253D5F58432452BC0D /* SwiftyJSONMappable.swift */; };
-		31A9D309751958C2492EBBE1 /* Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9DAB9935B984E0866C189 /* Shared.swift */; };
+		31A9D309751958C2492EBBE1 /* SharedObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9DAB9935B984E0866C189 /* SharedObjects.swift */; };
 		31A9D906AD995A2EDD558B0D /* Hello.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9D12781FB0997905874A1 /* Hello.swift */; };
+		31A9D93EDFCE02895C35F011 /* NetworkLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9DC04E21F53880B6828FC /* NetworkLogger.swift */; };
 		C418B1CF1C20A5A6001FB849 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C418B1CE1C20A5A6001FB849 /* Main.storyboard */; };
 		C441C03E1C1468180035AD6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C441C03D1C1468180035AD6E /* AppDelegate.swift */; };
 		C441C0471C1468180035AD6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C441C0461C1468180035AD6E /* Assets.xcassets */; };
@@ -65,7 +66,8 @@
 		231DFDE495210C9069AC1990 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		253395CDF7C6B183C52F0F86 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		31A9D12781FB0997905874A1 /* Hello.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hello.swift; sourceTree = "<group>"; };
-		31A9DAB9935B984E0866C189 /* Shared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shared.swift; sourceTree = "<group>"; };
+		31A9DAB9935B984E0866C189 /* SharedObjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedObjects.swift; sourceTree = "<group>"; };
+		31A9DC04E21F53880B6828FC /* NetworkLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkLogger.swift; sourceTree = "<group>"; };
 		490432762AA9EB16F5679865 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		B4C7C3327D2AF7205A9E4CF0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		C418B1CE1C20A5A6001FB849 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				231DF9785D40E9D6A86952F8 /* Endpoints */,
 				231DFA679F950A01DC35AC23 /* RubyChinaV3.swift */,
 				231DF0253D5F58432452BC0D /* SwiftyJSONMappable.swift */,
+				31A9DC04E21F53880B6828FC /* NetworkLogger.swift */,
 			);
 			path = Libraries;
 			sourceTree = "<group>";
@@ -214,7 +217,7 @@
 				231DF7E28829ED774FE9F9E3 /* GlobalConstant.swift */,
 				231DF500ECB4E1A69FDBC94B /* Controllers */,
 				231DFED5EF52071DF32EA780 /* Views */,
-				31A9DAB9935B984E0866C189 /* Shared.swift */,
+				31A9DAB9935B984E0866C189 /* SharedObjects.swift */,
 			);
 			path = RubyChinaApp;
 			sourceTree = "<group>";
@@ -443,7 +446,8 @@
 				231DFC6CC70D378E5AEA3D54 /* Topics.swift in Sources */,
 				231DF6043F8154E3CEE8673E /* Error.swift in Sources */,
 				31A9D906AD995A2EDD558B0D /* Hello.swift in Sources */,
-				31A9D309751958C2492EBBE1 /* Shared.swift in Sources */,
+				31A9D309751958C2492EBBE1 /* SharedObjects.swift in Sources */,
+				31A9D93EDFCE02895C35F011 /* NetworkLogger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

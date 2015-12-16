@@ -51,17 +51,28 @@
                                     <action selector="SignOut:" destination="9pv-A4-QxB" eventType="touchUpInside" id="c4j-Lw-5GB"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g84-P7-M2q">
+                                <rect key="frame" x="285" y="468" width="31" height="30"/>
+                                <state key="normal" title="Post"/>
+                                <connections>
+                                    <action selector="createPost:" destination="9pv-A4-QxB" eventType="touchUpInside" id="KpA-rX-27z"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="6BV-lF-sBN"/>
                             <constraint firstItem="tf0-ta-9zh" firstAttribute="centerX" secondItem="KnG-5i-mf7" secondAttribute="centerX" id="92t-i9-ARQ"/>
-                            <constraint firstItem="tf0-ta-9zh" firstAttribute="leading" secondItem="s0q-eH-Otw" secondAttribute="leading" id="Igj-gf-cIu"/>
+                            <constraint firstItem="s0q-eH-Otw" firstAttribute="top" secondItem="KnG-5i-mf7" secondAttribute="bottom" constant="8" symbolic="YES" id="9Zb-bQ-Vww"/>
+                            <constraint firstItem="s0q-eH-Otw" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="A8N-vZ-Dag"/>
+                            <constraint firstItem="s0q-eH-Otw" firstAttribute="centerX" secondItem="KnG-5i-mf7" secondAttribute="centerX" id="BZC-Ni-YUI"/>
+                            <constraint firstItem="g84-P7-M2q" firstAttribute="centerX" secondItem="s0q-eH-Otw" secondAttribute="centerX" id="GLp-5X-mzf"/>
                             <constraint firstItem="tf0-ta-9zh" firstAttribute="top" secondItem="A5M-7J-77L" secondAttribute="bottom" constant="8" symbolic="YES" id="Rff-j2-5oB"/>
-                            <constraint firstItem="s0q-eH-Otw" firstAttribute="top" secondItem="KnG-5i-mf7" secondAttribute="bottom" constant="8" symbolic="YES" id="aSO-To-kMp"/>
+                            <constraint firstItem="g84-P7-M2q" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="SFw-QZ-d74"/>
                             <constraint firstItem="A5M-7J-77L" firstAttribute="top" secondItem="KQZ-1w-vlD" secondAttribute="bottom" constant="8" symbolic="YES" id="cfb-er-3JN"/>
                             <constraint firstItem="A5M-7J-77L" firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="e1l-AV-tCB"/>
                             <constraint firstAttribute="centerY" secondItem="KQZ-1w-vlD" secondAttribute="centerY" id="exm-UA-ej4"/>
+                            <constraint firstItem="g84-P7-M2q" firstAttribute="top" secondItem="s0q-eH-Otw" secondAttribute="bottom" constant="8" symbolic="YES" id="mYY-YO-A27"/>
                             <constraint firstItem="tf0-ta-9zh" firstAttribute="centerX" secondItem="A5M-7J-77L" secondAttribute="centerX" id="pCf-dy-F56"/>
                             <constraint firstItem="KnG-5i-mf7" firstAttribute="top" secondItem="tf0-ta-9zh" secondAttribute="bottom" constant="8" symbolic="YES" id="vja-M3-ACC"/>
                         </constraints>

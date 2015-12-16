@@ -40,6 +40,7 @@ public protocol TargetType {
     var path: String { get }
     var method: NetworkAbstraction.Method { get }
     var parameters: [String: AnyObject]? { get }
+    var parameterEncoding: NetworkAbstraction.ParameterEncoding { get }
 }
 
 // Protocol to define the opaque type returned from a request
@@ -106,7 +107,7 @@ public extension APIProvider {
 
     public final class func DefaultEndpointMapping(target: TargetType) -> Endpoint {
         let url = target.baseURL.URLByAppendingPathComponent(target.path).absoluteString
-        return Endpoint(URL: url, method: target.method, parameters: target.parameters)
+        return Endpoint(URL: url, method: target.method, parameters: target.parameters, parameterEncoding: target.parameterEncoding)
     }
 
     public final class func DefaultRequestMapping(endpoint: Endpoint, closure: NSURLRequest -> Void) {

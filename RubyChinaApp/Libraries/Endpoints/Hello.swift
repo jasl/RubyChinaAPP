@@ -11,8 +11,9 @@ extension RubyChinaV3 {
         static let Path = "hello"
 
         var baseURL: NSURL { return RubyChinaV3.BaseURL }
-        var path: String { return Hello.Path }
+        var path: String { return RubyChinaV3.Hello.Path }
         var method: NetworkAbstraction.Method { return .GET }
         var parameters: [String: AnyObject]? { return nil }
+        var parameterEncoding: NetworkAbstraction.ParameterEncoding { return .URL }
     }
 }

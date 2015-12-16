@@ -22,7 +22,7 @@ class FirstViewController: UIViewController {
     }
     
     @IBAction func SendHello(sender: UIButton) {
-        provider.request(RubyChinaV3.Hello()) { result in
+        provider.request(RubyChinaV3.Users.Get(login: "huacnlee")) { result in
             switch result {
             case let .Success(response):
                 //dump(response)
@@ -30,6 +30,24 @@ class FirstViewController: UIViewController {
                 let user = User(byJSON: json["user"])
 
                 dump(user)
+            case let .Failure(error):
+                dump(error)
+            }
+        }
+    }
+    
+    @IBAction func createPost(sender: UIButton) {
+        let title = "yoooooo"
+        let body = "*小朋友们大家好*\n\n# 还记得我是谁么\n\n- 对了\n- 我就是给蓝猫配音的演员\n\n 葛炮!"
+        let nodeId = "61"
+
+        provider.request(RubyChinaV3.Topics.Create(title: title, body: body, nodeId: nodeId)) { result in
+            switch result {
+            case let .Success(response):
+                let json = response.mapSwiftyJSON()
+                dump(json)
+                let topic = Topic(byJSON: json["topic"])
+                dump(topic)
             case let .Failure(error):
                 dump(error)
             }

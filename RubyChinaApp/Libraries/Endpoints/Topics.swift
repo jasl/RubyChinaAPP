@@ -40,24 +40,25 @@ extension RubyChinaV3.Topics {
         var parameters: [String: AnyObject]? {
             var parameters = [String: AnyObject]()
 
-            if type != nil {
-                parameters["type"] = type!.rawValue
+            if let type = self.type {
+                parameters["type"] = type.rawValue
             }
-            if nodeId != nil {
-                parameters["nodeId"] = nodeId!
+            if let nodeId = self.nodeId {
+                parameters["nodeId"] = nodeId
             }
-            if offset != nil {
-                parameters["offset"] = offset!
+            if let offset = self.offset {
+                parameters["offset"] = offset
             }
-            if limit != nil {
-                parameters["limit"] = limit!
+            if let limit = self.limit {
+                parameters["limit"] = limit
             }
 
             return parameters
         }
+        var parameterEncoding: NetworkAbstraction.ParameterEncoding { return .URL }
     }
 
-    struct Show: TargetType {
+    struct Get: TargetType {
         var id: String
 
         init(id: String) {
@@ -65,8 +66,177 @@ extension RubyChinaV3.Topics {
         }
 
         var baseURL: NSURL { return RubyChinaV3.BaseURL }
-        var path: String { return "\(Path)/\(id)" }
+        var path: String { return "\(RubyChinaV3.Topics.Path)/\(self.id)" }
         var method: NetworkAbstraction.Method { return .GET }
         var parameters: [String: AnyObject]? { return nil }
+        var parameterEncoding: NetworkAbstraction.ParameterEncoding { return .URL }
+    }
+
+    struct Create: TargetType {
+        var nodeId: String
+        var title: String
+        var body: String
+
+        init(title: String, body: String, nodeId: String) {
+            self.title = title
+            self.body = body
+            self.nodeId = nodeId
+        }
+
+        var baseURL: NSURL { return RubyChinaV3.BaseURL }
+        var path: String { return RubyChinaV3.Topics.Path }
+        var method: NetworkAbstraction.Method { return .POST }
+        var parameters: [String: AnyObject]? {
+            var parameters = [String: AnyObject]()
+
+            parameters["title"] = self.title
+            parameters["body"] = self.body
+            parameters["node_id"] = self.nodeId
+
+            return parameters
+        }
+        var parameterEncoding: NetworkAbstraction.ParameterEncoding { return .URL }
+    }
+
+    struct Update: TargetType {
+        var id: String
+        var nodeId: String
+        var title: String
+        var body: String
+
+        init(id: String, title: String, body: String, nodeId: String) {
+            self.id = id
+            self.title = title
+            self.body = body
+            self.nodeId = nodeId
+        }
+
+        var baseURL: NSURL { return RubyChinaV3.BaseURL }
+        var path: String { return "\(RubyChinaV3.Topics.Path)/\(self.id)" }
+        var method: NetworkAbstraction.Method { return .PUT }
+        var parameters: [String: AnyObject]? {
+            var parameters = [String: AnyObject]()
+
+            parameters["title"] = self.title
+            parameters["body"] = self.body
+            parameters["node_id"] = self.nodeId
+
+            return parameters
+        }
+        var parameterEncoding: NetworkAbstraction.ParameterEncoding { return .URL }
+    }
+
+    struct Destroy: TargetType {
+        var id: String
+
+        init(id: String) {
+            self.id = id
+        }
+
+        var baseURL: NSURL { return RubyChinaV3.BaseURL }
+        var path: String { return "\(RubyChinaV3.Topics.Path)/\(self.id)" }
+        var method: NetworkAbstraction.Method { return .DELETE }
+        var parameters: [String: AnyObject]? { return nil }
+        var parameterEncoding: NetworkAbstraction.ParameterEncoding { return .URL }
+    }
+
+    struct Like: TargetType {
+        static let Path = "likes"
+        var id: String
+
+        init(id: String) {
+            self.id = id
+        }
+
+        var baseURL: NSURL { return RubyChinaV3.BaseURL }
+        var path: String { return RubyChinaV3.Topics.Like.Path }
+        var method: NetworkAbstraction.Method { return .POST }
+        var parameters: [String: AnyObject]? {
+            var parameters = [String: AnyObject]()
+
+            parameters["obj_type"] = "topic"
+            parameters["obj_id"] = self.id
+
+            return parameters
+        }
+        var parameterEncoding: NetworkAbstraction.ParameterEncoding { return .URL }
+    }
+
+    struct UndoLike: TargetType {
+        static let Path = "likes"
+        var id: String
+
+        init(id: String) {
+            self.id = id
+        }
+
+        var baseURL: NSURL { return RubyChinaV3.BaseURL }
+        var path: String { return RubyChinaV3.Topics.UndoLike.Path }
+        var method: NetworkAbstraction.Method { return .DELETE }
+        var parameters: [String: AnyObject]? {
+            var parameters = [String: AnyObject]()
+
+            parameters["obj_type"] = "topic"
+            parameters["obj_id"] = self.id
+
+            return parameters
+        }
+        var parameterEncoding: NetworkAbstraction.ParameterEncoding { return .URL }
+    }
+
+    struct Favorite: TargetType {
+        var id: String
+
+        init(id: String) {
+            self.id = id
+        }
+
+        var baseURL: NSURL { return RubyChinaV3.BaseURL }
+        var path: String { return "\(RubyChinaV3.Topics.Path)/\(self.id)/favorite" }
+        var method: NetworkAbstraction.Method { return .POST }
+        var parameters: [String: AnyObject]? { return nil }
+        var parameterEncoding: NetworkAbstraction.ParameterEncoding { return .URL }
+    }
+
+    struct UndoFavorite: TargetType {
+        var id: String
+
+        init(id: String) {
+            self.id = id
+        }
+
+        var baseURL: NSURL { return RubyChinaV3.BaseURL }
+        var path: String { return "\(RubyChinaV3.Topics.Path)/\(self.id)/unfavorite" }
+        var method: NetworkAbstraction.Method { return .POST }
+        var parameters: [String: AnyObject]? { return nil }
+        var parameterEncoding: NetworkAbstraction.ParameterEncoding { return .URL }
+    }
+
+    struct Follow: TargetType {
+        var id: String
+
+        init(id: String) {
+            self.id = id
+        }
+
+        var baseURL: NSURL { return RubyChinaV3.BaseURL }
+        var path: String { return "\(RubyChinaV3.Topics.Path)/\(self.id)/follow" }
+        var method: NetworkAbstraction.Method { return .POST }
+        var parameters: [String: AnyObject]? { return nil }
+        var parameterEncoding: NetworkAbstraction.ParameterEncoding { return .URL }
+    }
+
+    struct UndoFollow: TargetType {
+        var id: String
+
+        init(id: String) {
+            self.id = id
+        }
+
+        var baseURL: NSURL { return RubyChinaV3.BaseURL }
+        var path: String { return "\(RubyChinaV3.Topics.Path)/\(self.id)/unfollow" }
+        var method: NetworkAbstraction.Method { return .POST }
+        var parameters: [String: AnyObject]? { return nil }
+        var parameterEncoding: NetworkAbstraction.ParameterEncoding { return .URL }
     }
 }

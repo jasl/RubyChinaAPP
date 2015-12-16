@@ -13,7 +13,7 @@ import p2_OAuth2
 
 class FirstViewController: UIViewController {
 
-    let provider = RubyChinaV3Provider(clientID: GlobalConstant.clientId, clientSecret: GlobalConstant.clientSecret, redirect_uris: GlobalConstant.redirectURIs)
+    let provider = SharedProvider.instance
 
     override func viewDidLoad() {
         super.viewDidLoad()

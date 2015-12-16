@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		231DF034E718DBCD0AF1A9ED /* NetworkAbstraction.h in Headers */ = {isa = PBXBuildFile; fileRef = 231DF5EFC58EE2F862B44099 /* NetworkAbstraction.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		231DF550AD5E8C78F9EC7421 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231DF931040A94D50B388C49 /* Response.swift */; };
-		231DF6A1185D99521A72F2FD /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231DF24F2F13F43B18FF38D9 /* Provider.swift */; };
+		231DF6A1185D99521A72F2FD /* APIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231DF24F2F13F43B18FF38D9 /* APIProvider.swift */; };
 		231DF74A9351399CA4862F76 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231DF3131D681CAA9E79D99C /* Error.swift */; };
 		231DF8731B1B0E8F98A19AB9 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231DF3E39DF02E5452C2FFCA /* Endpoint.swift */; };
 		231DF9DBF9D16C555F83AD27 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231DFCED195C3E4F7CFB3415 /* Image.swift */; };
@@ -31,7 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		231DF24F2F13F43B18FF38D9 /* Provider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
+		231DF24F2F13F43B18FF38D9 /* APIProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIProvider.swift; sourceTree = "<group>"; };
 		231DF3131D681CAA9E79D99C /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		231DF3E39DF02E5452C2FFCA /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		231DF5EFC58EE2F862B44099 /* NetworkAbstraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkAbstraction.h; sourceTree = "<group>"; };
@@ -100,7 +100,7 @@
 			children = (
 				231DF3E39DF02E5452C2FFCA /* Endpoint.swift */,
 				231DFF7FAB33E474EE6C4648 /* Plugin.swift */,
-				231DF24F2F13F43B18FF38D9 /* Provider.swift */,
+				231DF24F2F13F43B18FF38D9 /* APIProvider.swift */,
 				231DF3131D681CAA9E79D99C /* Error.swift */,
 				231DFB35A1BF3CBC7E20A206 /* Result.swift */,
 				231DFF2B87D771DC6946A26E /* Supporting Files */,
@@ -229,7 +229,7 @@
 			files = (
 				231DF8731B1B0E8F98A19AB9 /* Endpoint.swift in Sources */,
 				231DFED9CD6A1B1E6F6CEEAE /* Plugin.swift in Sources */,
-				231DF6A1185D99521A72F2FD /* Provider.swift in Sources */,
+				231DF6A1185D99521A72F2FD /* APIProvider.swift in Sources */,
 				231DF74A9351399CA4862F76 /* Error.swift in Sources */,
 				231DF9E8679513CE09BC5B17 /* Result.swift in Sources */,
 				231DF550AD5E8C78F9EC7421 /* Response.swift in Sources */,

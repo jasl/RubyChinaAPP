@@ -26,15 +26,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
         dump(url)
 
-        dump(window)
+        SharedProvider.instance.handleRedirectURL(url)
 
-        if "rbcn" == url.scheme {
-            if let vc = window?.rootViewController as? FirstViewController {
-                vc.provider.handleRedirectURL(url)
-                return true
-            }
-        }
-        return false
+        return true
     }
 
     func applicationWillResignActive(application: UIApplication) {

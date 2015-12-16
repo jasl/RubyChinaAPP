@@ -11,7 +11,7 @@ struct RubyChinaV3 {
     static let BaseURL = NSURL(string: "https://ruby-china.org/api/v3/")!
 }
 
-class RubyChinaV3Provider {
+class Provider {
     private let oauthClient: OAuth2CodeGrant
     private let provider: APIProvider
 
@@ -83,4 +83,16 @@ class RubyChinaV3Provider {
     func handleRedirectURL(redirect: NSURL) {
         oauthClient.handleRedirectURL(redirect)
     }
+
+    func isAuthorized() -> Bool {
+        if let accessToken = self.oauthClient.clientConfig.accessToken where !accessToken.isEmpty {
+            return true
+        } else {
+            return false
+        }
+    }
+}
+
+struct SharedProvider {
+    static var instance = Provider(clientID: GlobalConstant.clientId, clientSecret: GlobalConstant.clientSecret, redirect_uris: GlobalConstant.redirectURIs)
 }

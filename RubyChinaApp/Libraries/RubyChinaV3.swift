@@ -12,12 +12,21 @@ struct RubyChinaV3 {
 }
 
 class Provider {
-    private let oauthClient: OAuth2CodeGrant
-    private let provider: APIProvider
+    private var oauthClient: OAuth2CodeGrant!
+    private var provider: APIProvider!
 
-    var afterAuthorizeSuccess: ((parameters: OAuth2JSON) -> Void)? = nil
-    var afterAuthorizeFailure: ((error: ErrorType?) -> Void)? = nil
-    var afterAuthorizeSuccessOrFailure: ((wasFailure: Bool, error: ErrorType?) -> Void)? = nil
+    var afterAuthorizeSuccess: ((parameters: OAuth2JSON) -> Void)? {
+        get { return oauthClient.onAuthorize }
+        set(closure) { oauthClient.onAuthorize = closure }
+    }
+    var afterAuthorizeFailure: ((error: ErrorType?) -> Void)? {
+        get { return oauthClient.onFailure }
+        set(closure) { oauthClient.onFailure = closure }
+    }
+    var afterAuthorizeSuccessOrFailure: ((wasFailure: Bool, error: ErrorType?) -> Void)? {
+        get { return oauthClient.afterAuthorizeOrFailure }
+        set(closure) { oauthClient.afterAuthorizeOrFailure = closure }
+    }
 
     var authorizeContext: AnyObject? {
         get { return oauthClient.authConfig.authorizeContext }
@@ -39,29 +48,17 @@ class Provider {
                 "verbose": true,
         ] as OAuth2JSON)
 
-        provider = APIProvider()
-
-        provider.requestClosure = { (endpoint: Endpoint, done: NSURLRequest -> Void) in
+        provider = APIProvider(requestClosure: { (endpoint: Endpoint, done: NSURLRequest -> Void) in
             self.signingRequest(endpoint, done: done)
-        }
+        })
 
         oauthClient.authConfig.authorizeEmbedded = authorizeEmbedded
-
-        oauthClient.onAuthorize = { parameters in
-            self.afterAuthorizeSuccess?(parameters: parameters)
-        }
-        oauthClient.onFailure = { error in
-            self.afterAuthorizeFailure?(error: error)
-        }
-        oauthClient.afterAuthorizeOrFailure = { (wasFailure: Bool, error: ErrorType?) in
-            self.afterAuthorizeSuccessOrFailure?(wasFailure: wasFailure, error: error)
-        }
     }
 
     private func signingRequest(endpoint: Endpoint, done: NSURLRequest -> Void) {
         let request = endpoint.mutableURLRequest
 
-        if let accessToken = self.oauthClient.clientConfig.accessToken where !accessToken.isEmpty {
+        if let accessToken = self.oauthClient!.clientConfig.accessToken where !accessToken.isEmpty {
             request.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
         }
 
@@ -85,14 +82,10 @@ class Provider {
     }
 
     func isAuthorized() -> Bool {
-        if let accessToken = self.oauthClient.clientConfig.accessToken where !accessToken.isEmpty {
+        if let accessToken = self.oauthClient!.clientConfig.accessToken where !accessToken.isEmpty {
             return true
         } else {
             return false
         }
     }
-}
-
-struct SharedProvider {
-    static var instance = Provider(clientID: GlobalConstant.clientId, clientSecret: GlobalConstant.clientSecret, redirect_uris: GlobalConstant.redirectURIs)
 }

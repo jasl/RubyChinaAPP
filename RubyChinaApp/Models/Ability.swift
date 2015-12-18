@@ -13,7 +13,7 @@ struct Ability: CustomDebugStringConvertible, SwiftyJSONMappable {
     init?(byJSON json: JSON) {
         if json.type == .Null { return nil }
 
-        canUpdate = json["update"].boolValue
-        canDestroy = json["destroy"].boolValue
+        self.canUpdate = json["update"].boolValue
+        self.canDestroy = json["destroy"].boolValue
     }
 }

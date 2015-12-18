@@ -4,10 +4,11 @@
 //
 
 import Foundation
+import SwiftyJSON
 import NetworkAbstraction
 
 extension RubyChinaV3 {
-    struct Hello: TargetType {
+    struct Hello: EndpointType {
         static let Path = "hello"
 
         var baseURL: NSURL { return RubyChinaV3.BaseURL }
@@ -15,5 +16,11 @@ extension RubyChinaV3 {
         var method: NetworkAbstraction.Method { return .GET }
         var parameters: [String: AnyObject]? { return nil }
         var parameterEncoding: NetworkAbstraction.ParameterEncoding { return .URL }
+
+        typealias T = User
+
+        func buildEntity(json: JSON) -> T? {
+            return T(byJSON: json["user"])
+        }
     }
 }

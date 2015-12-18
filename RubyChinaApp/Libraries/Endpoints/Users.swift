@@ -4,6 +4,7 @@
 //
 
 import Foundation
+import SwiftyJSON
 import NetworkAbstraction
 
 extension RubyChinaV3 {
@@ -13,7 +14,7 @@ extension RubyChinaV3 {
 }
 
 extension RubyChinaV3.Users {
-    struct Listing: TargetType {
+    struct Listing: EndpointType {
         var limit: Int?
 
         init(limit: Int? = nil) {
@@ -33,9 +34,15 @@ extension RubyChinaV3.Users {
             return parameters
         }
         var parameterEncoding: NetworkAbstraction.ParameterEncoding { return .URL }
+
+        typealias T = [User]
+
+        func buildEntity(json: JSON) -> T? {
+            return T(byJSON: json["users"])
+        }
     }
 
-    struct Get: TargetType {
+    struct Get: EndpointType {
         var login: String
 
         init(login: String) {
@@ -47,9 +54,15 @@ extension RubyChinaV3.Users {
         var method: NetworkAbstraction.Method { return .GET }
         var parameters: [String: AnyObject]? { return nil }
         var parameterEncoding: NetworkAbstraction.ParameterEncoding { return .URL }
+
+        typealias T = User
+
+        func buildEntity(json: JSON) -> T? {
+            return T(byJSON: json["user"])
+        }
     }
 
-    struct Topics: TargetType {
+    struct Topics: EndpointType {
         enum OrderByValue: String {
             case Recent = "recent"
             case Likes = "likes"
@@ -87,9 +100,15 @@ extension RubyChinaV3.Users {
             return parameters
         }
         var parameterEncoding: NetworkAbstraction.ParameterEncoding { return .URL }
+
+        typealias T = [Topic]
+
+        func buildEntity(json: JSON) -> T? {
+            return T(byJSON: json["topics"])
+        }
     }
 
-    struct Replies: TargetType {
+    struct Replies: EndpointType {
         enum OrderByValue: String {
             case Recent = "recent"
         }
@@ -125,9 +144,15 @@ extension RubyChinaV3.Users {
             return parameters
         }
         var parameterEncoding: NetworkAbstraction.ParameterEncoding { return .URL }
+
+        typealias T = [Reply]
+
+        func buildEntity(json: JSON) -> T? {
+            return T(byJSON: json["replies"])
+        }
     }
 
-    struct Favorites: TargetType {
+    struct Favorites: EndpointType {
         var login: String
         var offset: Int?
         var limit: Int?
@@ -154,9 +179,15 @@ extension RubyChinaV3.Users {
             return parameters
         }
         var parameterEncoding: NetworkAbstraction.ParameterEncoding { return .URL }
+
+        typealias T = [Topic]
+
+        func buildEntity(json: JSON) -> T? {
+            return T(byJSON: json["topics"])
+        }
     }
 
-    struct Following: TargetType {
+    struct Following: EndpointType {
         var login: String
         var offset: Int?
         var limit: Int?
@@ -183,9 +214,15 @@ extension RubyChinaV3.Users {
             return parameters
         }
         var parameterEncoding: NetworkAbstraction.ParameterEncoding { return .URL }
+
+        typealias T = [User]
+
+        func buildEntity(json: JSON) -> T? {
+            return T(byJSON: json["users"])
+        }
     }
 
-    struct Followers: TargetType {
+    struct Followers: EndpointType {
         var login: String
         var offset: Int?
         var limit: Int?
@@ -212,9 +249,15 @@ extension RubyChinaV3.Users {
             return parameters
         }
         var parameterEncoding: NetworkAbstraction.ParameterEncoding { return .URL }
+
+        typealias T = [User]
+
+        func buildEntity(json: JSON) -> T? {
+            return T(byJSON: json["users"])
+        }
     }
 
-    struct Blocked: TargetType {
+    struct Blocked: EndpointType {
         var login: String
         var offset: Int?
         var limit: Int?
@@ -241,10 +284,15 @@ extension RubyChinaV3.Users {
             return parameters
         }
         var parameterEncoding: NetworkAbstraction.ParameterEncoding { return .URL }
+
+        typealias T = [User]
+
+        func buildEntity(json: JSON) -> T? {
+            return T(byJSON: json["users"])
+        }
     }
 
-
-    struct Follow: TargetType {
+    struct Follow: EndpointType {
         var login: String
 
         init(login: String) {
@@ -256,9 +304,11 @@ extension RubyChinaV3.Users {
         var method: NetworkAbstraction.Method { return .POST }
         var parameters: [String: AnyObject]? { return nil }
         var parameterEncoding: NetworkAbstraction.ParameterEncoding { return .URL }
+
+        typealias T = AnyObject
     }
 
-    struct UndoFollow: TargetType {
+    struct UndoFollow: EndpointType {
         var login: String
 
         init(login: String) {
@@ -270,9 +320,11 @@ extension RubyChinaV3.Users {
         var method: NetworkAbstraction.Method { return .POST }
         var parameters: [String: AnyObject]? { return nil }
         var parameterEncoding: NetworkAbstraction.ParameterEncoding { return .URL }
+
+        typealias T = AnyObject
     }
 
-    struct Block: TargetType {
+    struct Block: EndpointType {
         var login: String
 
         init(login: String) {
@@ -284,9 +336,11 @@ extension RubyChinaV3.Users {
         var method: NetworkAbstraction.Method { return .POST }
         var parameters: [String: AnyObject]? { return nil }
         var parameterEncoding: NetworkAbstraction.ParameterEncoding { return .URL }
+
+        typealias T = AnyObject
     }
 
-    struct UndoBlock: TargetType {
+    struct UndoBlock: EndpointType {
         var login: String
 
         init(login: String) {
@@ -298,5 +352,7 @@ extension RubyChinaV3.Users {
         var method: NetworkAbstraction.Method { return .POST }
         var parameters: [String: AnyObject]? { return nil }
         var parameterEncoding: NetworkAbstraction.ParameterEncoding { return .URL }
+
+        typealias T = AnyObject
     }
 }

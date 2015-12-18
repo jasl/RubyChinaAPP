@@ -4,6 +4,7 @@
 //
 
 import Foundation
+import SwiftyJSON
 import NetworkAbstraction
 
 extension RubyChinaV3 {
@@ -13,7 +14,7 @@ extension RubyChinaV3 {
 }
 
 extension RubyChinaV3.Replies {
-    struct Listing: TargetType {
+    struct Listing: EndpointType {
         var topicId: String
         var offset: Int?
         var limit: Int?
@@ -40,9 +41,15 @@ extension RubyChinaV3.Replies {
             return parameters
         }
         var parameterEncoding: NetworkAbstraction.ParameterEncoding { return .URL }
+
+        typealias T = [Reply]
+
+        func buildEntity(json: JSON) -> T? {
+            return T(byJSON: json["replies"])
+        }
     }
 
-    struct Create: TargetType {
+    struct Create: EndpointType {
         var topicId: String
         var body: String
 
@@ -62,9 +69,15 @@ extension RubyChinaV3.Replies {
             return parameters
         }
         var parameterEncoding: NetworkAbstraction.ParameterEncoding { return .URL }
+
+        typealias T = Reply
+
+        func buildEntity(json: JSON) -> T? {
+            return T(byJSON: json["reply"])
+        }
     }
 
-    struct Get: TargetType {
+    struct Get: EndpointType {
         var id: String
 
         init(id: String) {
@@ -76,9 +89,15 @@ extension RubyChinaV3.Replies {
         var method: NetworkAbstraction.Method { return .GET }
         var parameters: [String: AnyObject]? { return nil }
         var parameterEncoding: NetworkAbstraction.ParameterEncoding { return .URL }
+
+        typealias T = Reply
+
+        func buildEntity(json: JSON) -> T? {
+            return T(byJSON: json["reply"])
+        }
     }
 
-    struct Destroy: TargetType {
+    struct Destroy: EndpointType {
         var id: String
 
         init(id: String) {
@@ -90,9 +109,11 @@ extension RubyChinaV3.Replies {
         var method: NetworkAbstraction.Method { return .DELETE }
         var parameters: [String: AnyObject]? { return nil }
         var parameterEncoding: NetworkAbstraction.ParameterEncoding { return .URL }
+
+        typealias T = AnyObject
     }
 
-    struct Update: TargetType {
+    struct Update: EndpointType {
         var id: String
         var body: String
 
@@ -112,9 +133,15 @@ extension RubyChinaV3.Replies {
             return parameters
         }
         var parameterEncoding: NetworkAbstraction.ParameterEncoding { return .URL }
+
+        typealias T = Reply
+
+        func buildEntity(json: JSON) -> T? {
+            return T(byJSON: json["reply"])
+        }
     }
 
-    struct Like: TargetType {
+    struct Like: EndpointType {
         static let Path = "likes"
         var id: String
 
@@ -134,9 +161,11 @@ extension RubyChinaV3.Replies {
             return parameters
         }
         var parameterEncoding: NetworkAbstraction.ParameterEncoding { return .URL }
+
+        typealias T = AnyObject
     }
 
-    struct UndoLike: TargetType {
+    struct UndoLike: EndpointType {
         static let Path = "likes"
         var id: String
 
@@ -156,5 +185,7 @@ extension RubyChinaV3.Replies {
             return parameters
         }
         var parameterEncoding: NetworkAbstraction.ParameterEncoding { return .URL }
+
+        typealias T = AnyObject
     }
 }

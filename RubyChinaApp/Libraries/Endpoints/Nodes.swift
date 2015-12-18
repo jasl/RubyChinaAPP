@@ -4,6 +4,7 @@
 //
 
 import Foundation
+import SwiftyJSON
 import NetworkAbstraction
 
 extension RubyChinaV3 {
@@ -13,15 +14,21 @@ extension RubyChinaV3 {
 }
 
 extension RubyChinaV3.Nodes {
-    struct Listing: TargetType {
+    struct Listing: EndpointType {
         var baseURL: NSURL { return RubyChinaV3.BaseURL }
         var path: String { return RubyChinaV3.Nodes.Path }
         var method: NetworkAbstraction.Method { return .GET }
         var parameters: [String: AnyObject]? { return nil }
         var parameterEncoding: NetworkAbstraction.ParameterEncoding { return .URL }
+
+        typealias T = [Node]
+
+        func buildEntity(json: JSON) -> T? {
+            return T(byJSON: json["nodes"])
+        }
     }
 
-    struct Get: TargetType {
+    struct Get: EndpointType {
         var id: String
 
         init(id: String) {
@@ -33,5 +40,11 @@ extension RubyChinaV3.Nodes {
         var method: NetworkAbstraction.Method { return .GET }
         var parameters: [String: AnyObject]? { return nil }
         var parameterEncoding: NetworkAbstraction.ParameterEncoding { return .URL }
+
+        typealias T = Node
+
+        func buildEntity(json: JSON) -> T? {
+            return T(byJSON: json["node"])
+        }
     }
 }

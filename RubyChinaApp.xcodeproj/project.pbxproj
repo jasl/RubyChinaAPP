@@ -609,6 +609,7 @@
 				INFOPLIST_FILE = RubyChinaApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				"OTHER_SWIFT_FLAGS[arch=*]" = "$(inherited) \"-D\" \"COCOAPODS\" -v";
 				PRODUCT_BUNDLE_IDENTIFIER = RubyChina.RubyChinaApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

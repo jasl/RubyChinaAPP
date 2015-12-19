@@ -15,8 +15,8 @@ protocol EndpointType: TargetType {
 }
 
 extension EndpointType {
-    func doRequest(callback: (result: APIResult<T>) -> ()) -> NetworkAbstraction.Cancellable {
-        return Provider.defaultInstance().request(self) { result in
+    func doRequest(provider: Provider = Provider.defaultInstance(), callback: (result: APIResult<T>) -> ()) -> NetworkAbstraction.Cancellable {
+        return provider.request(self) { result in
             var apiResult: APIResult<T>
 
             switch result {

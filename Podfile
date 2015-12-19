@@ -6,7 +6,8 @@ use_frameworks!
 
 # networking
 pod 'Alamofire', '~> 3.1'
-# pod 'Moya', '~> 5.1'
+# pod 'ReachabilitySwift', git: 'https://github.com/ashleymills/Reachability.swift'
+# pod 'Moya', '~> 5.1' # I cheat the code, Moya made it's Target generic, force to use enum, that's not suit for me.
 
 # serializing
 pod 'SwiftyJSON', '~> 2.3'

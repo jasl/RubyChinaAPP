@@ -12,7 +12,6 @@
 		231DF13DA4A78C3CC1937377 /* Response+mapSwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231DFD0EA6F48001E6B4E49D /* Response+mapSwiftyJSON.swift */; };
 		231DF20B184C8E0C4667DE14 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231DFCD7A04A2B6FE984C601 /* Util.swift */; };
 		231DF4EC0611FFB817390AA3 /* Ability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231DF69A0BA185B9D027ED3E /* Ability.swift */; };
-		231DF5DB6CAC43AF31CD9775 /* RubyChinaV3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231DFA679F950A01DC35AC23 /* RubyChinaV3.swift */; };
 		231DF9BC5E5C962FB01CA017 /* GlobalConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231DF7E28829ED774FE9F9E3 /* GlobalConstant.swift */; };
 		231DFA1A19C5011B9B4679CF /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231DF1962EC2499EB3374649 /* Topic.swift */; };
 		231DFC1935D67575003229D5 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231DF936033E22F103D80F2D /* FirstViewController.swift */; };
@@ -20,6 +19,7 @@
 		231DFD05D20D5C36BFF6EC86 /* CustomDebugStringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231DFA90FC2C300FD007C2FD /* CustomDebugStringConvertible.swift */; };
 		231DFD9928EE58ECE1136122 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231DFA0DD99841201D825416 /* String.swift */; };
 		231DFE21DA482EB20732B290 /* SwiftyJSONMappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231DF0253D5F58432452BC0D /* SwiftyJSONMappable.swift */; };
+		31A9D2230E0FA063CB10C95D /* RubyChinaV3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9D1F987FAF91B5F76E086 /* RubyChinaV3.swift */; };
 		31A9D28818F7293695CA168D /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9DB8831193C17732C80ED /* APIError.swift */; };
 		31A9D309751958C2492EBBE1 /* SharedObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9DAB9935B984E0866C189 /* SharedObjects.swift */; };
 		31A9D53BF888A4CC55B73909 /* Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9D0D14B6FD042B6FF04A5 /* Photos.swift */; };
@@ -30,6 +30,7 @@
 		31A9DA64933FE3C419778104 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9D82BB3D48D7D4FA16955 /* Users.swift */; };
 		31A9DB18DADE7BCD8C1F703B /* EndpointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9DEE22D18AB275DE61316 /* EndpointType.swift */; };
 		31A9DBE9CDA353194E87F9FC /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9D9BB6354DAC96C2A8391 /* Node.swift */; };
+		31A9DC4ADAA4003191EF16B4 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9D525F4F40028ECB3130E /* Provider.swift */; };
 		31A9DCBACE014A3E33924156 /* APIResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9DE22F7AC1350AE0E54C4 /* APIResult.swift */; };
 		31A9DD18A3DE831B4DD37DB5 /* Replies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9D89D2087401239B75AD4 /* Replies.swift */; };
 		31A9DE1B1C7112CD3FA27BD2 /* Nodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9DC00F1E6779F99683172 /* Nodes.swift */; };
@@ -68,14 +69,15 @@
 		231DF7E28829ED774FE9F9E3 /* GlobalConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalConstant.swift; sourceTree = "<group>"; };
 		231DF936033E22F103D80F2D /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		231DFA0DD99841201D825416 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
-		231DFA679F950A01DC35AC23 /* RubyChinaV3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RubyChinaV3.swift; sourceTree = "<group>"; };
 		231DFA90FC2C300FD007C2FD /* CustomDebugStringConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomDebugStringConvertible.swift; sourceTree = "<group>"; };
 		231DFCD7A04A2B6FE984C601 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		231DFD0EA6F48001E6B4E49D /* Response+mapSwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Response+mapSwiftyJSON.swift"; sourceTree = "<group>"; };
 		253395CDF7C6B183C52F0F86 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		31A9D0D14B6FD042B6FF04A5 /* Photos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photos.swift; sourceTree = "<group>"; };
 		31A9D12781FB0997905874A1 /* Hello.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hello.swift; sourceTree = "<group>"; };
+		31A9D1F987FAF91B5F76E086 /* RubyChinaV3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RubyChinaV3.swift; sourceTree = "<group>"; };
 		31A9D21FAECDA81239342C49 /* Array+initByJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+initByJSON.swift"; sourceTree = "<group>"; };
+		31A9D525F4F40028ECB3130E /* Provider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
 		31A9D6E8620E5FF3193037DA /* Reply.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reply.swift; sourceTree = "<group>"; };
 		31A9D82BB3D48D7D4FA16955 /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		31A9D89D2087401239B75AD4 /* Replies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Replies.swift; sourceTree = "<group>"; };
@@ -149,11 +151,11 @@
 				231DFCD7A04A2B6FE984C601 /* Util.swift */,
 				231DFD64D08DB90BA60E47AF /* Extensions */,
 				231DF9785D40E9D6A86952F8 /* Endpoints */,
-				231DFA679F950A01DC35AC23 /* RubyChinaV3.swift */,
 				231DF0253D5F58432452BC0D /* SwiftyJSONMappable.swift */,
 				31A9DC04E21F53880B6828FC /* NetworkLogger.swift */,
 				31A9DEE22D18AB275DE61316 /* EndpointType.swift */,
 				31A9DE22F7AC1350AE0E54C4 /* APIResult.swift */,
+				31A9D525F4F40028ECB3130E /* Provider.swift */,
 			);
 			path = Libraries;
 			sourceTree = "<group>";
@@ -175,6 +177,7 @@
 				31A9D82BB3D48D7D4FA16955 /* Users.swift */,
 				31A9DC00F1E6779F99683172 /* Nodes.swift */,
 				31A9D0D14B6FD042B6FF04A5 /* Photos.swift */,
+				31A9D1F987FAF91B5F76E086 /* RubyChinaV3.swift */,
 			);
 			path = Endpoints;
 			sourceTree = "<group>";
@@ -467,7 +470,6 @@
 				231DFC1935D67575003229D5 /* FirstViewController.swift in Sources */,
 				231DFD05D20D5C36BFF6EC86 /* CustomDebugStringConvertible.swift in Sources */,
 				231DFD9928EE58ECE1136122 /* String.swift in Sources */,
-				231DF5DB6CAC43AF31CD9775 /* RubyChinaV3.swift in Sources */,
 				231DF13DA4A78C3CC1937377 /* Response+mapSwiftyJSON.swift in Sources */,
 				231DFE21DA482EB20732B290 /* SwiftyJSONMappable.swift in Sources */,
 				231DFC6CC70D378E5AEA3D54 /* Topics.swift in Sources */,
@@ -484,6 +486,8 @@
 				31A9D74A9F10CD73DBE10247 /* Array+initByJSON.swift in Sources */,
 				31A9DB18DADE7BCD8C1F703B /* EndpointType.swift in Sources */,
 				31A9DCBACE014A3E33924156 /* APIResult.swift in Sources */,
+				31A9D2230E0FA063CB10C95D /* RubyChinaV3.swift in Sources */,
+				31A9DC4ADAA4003191EF16B4 /* Provider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

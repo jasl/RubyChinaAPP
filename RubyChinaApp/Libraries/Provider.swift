@@ -1,15 +1,11 @@
 //
-// Created by 姜军 on 12/13/15.
+// Created by 姜军 on 12/20/15.
 // Copyright (c) 2015 RubyChina. All rights reserved.
 //
 
 import Foundation
 import NetworkAbstraction
 import p2_OAuth2
-
-struct RubyChinaV3 {
-    static let BaseURL = NSURL(string: "https://ruby-china.org/api/v3/")!
-}
 
 class Provider {
     private var oauthClient: OAuth2CodeGrant!

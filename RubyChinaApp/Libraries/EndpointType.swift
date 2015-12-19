@@ -11,12 +11,12 @@ protocol EndpointType: TargetType {
     typealias T
 
     func buildEntity(json: JSON) -> T?
-    func doRequest(callback: (result: APIResult<T>) -> ()) -> NetworkAbstraction.Cancellable
+    func doRequest(provider: Provider, callback: (result: APIResult<T>) -> ()) -> NetworkAbstraction.Cancellable
 }
 
 extension EndpointType {
-    func doRequest(callback: (result: APIResult<T>) -> ()) -> NetworkAbstraction.Cancellable {
-        return Provider.defaultInstance().request(self) { result in
+    func doRequest(provider: Provider = Provider.defaultInstance(), callback: (result: APIResult<T>) -> ()) -> NetworkAbstraction.Cancellable {
+        return provider.request(self) { result in
             var apiResult: APIResult<T>
 
             switch result {

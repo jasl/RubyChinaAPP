@@ -22,7 +22,7 @@ extension EndpointType {
             switch result {
             case let .Success(response):
                 let json = response.mapSwiftyJSON()
-                
+
                 if let _ = json["ok"].int {
                     apiResult = .Ok
                 } else if let errorMessage = json["error"].string {

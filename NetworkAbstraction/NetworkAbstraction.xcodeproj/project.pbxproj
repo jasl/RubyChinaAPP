@@ -76,10 +76,18 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		C4BBE1581C1DF7B20029C7C4 = {
+		C419D12F1C2886310002E2B4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				C4C009151C1ED02F003226BC /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C4BBE1581C1DF7B20029C7C4 = {
+			isa = PBXGroup;
+			children = (
+				C419D12F1C2886310002E2B4 /* Frameworks */,
 				C4BBE1641C1DF7B20029C7C4 /* NetworkAbstraction */,
 				C4BBE1701C1DF7B20029C7C4 /* NetworkAbstractionTests */,
 				C4BBE1631C1DF7B20029C7C4 /* Products */,
@@ -98,12 +106,12 @@
 		C4BBE1641C1DF7B20029C7C4 /* NetworkAbstraction */ = {
 			isa = PBXGroup;
 			children = (
+				231DFF2B87D771DC6946A26E /* Supporting Files */,
 				231DF3E39DF02E5452C2FFCA /* Endpoint.swift */,
 				231DFF7FAB33E474EE6C4648 /* Plugin.swift */,
 				231DF24F2F13F43B18FF38D9 /* APIProvider.swift */,
 				231DF3131D681CAA9E79D99C /* Error.swift */,
 				231DFB35A1BF3CBC7E20A206 /* Result.swift */,
-				231DFF2B87D771DC6946A26E /* Supporting Files */,
 				231DF931040A94D50B388C49 /* Response.swift */,
 				231DFCED195C3E4F7CFB3415 /* Image.swift */,
 			);

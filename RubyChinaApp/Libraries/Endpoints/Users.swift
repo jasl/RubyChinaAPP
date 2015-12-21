@@ -58,7 +58,20 @@ extension RubyChinaV3.Users {
         typealias T = User
 
         func buildEntity(json: JSON) -> T? {
-            return T(byJSON: json["user"])
+            if json["user"].type == .Null {
+                return nil
+            }
+
+            var user = T(byJSON: json["user"])!
+
+            if let isFollowed = json["meta"]["followed"].bool {
+                user.isFollowed = isFollowed
+            }
+            if let isBlocked = json["meta"]["blocked"].bool {
+                user.isBlocked = isBlocked
+            }
+
+            return user
         }
     }
 

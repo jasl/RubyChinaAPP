@@ -34,6 +34,9 @@ struct User: CustomDebugStringConvertible, SwiftyJSONMappable {
 
     let createdAt: NSDate?
 
+    var isFollowed = false
+    var isBlocked = false
+
     init?(byJSON json: JSON) {
         if json.type == .Null { return nil }
 

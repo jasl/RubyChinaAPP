@@ -81,6 +81,10 @@ extension RubyChinaV3.Topics {
         typealias T = Topic
 
         func buildEntity(json: JSON) -> T? {
+            if json["topic"].type == .Null {
+                return nil
+            }
+
             var topic = T(byJSON: json["topic"])!
 
             if let isFollowed = json["meta"]["followed"].bool {

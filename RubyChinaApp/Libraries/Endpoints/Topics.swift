@@ -81,7 +81,19 @@ extension RubyChinaV3.Topics {
         typealias T = Topic
 
         func buildEntity(json: JSON) -> T? {
-            return T(byJSON: json["topic"])
+            var topic = T(byJSON: json["topic"])!
+
+            if let isFollowed = json["meta"]["followed"].bool {
+                topic.isFollowed = isFollowed
+            }
+            if let isLiked = json["meta"]["liked"].bool {
+                topic.isLiked = isLiked
+            }
+            if let isFavorited = json["meta"]["favorited"].bool {
+                topic.isFavorited = isFavorited
+            }
+
+            return topic
         }
     }
 

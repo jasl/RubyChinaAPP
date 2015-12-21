@@ -45,7 +45,17 @@ extension RubyChinaV3.Replies {
         typealias T = [Reply]
 
         func buildEntity(json: JSON) -> T? {
-            return T(byJSON: json["replies"])
+            var topics = T(byJSON: json["replies"])
+
+            if let userLikedReplyIDs = json["meta"]["user_liked_reply_ids"].array?.map({ $0.stringValue }) where !userLikedReplyIDs.isEmpty {
+                for (index, topic) in topics.enumerate() {
+                    if userLikedReplyIDs.contains(topic.id) {
+                        topics[index].isLiked = true
+                    }
+                }
+            }
+
+            return topics
         }
     }
 

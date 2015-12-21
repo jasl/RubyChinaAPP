@@ -22,11 +22,11 @@ extension EndpointType {
             switch result {
             case let .Success(response):
                 let json = response.mapSwiftyJSON()
-
-                if let ok = json["ok"].int {
+                
+                if let _ = json["ok"].int {
                     apiResult = .Ok
-                } else if let error = APIError(byJSON: json["error"]) {
-                    apiResult = .Failure(error)
+                } else if let errorMessage = json["error"].string {
+                    apiResult = .Failure(APIError(statusCode: response.statusCode, message: errorMessage))
                 } else if let entity = self.buildEntity(json) {
                     apiResult = .Success(entity)
                 } else {

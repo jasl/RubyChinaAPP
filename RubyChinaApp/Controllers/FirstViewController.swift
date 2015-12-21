@@ -22,11 +22,23 @@ class FirstViewController: UIViewController {
     }
     
     @IBAction func SendHello(sender: UIButton) {
-        RubyChinaV3.Topics.Listing(type: .Excellent).doRequest() { result in
+        RubyChinaV3.Topics.Get(id: "283541").doRequest() { result in
             switch result {
-            case let .Success(entities):
-                dump(entities)
+            case let .Success(topic):
+                dump(topic)
+            case let .Failure(error):
+                dump(error)
+            default:
+                dump(result)
+            }
+        }
 
+        RubyChinaV3.Replies.Listing(topicId: "283541").doRequest() { result in
+            switch result {
+            case let .Success(replies):
+                dump(replies)
+            case let .Failure(error):
+                dump(error)
             default:
                 dump(result)
             }

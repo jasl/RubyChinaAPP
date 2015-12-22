@@ -20,9 +20,9 @@
 		231DFD9928EE58ECE1136122 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231DFA0DD99841201D825416 /* String.swift */; };
 		231DFE21DA482EB20732B290 /* SwiftyJSONMappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231DF0253D5F58432452BC0D /* SwiftyJSONMappable.swift */; };
 		31A9D2230E0FA063CB10C95D /* RubyChinaV3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9D1F987FAF91B5F76E086 /* RubyChinaV3.swift */; };
-		31A9D28818F7293695CA168D /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9DB8831193C17732C80ED /* APIError.swift */; };
 		31A9D309751958C2492EBBE1 /* SharedObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9DAB9935B984E0866C189 /* SharedObjects.swift */; };
 		31A9D53BF888A4CC55B73909 /* Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9D0D14B6FD042B6FF04A5 /* Photos.swift */; };
+		31A9D73B6A82B2C1A35DFE0C /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9D702F03DD6CC2106C2F4 /* APIError.swift */; };
 		31A9D74A9F10CD73DBE10247 /* Array+initByJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9D21FAECDA81239342C49 /* Array+initByJSON.swift */; };
 		31A9D8B39216AC35E7F70468 /* Reply.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9D6E8620E5FF3193037DA /* Reply.swift */; };
 		31A9D906AD995A2EDD558B0D /* Hello.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9D12781FB0997905874A1 /* Hello.swift */; };
@@ -79,11 +79,11 @@
 		31A9D21FAECDA81239342C49 /* Array+initByJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+initByJSON.swift"; sourceTree = "<group>"; };
 		31A9D525F4F40028ECB3130E /* Provider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
 		31A9D6E8620E5FF3193037DA /* Reply.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reply.swift; sourceTree = "<group>"; };
+		31A9D702F03DD6CC2106C2F4 /* APIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		31A9D82BB3D48D7D4FA16955 /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		31A9D89D2087401239B75AD4 /* Replies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Replies.swift; sourceTree = "<group>"; };
 		31A9D9BB6354DAC96C2A8391 /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 		31A9DAB9935B984E0866C189 /* SharedObjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedObjects.swift; sourceTree = "<group>"; };
-		31A9DB8831193C17732C80ED /* APIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		31A9DC00F1E6779F99683172 /* Nodes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Nodes.swift; sourceTree = "<group>"; };
 		31A9DC04E21F53880B6828FC /* NetworkLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkLogger.swift; sourceTree = "<group>"; };
 		31A9DE22F7AC1350AE0E54C4 /* APIResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIResult.swift; sourceTree = "<group>"; };
@@ -140,7 +140,6 @@
 				231DF5EE10C04C7D61695AC7 /* User.swift */,
 				31A9D6E8620E5FF3193037DA /* Reply.swift */,
 				31A9D9BB6354DAC96C2A8391 /* Node.swift */,
-				31A9DB8831193C17732C80ED /* APIError.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -156,6 +155,7 @@
 				31A9DEE22D18AB275DE61316 /* EndpointType.swift */,
 				31A9DE22F7AC1350AE0E54C4 /* APIResult.swift */,
 				31A9D525F4F40028ECB3130E /* Provider.swift */,
+				31A9D702F03DD6CC2106C2F4 /* APIError.swift */,
 			);
 			path = Libraries;
 			sourceTree = "<group>";
@@ -482,12 +482,12 @@
 				31A9DBE9CDA353194E87F9FC /* Node.swift in Sources */,
 				31A9DE1B1C7112CD3FA27BD2 /* Nodes.swift in Sources */,
 				31A9D53BF888A4CC55B73909 /* Photos.swift in Sources */,
-				31A9D28818F7293695CA168D /* APIError.swift in Sources */,
 				31A9D74A9F10CD73DBE10247 /* Array+initByJSON.swift in Sources */,
 				31A9DB18DADE7BCD8C1F703B /* EndpointType.swift in Sources */,
 				31A9DCBACE014A3E33924156 /* APIResult.swift in Sources */,
 				31A9D2230E0FA063CB10C95D /* RubyChinaV3.swift in Sources */,
 				31A9DC4ADAA4003191EF16B4 /* Provider.swift in Sources */,
+				31A9D73B6A82B2C1A35DFE0C /* APIError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

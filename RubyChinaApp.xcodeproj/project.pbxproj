@@ -34,11 +34,13 @@
 		31A9DCBACE014A3E33924156 /* APIResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9DE22F7AC1350AE0E54C4 /* APIResult.swift */; };
 		31A9DD18A3DE831B4DD37DB5 /* Replies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9D89D2087401239B75AD4 /* Replies.swift */; };
 		31A9DE1B1C7112CD3FA27BD2 /* Nodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9DC00F1E6779F99683172 /* Nodes.swift */; };
-		C418B1CF1C20A5A6001FB849 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C418B1CE1C20A5A6001FB849 /* Main.storyboard */; };
+		C41A241F1C29D63500011096 /* TopicsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41A241E1C29D63500011096 /* TopicsViewController.swift */; };
 		C441C03E1C1468180035AD6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C441C03D1C1468180035AD6E /* AppDelegate.swift */; };
 		C441C0471C1468180035AD6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C441C0461C1468180035AD6E /* Assets.xcassets */; };
 		C441C0551C1468180035AD6E /* RubyChinaAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C441C0541C1468180035AD6E /* RubyChinaAppTests.swift */; };
 		C441C0601C1468180035AD6E /* RubyChinaAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C441C05F1C1468180035AD6E /* RubyChinaAppUITests.swift */; };
+		C45C1CA11C2AC93800CFCBB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C418B1CE1C20A5A6001FB849 /* Main.storyboard */; };
+		C45C1CA21C2AC94500CFCBB2 /* TopicsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C496A6231C2AC68C004E692C /* TopicsTableViewCell.swift */; };
 		C4BBE17D1C1DFDA00029C7C4 /* NetworkAbstraction.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4BBE17C1C1DFDA00029C7C4 /* NetworkAbstraction.framework */; };
 		C4C009131C1ECEEA003226BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4C009111C1ECEEA003226BC /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -91,6 +93,7 @@
 		490432762AA9EB16F5679865 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		B4C7C3327D2AF7205A9E4CF0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		C418B1CE1C20A5A6001FB849 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		C41A241E1C29D63500011096 /* TopicsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicsViewController.swift; sourceTree = "<group>"; };
 		C441C03A1C1468180035AD6E /* RubyChinaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RubyChinaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C441C03D1C1468180035AD6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C441C0461C1468180035AD6E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -101,6 +104,7 @@
 		C441C05B1C1468180035AD6E /* RubyChinaAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RubyChinaAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C441C05F1C1468180035AD6E /* RubyChinaAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubyChinaAppUITests.swift; sourceTree = "<group>"; };
 		C441C0611C1468180035AD6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C496A6231C2AC68C004E692C /* TopicsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicsTableViewCell.swift; sourceTree = "<group>"; };
 		C4BBE17C1C1DFDA00029C7C4 /* NetworkAbstraction.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkAbstraction.framework; path = "NetworkAbstraction/NetworkAbstraction/build/Debug-iphoneos/NetworkAbstraction.framework"; sourceTree = "<group>"; };
 		C4C009111C1ECEEA003226BC /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -163,7 +167,9 @@
 		231DF500ECB4E1A69FDBC94B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C496A6231C2AC68C004E692C /* TopicsTableViewCell.swift */,
 				231DF936033E22F103D80F2D /* FirstViewController.swift */,
+				C41A241E1C29D63500011096 /* TopicsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -386,9 +392,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C45C1CA11C2AC93800CFCBB2 /* Main.storyboard in Resources */,
 				C441C0471C1468180035AD6E /* Assets.xcassets in Resources */,
 				C4C009131C1ECEEA003226BC /* LaunchScreen.storyboard in Resources */,
-				C418B1CF1C20A5A6001FB849 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,11 +476,13 @@
 				231DFC1935D67575003229D5 /* FirstViewController.swift in Sources */,
 				231DFD05D20D5C36BFF6EC86 /* CustomDebugStringConvertible.swift in Sources */,
 				231DFD9928EE58ECE1136122 /* String.swift in Sources */,
+				C45C1CA21C2AC94500CFCBB2 /* TopicsTableViewCell.swift in Sources */,
 				231DF13DA4A78C3CC1937377 /* Response+mapSwiftyJSON.swift in Sources */,
 				231DFE21DA482EB20732B290 /* SwiftyJSONMappable.swift in Sources */,
 				231DFC6CC70D378E5AEA3D54 /* Topics.swift in Sources */,
 				31A9D906AD995A2EDD558B0D /* Hello.swift in Sources */,
 				31A9D309751958C2492EBBE1 /* SharedObjects.swift in Sources */,
+				C41A241F1C29D63500011096 /* TopicsViewController.swift in Sources */,
 				31A9D93EDFCE02895C35F011 /* NetworkLogger.swift in Sources */,
 				31A9D8B39216AC35E7F70468 /* Reply.swift in Sources */,
 				31A9DD18A3DE831B4DD37DB5 /* Replies.swift in Sources */,

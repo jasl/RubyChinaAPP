@@ -2,10 +2,10 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:NetworkAbstraction/NetworkAbstraction.xcodeproj">
+      location = "group:RubyChinaApp.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:RubyChinaApp.xcodeproj">
+      location = "group:NetworkAbstraction/NetworkAbstraction.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

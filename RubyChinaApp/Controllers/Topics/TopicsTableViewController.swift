@@ -54,6 +54,10 @@ class TopicsTableViewController: UIViewController, UITableViewDelegate {
     // MARK: - Table view data source
 
     func pullDownRefreshingAction() {
+        defer {
+            self.topicsTableView.mj_header.endRefreshing()
+        }
+
         self.topicsPager.loadFresh() { result in
             switch result {
             case let .Success(topics):
@@ -65,11 +69,17 @@ class TopicsTableViewController: UIViewController, UITableViewDelegate {
                 dump(result)
             }
         }
-
-        self.topicsTableView.mj_header.endRefreshing()
     }
 
     func pullUpRefreshingAction() {
+        defer {
+            self.topicsTableView.mj_footer.endRefreshing()
+        }
+
+        if self.topicsPager.hasReachedTheEnd {
+            return
+        }
+
         self.topicsPager.loadMore { result in
             switch result {
             case let .Success(topics):
@@ -81,8 +91,6 @@ class TopicsTableViewController: UIViewController, UITableViewDelegate {
                 dump(result)
             }
         }
-
-        self.topicsTableView.mj_footer.endRefreshing()
     }
 
     /*

@@ -8,6 +8,8 @@ import NetworkAbstraction
 import p2_OAuth2
 
 class Provider {
+    var timeOut: NSTimeInterval = 15
+
     private var oauthClient: OAuth2CodeGrant!
     private var provider: APIProvider!
 
@@ -45,20 +47,15 @@ class Provider {
         ] as OAuth2JSON)
 
         provider = APIProvider(requestClosure: { (endpoint: Endpoint, done: NSURLRequest -> Void) in
-            self.signingRequest(endpoint, done: done)
+            let request = endpoint.mutableURLRequest
+
+            self.signingRequest(request)
+            self.setRequestTimeOutInterval(request)
+
+            done(request)
         }, plugins: plugins)
 
         oauthClient.authConfig.authorizeEmbedded = authorizeEmbedded
-    }
-
-    private func signingRequest(endpoint: Endpoint, done: NSURLRequest -> Void) {
-        let request = endpoint.mutableURLRequest
-
-        if let accessToken = self.oauthClient!.clientConfig.accessToken where !accessToken.isEmpty {
-            request.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
-        }
-
-        done(request)
     }
 
     func request(target: TargetType, completion: NetworkAbstraction.Completion) -> Cancellable {
@@ -83,5 +80,15 @@ class Provider {
         } else {
             return false
         }
+    }
+
+    private func signingRequest(request: NSMutableURLRequest) {
+        if let accessToken = self.oauthClient!.clientConfig.accessToken where !accessToken.isEmpty {
+            request.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
+        }
+    }
+
+    private func setRequestTimeOutInterval(request: NSMutableURLRequest) {
+        request.timeoutInterval = self.timeOut
     }
 }

@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import MJRefresh
 
-class TopicsTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class TopicsTableViewController: UIViewController, UITableViewDelegate {
 
     // MARK: Properties
     @IBOutlet weak var topicsTableView: UITableView!
     let cellIdentifier = "TopicsTableViewCell"
+    var topicsPager = TopicsPager(withCustomPerPage: 20)
     var topics = [Topic]()
 
     override func viewDidLoad() {
@@ -25,14 +27,50 @@ class TopicsTableViewController: UIViewController, UITableViewDataSource, UITabl
         
         self.topicsTableView.estimatedRowHeight = 72
         self.topicsTableView.rowHeight = UITableViewAutomaticDimension
-        
+
+        var tableViewHeader = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: "pullDownRefreshingAction")
+        tableViewHeader.lastUpdatedTimeLabel!.hidden = true
+
+        self.topicsTableView.mj_header = tableViewHeader
+
+        var tableViewFooter = MJRefreshAutoNormalFooter(refreshingTarget: self, refreshingAction: "pullUpRefreshingAction")
+
+        self.topicsTableView.mj_footer = tableViewFooter
+
+        self.topicsTableView.mj_header.beginRefreshing()
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
 
-        RubyChinaV3.Topics.Listing().doRequest() { result in
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+    // MARK: - Table view data source
+
+    func pullDownRefreshingAction() {
+        self.topicsPager.loadFresh() { result in
+            switch result {
+            case let .Success(topics):
+                self.topics = topics
+                self.topicsTableView.reloadData()
+            case let .Failure(error):
+                dump(error)
+            default:
+                dump(result)
+            }
+        }
+
+        self.topicsTableView.mj_header.endRefreshing()
+    }
+
+    func pullUpRefreshingAction() {
+        self.topicsPager.loadMore { result in
             switch result {
             case let .Success(topics):
                 self.topics.appendContentsOf(topics)
@@ -43,36 +81,8 @@ class TopicsTableViewController: UIViewController, UITableViewDataSource, UITabl
                 dump(result)
             }
         }
-    }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    // MARK: - Table view data source
-
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
-    }
-
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.topics.count
-    }
-
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(self.cellIdentifier, forIndexPath: indexPath) as! TopicsTableViewCell
-        let topic = self.topics[indexPath.row]
-
-        // Configure the cell...
-        cell.titleLabel.text = topic.title
-        cell.authorNameLabel.text = topic.user.login
-        cell.nodeNameLabel.text = topic.nodeName
-        cell.repliesCountLabel.text = String(topic.repliesCount)
-        
-        //cell.separatorInset = UIEdgeInsetsMake(0, cell.bounds.size.width, 0, 0);
-        
-        return cell
+        self.topicsTableView.mj_footer.endRefreshing()
     }
 
     /*
@@ -119,4 +129,29 @@ class TopicsTableViewController: UIViewController, UITableViewDataSource, UITabl
         // Pass the selected object to the new view controller.
     }
     */
+}
+
+extension TopicsTableViewController: UITableViewDataSource {
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.topics.count
+    }
+
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier(self.cellIdentifier, forIndexPath: indexPath) as! TopicsTableViewCell
+        let topic = self.topics[indexPath.row]
+
+        // Configure the cell...
+        cell.titleLabel.text = topic.title
+        cell.authorNameLabel.text = topic.user.login
+        cell.nodeNameLabel.text = topic.nodeName
+        cell.repliesCountLabel.text = String(topic.repliesCount)
+
+        //cell.separatorInset = UIEdgeInsetsMake(0, cell.bounds.size.width, 0, 0);
+
+        return cell
+    }
 }

@@ -16,8 +16,7 @@ class TopicsTableViewCell: UITableViewCell {
     @IBOutlet weak var nodeNameLabel: UILabel!
     @IBOutlet weak var authorNameLabel: UILabel!
     @IBOutlet weak var authorAvatarImageView: UIImageView!
-    
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -27,6 +26,9 @@ class TopicsTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+        if selected {
+            print("select \(self.titleLabel.text)")
+        }
     }
 
 }

@@ -38,3 +38,13 @@ struct Node: CustomDebugStringConvertible, SwiftyJSONMappable {
         self.updatedAt = json["updated_at"].stringValue.toDate(DateFormat.ISO8601)!
     }
 }
+
+extension Node: Hashable, Equatable {
+    public var hashValue: Int {
+        return "Node#\(self.id)".hashValue
+    }
+}
+
+func ==(lhs: Node, rhs: Node) -> Bool {
+    return lhs.id == rhs.id
+}

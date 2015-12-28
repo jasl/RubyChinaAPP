@@ -73,3 +73,13 @@ struct Topic: CustomDebugStringConvertible, SwiftyJSONMappable {
         self.bodyHTML = json["body_html"].string
     }
 }
+
+extension Topic: Hashable, Equatable {
+    public var hashValue: Int {
+        return "Topic#\(self.id)".hashValue
+    }
+}
+
+func ==(lhs: Topic, rhs: Topic) -> Bool {
+    return lhs.id == rhs.id
+}

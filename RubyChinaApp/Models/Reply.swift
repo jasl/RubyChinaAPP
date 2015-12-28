@@ -49,3 +49,13 @@ struct Reply: CustomDebugStringConvertible, SwiftyJSONMappable {
         self.body = json["body"].string
     }
 }
+
+extension Reply: Hashable, Equatable {
+    public var hashValue: Int {
+        return "Reply#\(self.id)".hashValue
+    }
+}
+
+func ==(lhs: Reply, rhs: Reply) -> Bool {
+    return lhs.id == rhs.id
+}

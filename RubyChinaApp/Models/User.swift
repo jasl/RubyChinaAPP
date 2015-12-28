@@ -73,6 +73,16 @@ struct User: CustomDebugStringConvertible, SwiftyJSONMappable {
     }
 }
 
+extension User: Hashable, Equatable {
+    public var hashValue: Int {
+        return "User#\(self.id)".hashValue
+    }
+}
+
+func ==(lhs: User, rhs: User) -> Bool {
+    return lhs.id == rhs.id
+}
+
 extension User {
     enum LevelValue: String, CustomDebugStringConvertible, SwiftyJSONMappable {
         case Admin = "admin"

@@ -7,7 +7,7 @@ import Foundation
 import SwiftyJSON
 import SwiftDate
 
-struct Topic: CustomDebugStringConvertible, SwiftyJSONMappable {
+struct Topic: CustomDebugStringConvertible, ModelType {
     let id: String
 
     let createdAt: NSDate
@@ -39,6 +39,10 @@ struct Topic: CustomDebugStringConvertible, SwiftyJSONMappable {
     var isFollowed = false
     var isLiked = false
     var isFavorited = false
+
+    var identifier: String {
+        return "Topic#\(self.id)"
+    }
 
     init?(byJSON json: JSON) {
         if json.type == .Null { return nil }
@@ -72,14 +76,4 @@ struct Topic: CustomDebugStringConvertible, SwiftyJSONMappable {
         self.body = json["body"].string
         self.bodyHTML = json["body_html"].string
     }
-}
-
-extension Topic: Hashable, Equatable {
-    public var hashValue: Int {
-        return "Topic#\(self.id)".hashValue
-    }
-}
-
-func ==(lhs: Topic, rhs: Topic) -> Bool {
-    return lhs.id == rhs.id
 }

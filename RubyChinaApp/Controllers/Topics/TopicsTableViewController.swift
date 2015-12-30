@@ -14,7 +14,7 @@ class TopicsTableViewController: UIViewController, UITableViewDelegate {
     // MARK: Properties
     @IBOutlet weak var topicsTableView: UITableView!
     let cellIdentifier = "TopicsTableViewCell"
-    var topicsPager = TopicsPager(withCustomPerPage: 20)
+    var topicsPager = TopicsPager(withPerPage: 10)
     var topics = [Topic]()
 
     override func viewDidLoad() {
@@ -22,9 +22,9 @@ class TopicsTableViewController: UIViewController, UITableViewDelegate {
 
         self.topicsTableView.delegate = self
         self.topicsTableView.dataSource = self
-        
+
         self.topicsTableView.separatorColor = UIColor.clearColor()
-        
+
         self.topicsTableView.estimatedRowHeight = 72
         self.topicsTableView.rowHeight = UITableViewAutomaticDimension
 
@@ -109,7 +109,7 @@ class TopicsTableViewController: UIViewController, UITableViewDelegate {
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
     */
 

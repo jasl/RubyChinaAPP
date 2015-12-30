@@ -7,7 +7,7 @@ import Foundation
 import SwiftyJSON
 import SwiftDate
 
-struct Node: CustomDebugStringConvertible, SwiftyJSONMappable {
+struct Node: CustomDebugStringConvertible, ModelType {
     let id: String
 
     let topicsCount: Int
@@ -20,6 +20,10 @@ struct Node: CustomDebugStringConvertible, SwiftyJSONMappable {
     let name: String
     let summary: String
     let updatedAt: NSDate
+
+    var identifier: String {
+        return "Node#\(self.id)"
+    }
 
     init?(byJSON json: JSON) {
         if json.type == .Null { return nil }
@@ -37,14 +41,4 @@ struct Node: CustomDebugStringConvertible, SwiftyJSONMappable {
         self.summary = json["summary"].stringValue
         self.updatedAt = json["updated_at"].stringValue.toDate(DateFormat.ISO8601)!
     }
-}
-
-extension Node: Hashable, Equatable {
-    public var hashValue: Int {
-        return "Node#\(self.id)".hashValue
-    }
-}
-
-func ==(lhs: Node, rhs: Node) -> Bool {
-    return lhs.id == rhs.id
 }

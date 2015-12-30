@@ -11,12 +11,13 @@
 		231DF0C9E04F39E6FB98AE0F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231DF5EE10C04C7D61695AC7 /* User.swift */; };
 		231DF13DA4A78C3CC1937377 /* Response+mapSwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231DFD0EA6F48001E6B4E49D /* Response+mapSwiftyJSON.swift */; };
 		231DF20B184C8E0C4667DE14 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231DFCD7A04A2B6FE984C601 /* Util.swift */; };
+		231DF4CFB128DFACB9AC4F66 /* CustomDebugStringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231DF3CC95CBAEB48744C125 /* CustomDebugStringConvertible.swift */; };
 		231DF4EC0611FFB817390AA3 /* Ability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231DF69A0BA185B9D027ED3E /* Ability.swift */; };
 		231DF9BC5E5C962FB01CA017 /* GlobalConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231DF7E28829ED774FE9F9E3 /* GlobalConstant.swift */; };
+		231DF9D3F6E134E3A9DE4041 /* ModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231DF3FB0007F49DFD891DA9 /* ModelType.swift */; };
 		231DFA1A19C5011B9B4679CF /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231DF1962EC2499EB3374649 /* Topic.swift */; };
 		231DFC1935D67575003229D5 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231DF936033E22F103D80F2D /* FirstViewController.swift */; };
 		231DFC6CC70D378E5AEA3D54 /* Topics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231DF1591B7761CA1D5664FA /* Topics.swift */; };
-		231DFD05D20D5C36BFF6EC86 /* CustomDebugStringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231DFA90FC2C300FD007C2FD /* CustomDebugStringConvertible.swift */; };
 		231DFD9928EE58ECE1136122 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231DFA0DD99841201D825416 /* String.swift */; };
 		231DFE21DA482EB20732B290 /* SwiftyJSONMappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231DF0253D5F58432452BC0D /* SwiftyJSONMappable.swift */; };
 		31A9D2230E0FA063CB10C95D /* RubyChinaV3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9D1F987FAF91B5F76E086 /* RubyChinaV3.swift */; };
@@ -67,12 +68,13 @@
 		231DF0253D5F58432452BC0D /* SwiftyJSONMappable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSONMappable.swift; sourceTree = "<group>"; };
 		231DF1591B7761CA1D5664FA /* Topics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Topics.swift; sourceTree = "<group>"; };
 		231DF1962EC2499EB3374649 /* Topic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Topic.swift; sourceTree = "<group>"; };
+		231DF3CC95CBAEB48744C125 /* CustomDebugStringConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomDebugStringConvertible.swift; sourceTree = "<group>"; };
+		231DF3FB0007F49DFD891DA9 /* ModelType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelType.swift; sourceTree = "<group>"; };
 		231DF5EE10C04C7D61695AC7 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		231DF69A0BA185B9D027ED3E /* Ability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ability.swift; sourceTree = "<group>"; };
 		231DF7E28829ED774FE9F9E3 /* GlobalConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalConstant.swift; sourceTree = "<group>"; };
 		231DF936033E22F103D80F2D /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		231DFA0DD99841201D825416 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
-		231DFA90FC2C300FD007C2FD /* CustomDebugStringConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomDebugStringConvertible.swift; sourceTree = "<group>"; };
 		231DFCD7A04A2B6FE984C601 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		231DFD0EA6F48001E6B4E49D /* Response+mapSwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Response+mapSwiftyJSON.swift"; sourceTree = "<group>"; };
 		253395CDF7C6B183C52F0F86 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -163,6 +165,7 @@
 				31A9D525F4F40028ECB3130E /* Provider.swift */,
 				31A9D702F03DD6CC2106C2F4 /* APIError.swift */,
 				31A9DD883B282D8FC2A94423 /* Pagers */,
+				231DF3FB0007F49DFD891DA9 /* ModelType.swift */,
 			);
 			path = Libraries;
 			sourceTree = "<group>";
@@ -193,10 +196,10 @@
 		231DFD64D08DB90BA60E47AF /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				231DFA90FC2C300FD007C2FD /* CustomDebugStringConvertible.swift */,
 				231DFA0DD99841201D825416 /* String.swift */,
 				231DFD0EA6F48001E6B4E49D /* Response+mapSwiftyJSON.swift */,
 				31A9D21FAECDA81239342C49 /* Array+initByJSON.swift */,
+				231DF3CC95CBAEB48744C125 /* CustomDebugStringConvertible.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -493,7 +496,6 @@
 				231DFA1A19C5011B9B4679CF /* Topic.swift in Sources */,
 				231DF0C9E04F39E6FB98AE0F /* User.swift in Sources */,
 				231DFC1935D67575003229D5 /* FirstViewController.swift in Sources */,
-				231DFD05D20D5C36BFF6EC86 /* CustomDebugStringConvertible.swift in Sources */,
 				231DFD9928EE58ECE1136122 /* String.swift in Sources */,
 				231DF13DA4A78C3CC1937377 /* Response+mapSwiftyJSON.swift in Sources */,
 				231DFE21DA482EB20732B290 /* SwiftyJSONMappable.swift in Sources */,
@@ -516,6 +518,8 @@
 				31A9D2CBCB1F99B39CA623B2 /* TopicsTableViewController.swift in Sources */,
 				31A9DB46CE52F141B02A2BFE /* TopicsTableViewCell.swift in Sources */,
 				31A9DD29918C765715235B96 /* TopicsPager.swift in Sources */,
+				231DF9D3F6E134E3A9DE4041 /* ModelType.swift in Sources */,
+				231DF4CFB128DFACB9AC4F66 /* CustomDebugStringConvertible.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

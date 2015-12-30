@@ -7,7 +7,7 @@ import Foundation
 import SwiftyJSON
 import SwiftDate
 
-struct User: CustomDebugStringConvertible, SwiftyJSONMappable {
+struct User: CustomDebugStringConvertible, ModelType {
     let id: String
 
     let login: String
@@ -36,6 +36,10 @@ struct User: CustomDebugStringConvertible, SwiftyJSONMappable {
 
     var isFollowed = false
     var isBlocked = false
+
+    var identifier: String {
+        return "User#\(self.id)"
+    }
 
     init?(byJSON json: JSON) {
         if json.type == .Null { return nil }

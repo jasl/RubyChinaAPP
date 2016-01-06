@@ -30,5 +30,4 @@ class TopicsTableViewCell: UITableViewCell {
             print("select \(self.titleLabel.text)")
         }
     }
-
 }

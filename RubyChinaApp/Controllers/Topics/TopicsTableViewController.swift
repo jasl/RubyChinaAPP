@@ -29,12 +29,12 @@ class TopicsTableViewController: UIViewController, UITableViewDelegate {
         self.topicsTableView.estimatedRowHeight = 72
         self.topicsTableView.rowHeight = UITableViewAutomaticDimension
 
-        var tableViewHeader = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: "pullDownRefreshingAction")
+        let tableViewHeader = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: "pullDownRefreshingAction")
         tableViewHeader.lastUpdatedTimeLabel!.hidden = true
 
         self.topicsTableView.mj_header = tableViewHeader
 
-        var tableViewFooter = MJRefreshAutoNormalFooter(refreshingTarget: self, refreshingAction: "pullUpRefreshingAction")
+        let tableViewFooter = MJRefreshAutoNormalFooter(refreshingTarget: self, refreshingAction: "pullUpRefreshingAction")
 
         self.topicsTableView.mj_footer = tableViewFooter
 
@@ -153,6 +153,7 @@ extension TopicsTableViewController: UITableViewDataSource {
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(self.cellIdentifier, forIndexPath: indexPath) as! TopicsTableViewCell
+        
         let topic = self.topics[indexPath.row]
 
         // Configure the cell...

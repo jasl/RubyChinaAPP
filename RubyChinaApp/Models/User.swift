@@ -78,7 +78,7 @@ struct User: CustomDebugStringConvertible, ModelType {
 }
 
 extension User: Hashable, Equatable {
-    public var hashValue: Int {
+    internal var hashValue: Int {
         return "User#\(self.id)".hashValue
     }
 }

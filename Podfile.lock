@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (3.1.4)
+  - Kingfisher (1.9.1)
   - MJRefresh (3.0.8)
   - p2.OAuth2 (2.1.2):
     - SwiftKeychain (~> 0.1.5)
@@ -10,6 +11,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 3.1)
+  - Kingfisher
   - MJRefresh
   - p2.OAuth2
   - SwiftDate
@@ -18,6 +20,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: fbc829692f351fa1d8a31dd75fd7f7f56fea31fb
+  Kingfisher: 98fedd5d44d982b331fc7303f9f6144b7d8ba289
   MJRefresh: fafde8f18f4afd66b434331a9beb67a6c0264056
   p2.OAuth2: 8f76c8c7679efa38beeb20c5813d4c6095e29ef3
   SwiftDate: b4f4d0962afe48365ad2800c9850a6626deb9359

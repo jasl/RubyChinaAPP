@@ -27,4 +27,4 @@ pod 'SwiftDate'
 # UI
 pod 'MJRefresh'
 # pod 'DGTemplateLayoutCell'
-
+pod 'Kingfisher'

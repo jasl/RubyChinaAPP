@@ -8,6 +8,7 @@
 
 import UIKit
 import MJRefresh
+import Kingfisher
 
 class TopicsTableViewController: UIViewController, UITableViewDelegate {
 
@@ -58,7 +59,8 @@ class TopicsTableViewController: UIViewController, UITableViewDelegate {
             self.topicsTableView.mj_header.endRefreshing()
         }
 
-        self.topicsPager.loadFresh() { result in
+        self.topicsPager.loadFresh() {
+            result in
             switch result {
             case let .Success(topics):
                 self.topics = topics
@@ -80,7 +82,8 @@ class TopicsTableViewController: UIViewController, UITableViewDelegate {
             return
         }
 
-        self.topicsPager.loadMore { result in
+        self.topicsPager.loadMore {
+            result in
             switch result {
             case let .Success(topics):
                 self.topics.appendContentsOf(topics)
@@ -157,6 +160,9 @@ extension TopicsTableViewController: UITableViewDataSource {
         cell.authorNameLabel.text = topic.user.login
         cell.nodeNameLabel.text = topic.nodeName
         cell.repliesCountLabel.text = String(topic.repliesCount)
+        cell.authorAvatarImageView.kf_setImageWithURL(topic.user.avatarUrl,
+                placeholderImage: nil,
+                optionsInfo: [.Transition(ImageTransition.Fade(0.1))])
 
         //cell.separatorInset = UIEdgeInsetsMake(0, cell.bounds.size.width, 0, 0);
 

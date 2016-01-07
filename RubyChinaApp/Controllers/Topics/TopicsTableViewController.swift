@@ -8,7 +8,6 @@
 
 import UIKit
 import MJRefresh
-import Kingfisher
 
 class TopicsTableViewController: UIViewController, UITableViewDelegate {
 
@@ -16,7 +15,7 @@ class TopicsTableViewController: UIViewController, UITableViewDelegate {
     @IBOutlet weak var topicsTableView: UITableView!
     let cellIdentifier = "TopicsTableViewCell"
     var topicsPager = TopicsPager(withPerPage: 10)
-    var topics = [Topic]()
+    var topicViewModels = [TopicCellViewModel]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,7 +62,8 @@ class TopicsTableViewController: UIViewController, UITableViewDelegate {
             result in
             switch result {
             case let .Success(topics):
-                self.topics = topics
+                self.topicViewModels = toTopicCellViewModel(topics)
+
                 self.topicsTableView.reloadData()
             case let .Failure(error):
                 dump(error)
@@ -86,7 +86,8 @@ class TopicsTableViewController: UIViewController, UITableViewDelegate {
             result in
             switch result {
             case let .Success(topics):
-                self.topics.appendContentsOf(topics)
+                self.topicViewModels.appendContentsOf(toTopicCellViewModel(topics))
+
                 self.topicsTableView.reloadData()
             case let .Failure(error):
                 dump(error)
@@ -148,24 +149,14 @@ extension TopicsTableViewController: UITableViewDataSource {
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.topics.count
+        return self.topicViewModels.count
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(self.cellIdentifier, forIndexPath: indexPath) as! TopicsTableViewCell
-        
-        let topic = self.topics[indexPath.row]
 
-        // Configure the cell...
-        cell.titleLabel.text = topic.title
-        cell.authorNameLabel.text = topic.user.login
-        cell.nodeNameLabel.text = topic.nodeName
-        cell.repliesCountLabel.text = String(topic.repliesCount)
-        cell.authorAvatarImageView.kf_setImageWithURL(topic.user.avatarUrl,
-                placeholderImage: nil,
-                optionsInfo: [.Transition(ImageTransition.Fade(0.1))])
-
-        //cell.separatorInset = UIEdgeInsetsMake(0, cell.bounds.size.width, 0, 0);
+        let viewModel = self.topicViewModels[indexPath.row]
+        viewModel.applyToCell(cell)
 
         return cell
     }

@@ -1,25 +1,32 @@
-platform :ios, "9.0"
+platform :ios, '9.0'
 use_frameworks!
 
-# arch
-# pod 'RxSwift', '~> 1.8'
+target 'RubyChinaApp' do
+  # arch
+  # pod 'RxSwift', '~> 1.8'
 
-# networking
-pod 'Alamofire', '~> 3.1'
-# pod 'ReachabilitySwift', git: 'https://github.com/ashleymills/Reachability.swift'
-# pod 'Moya', '~> 5.1' # I cheat the code, Moya made it's Target generic, force to use enum, that's not suit for me.
+  # networking
+  pod 'Alamofire', '~> 3.1'
+  # pod 'ReachabilitySwift', git: 'https://github.com/ashleymills/Reachability.swift'
+  # pod 'Moya', '~> 5.1' # I cheat the code, Moya made it's Target generic, force to use enum, that's not suit for me.
 
-# serializing
-pod 'SwiftyJSON', '~> 2.3'
+  # serializing
+  pod 'SwiftyJSON', '~> 2.3'
 
-# logging
-pod 'XCGLogger', '~> 3.1'
+  # logging
+  pod 'XCGLogger', '~> 3.1'
 
-# OAuth
-pod 'p2.OAuth2'
+  # OAuth
+  pod 'p2.OAuth2'
 
-# caching
-# pod 'HanekeSwift'
+  # caching
+  # pod 'HanekeSwift'
 
-# util
-pod 'SwiftDate'
+  # util
+  pod 'SwiftDate'
+
+  # UI
+  pod 'MJRefresh'
+  # pod 'DGTemplateLayoutCell'
+  pod 'Kingfisher'
+end

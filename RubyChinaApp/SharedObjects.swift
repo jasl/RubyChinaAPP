@@ -7,7 +7,7 @@ import Foundation
 import XCGLogger
 
 extension Provider {
-    public class func defaultInstance() -> Provider {
+    class func defaultInstance() -> Provider {
         struct statics {
             static let instance: Provider = Provider(clientID: GlobalConstant.clientId,
                                                      clientSecret: GlobalConstant.clientSecret,

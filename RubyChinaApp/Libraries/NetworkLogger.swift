@@ -30,7 +30,7 @@ class NetworkLogger: PluginType {
             case let .Data(response):
                 logger.warning("Received response(\(response.statusCode ?? 0)) but got 'Data Error' from \(response.response!.URL?.absoluteString ?? String()).")
             case let .Underlying(errorType):
-                logger.warning("Underlying Error.")
+                logger.warning("Underlying Error \(errorType).")
             }
         }
 

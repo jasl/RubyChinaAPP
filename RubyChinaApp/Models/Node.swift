@@ -7,7 +7,7 @@ import Foundation
 import SwiftyJSON
 import SwiftDate
 
-struct Node: CustomDebugStringConvertible, SwiftyJSONMappable {
+struct Node: CustomDebugStringConvertible, ModelType {
     let id: String
 
     let topicsCount: Int
@@ -20,6 +20,10 @@ struct Node: CustomDebugStringConvertible, SwiftyJSONMappable {
     let name: String
     let summary: String
     let updatedAt: NSDate
+
+    var identifier: String {
+        return "Node#\(self.id)"
+    }
 
     init?(byJSON json: JSON) {
         if json.type == .Null { return nil }

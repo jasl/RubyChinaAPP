@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,6 +16,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         logger.setup(GlobalConstant.logLevel, showThreadName: true, showLogLevel: true, showFileNames: false, showLineNumbers: false, writeToFile: nil, fileLogLevel: .Debug)
+
+        let downloader = KingfisherManager.sharedManager.downloader
+
+        // Download process will timeout after 5 seconds. Default is 15.
+        downloader.downloadTimeout = 5
 
         return true
     }

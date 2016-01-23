@@ -7,7 +7,7 @@ import Foundation
 import SwiftyJSON
 import SwiftDate
 
-struct Topic: CustomDebugStringConvertible, SwiftyJSONMappable {
+struct Topic: CustomDebugStringConvertible, ModelType {
     let id: String
 
     let createdAt: NSDate
@@ -39,6 +39,10 @@ struct Topic: CustomDebugStringConvertible, SwiftyJSONMappable {
     var isFollowed = false
     var isLiked = false
     var isFavorited = false
+
+    var identifier: String {
+        return "Topic#\(self.id)"
+    }
 
     init?(byJSON json: JSON) {
         if json.type == .Null { return nil }

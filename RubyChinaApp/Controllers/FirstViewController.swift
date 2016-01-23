@@ -8,9 +8,6 @@
 
 import UIKit
 
-import NetworkAbstraction
-import p2_OAuth2
-
 class FirstViewController: UIViewController {
 
     override func viewDidLoad() {

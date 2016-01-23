@@ -7,7 +7,7 @@ import Foundation
 import SwiftyJSON
 import SwiftDate
 
-struct User: CustomDebugStringConvertible, SwiftyJSONMappable {
+struct User: CustomDebugStringConvertible, ModelType {
     let id: String
 
     let login: String
@@ -36,6 +36,10 @@ struct User: CustomDebugStringConvertible, SwiftyJSONMappable {
 
     var isFollowed = false
     var isBlocked = false
+
+    var identifier: String {
+        return "User#\(self.id)"
+    }
 
     init?(byJSON json: JSON) {
         if json.type == .Null { return nil }
@@ -71,6 +75,16 @@ struct User: CustomDebugStringConvertible, SwiftyJSONMappable {
 
         self.createdAt = json["created_at"].string?.toDate(DateFormat.ISO8601)
     }
+}
+
+extension User: Hashable, Equatable {
+    internal var hashValue: Int {
+        return "User#\(self.id)".hashValue
+    }
+}
+
+func ==(lhs: User, rhs: User) -> Bool {
+    return lhs.id == rhs.id
 }
 
 extension User {

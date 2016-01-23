@@ -14,12 +14,12 @@ extension RubyChinaV3 {
 }
 
 extension RubyChinaV3.Replies {
-    struct Listing: EndpointType {
+    struct Listing: EndpointType, OffsetPaginatable {
         var topicId: String
-        var offset: Int?
-        var limit: Int?
+        var offset: Int
+        var limit: Int
 
-        init(topicId: String, offset: Int? = nil, limit: Int? = nil) {
+        init(topicId: String, offset: Int = 0, limit: Int = 20) {
             self.topicId = topicId
             self.offset = offset
             self.limit = limit
@@ -31,12 +31,8 @@ extension RubyChinaV3.Replies {
         var parameters: [String: AnyObject]? {
             var parameters = [String: AnyObject]()
 
-            if let offset = self.offset {
-                parameters["offset"] = offset
-            }
-            if let limit = self.limit {
-                parameters["limit"] = limit
-            }
+            parameters["limit"] = self.limit
+            parameters["offset"] = self.offset
 
             return parameters
         }

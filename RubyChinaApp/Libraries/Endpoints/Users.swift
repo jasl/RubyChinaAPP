@@ -75,7 +75,7 @@ extension RubyChinaV3.Users {
         }
     }
 
-    struct Topics: EndpointType {
+    struct Topics: EndpointType, OffsetPaginatable {
         enum OrderByValue: String {
             case Recent = "recent"
             case Likes = "likes"
@@ -84,10 +84,10 @@ extension RubyChinaV3.Users {
 
         var login: String
         var orderBy: OrderByValue?
-        var offset: Int?
-        var limit: Int?
+        var offset: Int
+        var limit: Int
 
-        init(login: String, orderBy: OrderByValue? = nil, offset: Int? = nil, limit: Int? = nil) {
+        init(login: String, orderBy: OrderByValue? = nil, offset: Int = 0, limit: Int = 20) {
             self.login = login
             self.orderBy = orderBy
             self.offset = offset
@@ -103,12 +103,9 @@ extension RubyChinaV3.Users {
             if let orderBy = self.orderBy {
                 parameters["order"] = orderBy.rawValue
             }
-            if let offset = self.offset {
-                parameters["offset"] = offset
-            }
-            if let limit = self.limit {
-                parameters["limit"] = limit
-            }
+
+            parameters["limit"] = self.limit
+            parameters["offset"] = self.offset
 
             return parameters
         }
@@ -121,17 +118,17 @@ extension RubyChinaV3.Users {
         }
     }
 
-    struct Replies: EndpointType {
+    struct Replies: EndpointType, OffsetPaginatable {
         enum OrderByValue: String {
             case Recent = "recent"
         }
 
         var login: String
         var orderBy: OrderByValue?
-        var offset: Int?
-        var limit: Int?
+        var offset: Int
+        var limit: Int
 
-        init(login: String, orderBy: OrderByValue? = nil, offset: Int? = nil, limit: Int? = nil) {
+        init(login: String, orderBy: OrderByValue? = nil, offset: Int = 0, limit: Int = 20) {
             self.login = login
             self.orderBy = orderBy
             self.offset = offset
@@ -147,12 +144,9 @@ extension RubyChinaV3.Users {
             if let orderBy = self.orderBy {
                 parameters["order"] = orderBy.rawValue
             }
-            if let offset = self.offset {
-                parameters["offset"] = offset
-            }
-            if let limit = self.limit {
-                parameters["limit"] = limit
-            }
+
+            parameters["limit"] = self.limit
+            parameters["offset"] = self.offset
 
             return parameters
         }
@@ -165,12 +159,12 @@ extension RubyChinaV3.Users {
         }
     }
 
-    struct Favorites: EndpointType {
+    struct Favorites: EndpointType, OffsetPaginatable {
         var login: String
-        var offset: Int?
-        var limit: Int?
+        var offset: Int
+        var limit: Int
 
-        init(login: String, offset: Int? = nil, limit: Int? = nil) {
+        init(login: String, offset: Int = 0, limit: Int = 20) {
             self.login = login
             self.offset = offset
             self.limit = limit
@@ -182,12 +176,8 @@ extension RubyChinaV3.Users {
         var parameters: [String: AnyObject]? {
             var parameters = [String: AnyObject]()
 
-            if let offset = self.offset {
-                parameters["offset"] = offset
-            }
-            if let limit = self.limit {
-                parameters["limit"] = limit
-            }
+            parameters["limit"] = self.limit
+            parameters["offset"] = self.offset
 
             return parameters
         }
@@ -200,12 +190,12 @@ extension RubyChinaV3.Users {
         }
     }
 
-    struct Following: EndpointType {
+    struct Following: EndpointType, OffsetPaginatable {
         var login: String
-        var offset: Int?
-        var limit: Int?
+        var offset: Int
+        var limit: Int
 
-        init(login: String, offset: Int? = nil, limit: Int? = nil) {
+        init(login: String, offset: Int = 0, limit: Int = 20) {
             self.login = login
             self.offset = offset
             self.limit = limit
@@ -217,12 +207,8 @@ extension RubyChinaV3.Users {
         var parameters: [String: AnyObject]? {
             var parameters = [String: AnyObject]()
 
-            if let offset = self.offset {
-                parameters["offset"] = offset
-            }
-            if let limit = self.limit {
-                parameters["limit"] = limit
-            }
+            parameters["limit"] = self.limit
+            parameters["offset"] = self.offset
 
             return parameters
         }
@@ -235,12 +221,12 @@ extension RubyChinaV3.Users {
         }
     }
 
-    struct Followers: EndpointType {
+    struct Followers: EndpointType, OffsetPaginatable {
         var login: String
-        var offset: Int?
-        var limit: Int?
+        var offset: Int
+        var limit: Int
 
-        init(login: String, offset: Int? = nil, limit: Int? = nil) {
+        init(login: String, offset: Int = 0, limit: Int = 20) {
             self.login = login
             self.offset = offset
             self.limit = limit
@@ -252,12 +238,8 @@ extension RubyChinaV3.Users {
         var parameters: [String: AnyObject]? {
             var parameters = [String: AnyObject]()
 
-            if let offset = self.offset {
-                parameters["offset"] = offset
-            }
-            if let limit = self.limit {
-                parameters["limit"] = limit
-            }
+            parameters["limit"] = self.limit
+            parameters["offset"] = self.offset
 
             return parameters
         }
@@ -270,12 +252,12 @@ extension RubyChinaV3.Users {
         }
     }
 
-    struct Blocked: EndpointType {
+    struct Blocked: EndpointType, OffsetPaginatable {
         var login: String
-        var offset: Int?
-        var limit: Int?
+        var offset: Int
+        var limit: Int
 
-        init(login: String, offset: Int? = nil, limit: Int? = nil) {
+        init(login: String, offset: Int = 0, limit: Int = 20) {
             self.login = login
             self.offset = offset
             self.limit = limit
@@ -287,12 +269,8 @@ extension RubyChinaV3.Users {
         var parameters: [String: AnyObject]? {
             var parameters = [String: AnyObject]()
 
-            if let offset = self.offset {
-                parameters["offset"] = offset
-            }
-            if let limit = self.limit {
-                parameters["limit"] = limit
-            }
+            parameters["limit"] = self.limit
+            parameters["offset"] = self.offset
 
             return parameters
         }

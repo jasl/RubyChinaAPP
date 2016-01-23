@@ -14,7 +14,7 @@ extension RubyChinaV3 {
 }
 
 extension RubyChinaV3.Topics {
-    struct Listing: EndpointType {
+    struct Listing: EndpointType, OffsetPaginatable {
         enum TypeFieldValue: String {
             case LastActived = "last_actived"
             case Recent = "recent"
@@ -25,10 +25,10 @@ extension RubyChinaV3.Topics {
 
         var type: TypeFieldValue?
         var nodeId: String?
-        var offset: Int?
-        var limit: Int?
+        var offset: Int
+        var limit: Int
 
-        init(type: TypeFieldValue? = nil, nodeId: String? = nil, offset: Int? = nil, limit: Int? = nil) {
+        init(type: TypeFieldValue? = nil, nodeId: String? = nil, offset: Int = 0, limit: Int = 20) {
             self.type = type
             self.nodeId = nodeId
             self.offset = offset
@@ -47,12 +47,9 @@ extension RubyChinaV3.Topics {
             if let nodeId = self.nodeId {
                 parameters["nodeId"] = nodeId
             }
-            if let offset = self.offset {
-                parameters["offset"] = offset
-            }
-            if let limit = self.limit {
-                parameters["limit"] = limit
-            }
+
+            parameters["limit"] = self.limit
+            parameters["offset"] = self.offset
 
             return parameters
         }

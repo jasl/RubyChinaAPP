@@ -1,13 +1,13 @@
 PODS:
-  - Alamofire (3.1.4)
-  - Kingfisher (1.9.1)
-  - MJRefresh (3.0.8)
-  - p2.OAuth2 (2.1.2):
+  - Alamofire (3.1.5)
+  - Kingfisher (2.0.0)
+  - MJRefresh (3.1.0)
+  - p2.OAuth2 (2.1.3):
     - SwiftKeychain (~> 0.1.5)
   - SwiftDate (2.0.2)
   - SwiftKeychain (0.1.5)
   - SwiftyJSON (2.3.2)
-  - XCGLogger (3.1.1)
+  - XCGLogger (3.2)
 
 DEPENDENCIES:
   - Alamofire (~> 3.1)
@@ -19,13 +19,15 @@ DEPENDENCIES:
   - XCGLogger (~> 3.1)
 
 SPEC CHECKSUMS:
-  Alamofire: fbc829692f351fa1d8a31dd75fd7f7f56fea31fb
-  Kingfisher: 98fedd5d44d982b331fc7303f9f6144b7d8ba289
-  MJRefresh: fafde8f18f4afd66b434331a9beb67a6c0264056
-  p2.OAuth2: 8f76c8c7679efa38beeb20c5813d4c6095e29ef3
+  Alamofire: 5f730ba29fd113b7ddd71c1e65d0c630acf5d7b0
+  Kingfisher: 67d280b39e878afbd467c80953924a61950c45e4
+  MJRefresh: 743e6404967d1c2c688472ea3ecfde247d872db4
+  p2.OAuth2: ce5d6fe61f564354a8267ec3482f0316ae24cfa3
   SwiftDate: b4f4d0962afe48365ad2800c9850a6626deb9359
   SwiftKeychain: 1387edad8b56c659daa93d9ffc99526bac5b0088
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
-  XCGLogger: e111a313f609432394c3ae378d99511634fd2e3c
+  XCGLogger: da1f341f4bb8979db6e1df64232f04d9698402d4
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: 9bab5a06cc631a63e355e1364ff944c155df0847
+
+COCOAPODS: 1.0.0.beta.2

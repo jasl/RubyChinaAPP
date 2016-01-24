@@ -9,7 +9,7 @@
 import UIKit
 import MJRefresh
 
-class TopicsTableViewController: UIViewController, UITableViewDelegate {
+class TopicsTableViewController: UIViewController {
 
     // MARK: Properties
     @IBOutlet weak var topicsTableView: UITableView!
@@ -155,9 +155,25 @@ extension TopicsTableViewController: UITableViewDataSource {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(self.cellIdentifier, forIndexPath: indexPath) as! TopicsTableViewCell
 
-        let viewModel = self.topicViewModels[indexPath.row]
-        viewModel.applyToCell(cell)
-
         return cell
+    }
+}
+
+extension TopicsTableViewController: UITableViewDelegate {
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        let topicCell = cell as! TopicsTableViewCell
+        let viewModel = self.topicViewModels[indexPath.row]
+
+        viewModel.applyToCell(topicCell)
+    }
+
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        defer {
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        }
+
+        let viewModel = self.topicViewModels[indexPath.row]
+
+        print("selected \(viewModel.title)")
     }
 }

@@ -22,12 +22,7 @@ class TopicsTableViewCell: UITableViewCell {
         // Initialization code
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-        if selected {
-            print("select \(self.titleLabel.text)")
-        }
+    override func prepareForReuse() {
+        self.authorAvatarImageView.kf_cancelDownloadTask()
     }
 }

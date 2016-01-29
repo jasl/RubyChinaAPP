@@ -26,12 +26,7 @@ class OffsetPager<T: protocol<EndpointType, OffsetPaginatable>> {
         return (self.currentPage - 1) * self.perPage
     }
 
-    private var isNoMoreData = false
-    var hasReachedTheEnd: Bool {
-        get {
-            return self.isNoMoreData
-        }
-    }
+    private(set) var isNoMoreData: Bool = false
 
     private var endpoint: T
 

@@ -13,7 +13,6 @@ class TopicsTableViewController: UIViewController {
 
     // MARK: Properties
     @IBOutlet weak var topicsTableView: UITableView!
-    let cellIdentifier = "TopicsTableViewCell"
     var topicsPager = TopicsPager(withPerPage: 10)
     var topicViewModels = [TopicCellViewModel]()
 
@@ -78,7 +77,7 @@ class TopicsTableViewController: UIViewController {
             self.topicsTableView.mj_footer.endRefreshing()
         }
 
-        if self.topicsPager.hasReachedTheEnd {
+        if self.topicsPager.isNoMoreData {
             return
         }
 
@@ -153,7 +152,7 @@ extension TopicsTableViewController: UITableViewDataSource {
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(self.cellIdentifier, forIndexPath: indexPath) as! TopicsTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(String(TopicsTableViewCell), forIndexPath: indexPath) as! TopicsTableViewCell
 
         return cell
     }

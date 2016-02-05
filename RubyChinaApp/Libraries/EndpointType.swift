@@ -10,7 +10,7 @@ import NetworkAbstraction
 protocol EndpointType: TargetType {
     typealias T
 
-    func buildEntity(json: JSON) -> T?
+    func parseResponse(json: JSON) -> T?
     func doRequest(provider: Provider, completion: (result: APIResult<T>) -> ()) -> NetworkAbstraction.Cancellable
 }
 
@@ -27,7 +27,7 @@ extension EndpointType {
                     apiResult = .Ok
                 } else if let errorMessage = json["error"].string {
                     apiResult = .Failure(APIError(statusCode: response.statusCode, message: errorMessage))
-                } else if let entity = self.buildEntity(json) {
+                } else if let entity = self.parseResponse(json) {
                     apiResult = .Success(entity)
                 } else {
                     apiResult = .Ok
@@ -42,7 +42,7 @@ extension EndpointType {
 }
 
 extension EndpointType {
-    func buildEntity(json: JSON) -> T? {
+    func parseResponse(json: JSON) -> T? {
         return nil
     }
 }

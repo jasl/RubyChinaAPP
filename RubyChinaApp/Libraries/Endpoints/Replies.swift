@@ -40,7 +40,7 @@ extension RubyChinaV3.Replies {
 
         typealias T = [Reply]
 
-        func buildEntity(json: JSON) -> T? {
+        func parseResponse(json: JSON) -> T? {
             var topics = T(byJSON: json["replies"])
 
             if let userLikedReplyIDs = json["meta"]["user_liked_reply_ids"].array?.map({ $0.stringValue }) where !userLikedReplyIDs.isEmpty {
@@ -78,7 +78,7 @@ extension RubyChinaV3.Replies {
 
         typealias T = Reply
 
-        func buildEntity(json: JSON) -> T? {
+        func parseResponse(json: JSON) -> T? {
             return T(byJSON: json["reply"])
         }
     }
@@ -98,7 +98,7 @@ extension RubyChinaV3.Replies {
 
         typealias T = Reply
 
-        func buildEntity(json: JSON) -> T? {
+        func parseResponse(json: JSON) -> T? {
             return T(byJSON: json["reply"])
         }
     }
@@ -142,7 +142,7 @@ extension RubyChinaV3.Replies {
 
         typealias T = Reply
 
-        func buildEntity(json: JSON) -> T? {
+        func parseResponse(json: JSON) -> T? {
             return T(byJSON: json["reply"])
         }
     }

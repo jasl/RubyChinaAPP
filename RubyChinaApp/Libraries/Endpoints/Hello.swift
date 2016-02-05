@@ -19,7 +19,7 @@ extension RubyChinaV3 {
 
         typealias T = User
 
-        func buildEntity(json: JSON) -> T? {
+        func parseResponse(json: JSON) -> T? {
             return T(byJSON: json["user"])
         }
     }

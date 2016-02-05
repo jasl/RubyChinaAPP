@@ -23,7 +23,7 @@ extension RubyChinaV3.Nodes {
 
         typealias T = [Node]
 
-        func buildEntity(json: JSON) -> T? {
+        func parseResponse(json: JSON) -> T? {
             return T(byJSON: json["nodes"])
         }
     }
@@ -43,7 +43,7 @@ extension RubyChinaV3.Nodes {
 
         typealias T = Node
 
-        func buildEntity(json: JSON) -> T? {
+        func parseResponse(json: JSON) -> T? {
             return T(byJSON: json["node"])
         }
     }

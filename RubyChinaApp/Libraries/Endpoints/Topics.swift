@@ -57,7 +57,7 @@ extension RubyChinaV3.Topics {
 
         typealias T = [Topic]
 
-        func buildEntity(json: JSON) -> T? {
+        func parseResponse(json: JSON) -> T? {
             return T(byJSON: json["topics"])
         }
     }
@@ -77,7 +77,7 @@ extension RubyChinaV3.Topics {
 
         typealias T = Topic
 
-        func buildEntity(json: JSON) -> T? {
+        func parseResponse(json: JSON) -> T? {
             if json["topic"].type == .Null {
                 return nil
             }
@@ -125,7 +125,7 @@ extension RubyChinaV3.Topics {
 
         typealias T = Topic
 
-        func buildEntity(json: JSON) -> T? {
+        func parseResponse(json: JSON) -> T? {
             return T(byJSON: json["topic"])
         }
     }
@@ -159,7 +159,7 @@ extension RubyChinaV3.Topics {
 
         typealias T = Topic
 
-        func buildEntity(json: JSON) -> T? {
+        func parseResponse(json: JSON) -> T? {
             return T(byJSON: json["topic"])
         }
     }

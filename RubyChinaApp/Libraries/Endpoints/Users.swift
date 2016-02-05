@@ -37,7 +37,7 @@ extension RubyChinaV3.Users {
 
         typealias T = [User]
 
-        func buildEntity(json: JSON) -> T? {
+        func parseResponse(json: JSON) -> T? {
             return T(byJSON: json["users"])
         }
     }
@@ -57,7 +57,7 @@ extension RubyChinaV3.Users {
 
         typealias T = User
 
-        func buildEntity(json: JSON) -> T? {
+        func parseResponse(json: JSON) -> T? {
             if json["user"].type == .Null {
                 return nil
             }
@@ -113,7 +113,7 @@ extension RubyChinaV3.Users {
 
         typealias T = [Topic]
 
-        func buildEntity(json: JSON) -> T? {
+        func parseResponse(json: JSON) -> T? {
             return T(byJSON: json["topics"])
         }
     }
@@ -154,7 +154,7 @@ extension RubyChinaV3.Users {
 
         typealias T = [Reply]
 
-        func buildEntity(json: JSON) -> T? {
+        func parseResponse(json: JSON) -> T? {
             return T(byJSON: json["replies"])
         }
     }
@@ -185,7 +185,7 @@ extension RubyChinaV3.Users {
 
         typealias T = [Topic]
 
-        func buildEntity(json: JSON) -> T? {
+        func parseResponse(json: JSON) -> T? {
             return T(byJSON: json["topics"])
         }
     }
@@ -216,7 +216,7 @@ extension RubyChinaV3.Users {
 
         typealias T = [User]
 
-        func buildEntity(json: JSON) -> T? {
+        func parseResponse(json: JSON) -> T? {
             return T(byJSON: json["users"])
         }
     }
@@ -247,7 +247,7 @@ extension RubyChinaV3.Users {
 
         typealias T = [User]
 
-        func buildEntity(json: JSON) -> T? {
+        func parseResponse(json: JSON) -> T? {
             return T(byJSON: json["users"])
         }
     }
@@ -278,7 +278,7 @@ extension RubyChinaV3.Users {
 
         typealias T = [User]
 
-        func buildEntity(json: JSON) -> T? {
+        func parseResponse(json: JSON) -> T? {
             return T(byJSON: json["users"])
         }
     }

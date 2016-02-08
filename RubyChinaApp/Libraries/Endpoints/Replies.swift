@@ -5,7 +5,7 @@
 
 import Foundation
 import SwiftyJSON
-import NetworkAbstraction
+import MoyaX
 
 extension RubyChinaV3 {
     struct Replies {
@@ -27,7 +27,7 @@ extension RubyChinaV3.Replies {
 
         var baseURL: NSURL { return RubyChinaV3.BaseURL }
         var path: String { return "\(RubyChinaV3.Topics.Path)/\(self.topicId)/\(RubyChinaV3.Replies.Path)" }
-        var method: NetworkAbstraction.Method { return .GET }
+        var method: MoyaX.Method { return .GET }
         var parameters: [String: AnyObject]? {
             var parameters = [String: AnyObject]()
 
@@ -36,7 +36,7 @@ extension RubyChinaV3.Replies {
 
             return parameters
         }
-        var parameterEncoding: NetworkAbstraction.ParameterEncoding { return .URL }
+        var parameterEncoding: MoyaX.ParameterEncoding { return .URL }
 
         typealias T = [Reply]
 
@@ -66,7 +66,7 @@ extension RubyChinaV3.Replies {
 
         var baseURL: NSURL { return RubyChinaV3.BaseURL }
         var path: String { return "\(RubyChinaV3.Topics.Path)/\(self.topicId)/\(RubyChinaV3.Replies.Path)" }
-        var method: NetworkAbstraction.Method { return .POST }
+        var method: MoyaX.Method { return .POST }
         var parameters: [String: AnyObject]? {
             var parameters = [String: AnyObject]()
 
@@ -74,7 +74,7 @@ extension RubyChinaV3.Replies {
 
             return parameters
         }
-        var parameterEncoding: NetworkAbstraction.ParameterEncoding { return .URL }
+        var parameterEncoding: MoyaX.ParameterEncoding { return .URL }
 
         typealias T = Reply
 
@@ -92,9 +92,9 @@ extension RubyChinaV3.Replies {
 
         var baseURL: NSURL { return RubyChinaV3.BaseURL }
         var path: String { return "\(RubyChinaV3.Replies.Path)/\(self.id)" }
-        var method: NetworkAbstraction.Method { return .GET }
+        var method: MoyaX.Method { return .GET }
         var parameters: [String: AnyObject]? { return nil }
-        var parameterEncoding: NetworkAbstraction.ParameterEncoding { return .URL }
+        var parameterEncoding: MoyaX.ParameterEncoding { return .URL }
 
         typealias T = Reply
 
@@ -112,9 +112,9 @@ extension RubyChinaV3.Replies {
 
         var baseURL: NSURL { return RubyChinaV3.BaseURL }
         var path: String { return "\(RubyChinaV3.Replies.Path)/\(self.id)" }
-        var method: NetworkAbstraction.Method { return .DELETE }
+        var method: MoyaX.Method { return .DELETE }
         var parameters: [String: AnyObject]? { return nil }
-        var parameterEncoding: NetworkAbstraction.ParameterEncoding { return .URL }
+        var parameterEncoding: MoyaX.ParameterEncoding { return .URL }
 
         typealias T = AnyObject
     }
@@ -130,7 +130,7 @@ extension RubyChinaV3.Replies {
 
         var baseURL: NSURL { return RubyChinaV3.BaseURL }
         var path: String { return "\(RubyChinaV3.Replies.Path)/\(self.id)" }
-        var method: NetworkAbstraction.Method { return .PUT }
+        var method: MoyaX.Method { return .PUT }
         var parameters: [String: AnyObject]? {
             var parameters = [String: AnyObject]()
 
@@ -138,7 +138,7 @@ extension RubyChinaV3.Replies {
 
             return parameters
         }
-        var parameterEncoding: NetworkAbstraction.ParameterEncoding { return .URL }
+        var parameterEncoding: MoyaX.ParameterEncoding { return .URL }
 
         typealias T = Reply
 
@@ -157,7 +157,7 @@ extension RubyChinaV3.Replies {
 
         var baseURL: NSURL { return RubyChinaV3.BaseURL }
         var path: String { return RubyChinaV3.Replies.Like.Path }
-        var method: NetworkAbstraction.Method { return .POST }
+        var method: MoyaX.Method { return .POST }
         var parameters: [String: AnyObject]? {
             var parameters = [String: AnyObject]()
 
@@ -166,7 +166,7 @@ extension RubyChinaV3.Replies {
 
             return parameters
         }
-        var parameterEncoding: NetworkAbstraction.ParameterEncoding { return .URL }
+        var parameterEncoding: MoyaX.ParameterEncoding { return .URL }
 
         typealias T = AnyObject
     }
@@ -181,7 +181,7 @@ extension RubyChinaV3.Replies {
 
         var baseURL: NSURL { return RubyChinaV3.BaseURL }
         var path: String { return RubyChinaV3.Replies.UndoLike.Path }
-        var method: NetworkAbstraction.Method { return .DELETE }
+        var method: MoyaX.Method { return .DELETE }
         var parameters: [String: AnyObject]? {
             var parameters = [String: AnyObject]()
 
@@ -190,7 +190,7 @@ extension RubyChinaV3.Replies {
 
             return parameters
         }
-        var parameterEncoding: NetworkAbstraction.ParameterEncoding { return .URL }
+        var parameterEncoding: MoyaX.ParameterEncoding { return .URL }
 
         typealias T = AnyObject
     }

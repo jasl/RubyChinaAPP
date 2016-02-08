@@ -5,17 +5,17 @@
 
 import Foundation
 import SwiftyJSON
-import NetworkAbstraction
+import MoyaX
 
 protocol EndpointType: TargetType {
     typealias T
 
     func parseResponse(json: JSON) -> T?
-    func doRequest(provider: Provider, completion: (result: APIResult<T>) -> ()) -> NetworkAbstraction.Cancellable
+    func doRequest(provider: Provider, completion: (result: APIResult<T>) -> ()) -> MoyaX.Cancellable
 }
 
 extension EndpointType {
-    func doRequest(provider: Provider = Provider.defaultInstance(), completion: (result: APIResult<T>) -> ()) -> NetworkAbstraction.Cancellable {
+    func doRequest(provider: Provider = Provider.defaultInstance(), completion: (result: APIResult<T>) -> ()) -> MoyaX.Cancellable {
         return provider.request(self) { result in
             var apiResult: APIResult<T>
 

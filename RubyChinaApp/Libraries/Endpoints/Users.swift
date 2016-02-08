@@ -5,7 +5,7 @@
 
 import Foundation
 import SwiftyJSON
-import NetworkAbstraction
+import MoyaX
 
 extension RubyChinaV3 {
     struct Users {
@@ -23,7 +23,7 @@ extension RubyChinaV3.Users {
 
         var baseURL: NSURL { return RubyChinaV3.BaseURL }
         var path: String { return RubyChinaV3.Users.Path }
-        var method: NetworkAbstraction.Method { return .GET }
+        var method: MoyaX.Method { return .GET }
         var parameters: [String: AnyObject]? {
             var parameters = [String: AnyObject]()
 
@@ -33,7 +33,7 @@ extension RubyChinaV3.Users {
 
             return parameters
         }
-        var parameterEncoding: NetworkAbstraction.ParameterEncoding { return .URL }
+        var parameterEncoding: MoyaX.ParameterEncoding { return .URL }
 
         typealias T = [User]
 
@@ -51,9 +51,9 @@ extension RubyChinaV3.Users {
 
         var baseURL: NSURL { return RubyChinaV3.BaseURL }
         var path: String { return "\(RubyChinaV3.Users.Path)/\(self.login)" }
-        var method: NetworkAbstraction.Method { return .GET }
+        var method: MoyaX.Method { return .GET }
         var parameters: [String: AnyObject]? { return nil }
-        var parameterEncoding: NetworkAbstraction.ParameterEncoding { return .URL }
+        var parameterEncoding: MoyaX.ParameterEncoding { return .URL }
 
         typealias T = User
 
@@ -96,7 +96,7 @@ extension RubyChinaV3.Users {
 
         var baseURL: NSURL { return RubyChinaV3.BaseURL }
         var path: String { return "\(RubyChinaV3.Users.Path)/\(self.login)/topics" }
-        var method: NetworkAbstraction.Method { return .GET }
+        var method: MoyaX.Method { return .GET }
         var parameters: [String: AnyObject]? {
             var parameters = [String: AnyObject]()
 
@@ -109,7 +109,7 @@ extension RubyChinaV3.Users {
 
             return parameters
         }
-        var parameterEncoding: NetworkAbstraction.ParameterEncoding { return .URL }
+        var parameterEncoding: MoyaX.ParameterEncoding { return .URL }
 
         typealias T = [Topic]
 
@@ -137,7 +137,7 @@ extension RubyChinaV3.Users {
 
         var baseURL: NSURL { return RubyChinaV3.BaseURL }
         var path: String { return "\(RubyChinaV3.Users.Path)/\(self.login)/replies" }
-        var method: NetworkAbstraction.Method { return .GET }
+        var method: MoyaX.Method { return .GET }
         var parameters: [String: AnyObject]? {
             var parameters = [String: AnyObject]()
 
@@ -150,7 +150,7 @@ extension RubyChinaV3.Users {
 
             return parameters
         }
-        var parameterEncoding: NetworkAbstraction.ParameterEncoding { return .URL }
+        var parameterEncoding: MoyaX.ParameterEncoding { return .URL }
 
         typealias T = [Reply]
 
@@ -172,7 +172,7 @@ extension RubyChinaV3.Users {
 
         var baseURL: NSURL { return RubyChinaV3.BaseURL }
         var path: String { return "\(RubyChinaV3.Users.Path)/\(self.login)/favorites" }
-        var method: NetworkAbstraction.Method { return .GET }
+        var method: MoyaX.Method { return .GET }
         var parameters: [String: AnyObject]? {
             var parameters = [String: AnyObject]()
 
@@ -181,7 +181,7 @@ extension RubyChinaV3.Users {
 
             return parameters
         }
-        var parameterEncoding: NetworkAbstraction.ParameterEncoding { return .URL }
+        var parameterEncoding: MoyaX.ParameterEncoding { return .URL }
 
         typealias T = [Topic]
 
@@ -203,7 +203,7 @@ extension RubyChinaV3.Users {
 
         var baseURL: NSURL { return RubyChinaV3.BaseURL }
         var path: String { return "\(RubyChinaV3.Users.Path)/\(self.login)/following" }
-        var method: NetworkAbstraction.Method { return .GET }
+        var method: MoyaX.Method { return .GET }
         var parameters: [String: AnyObject]? {
             var parameters = [String: AnyObject]()
 
@@ -212,7 +212,7 @@ extension RubyChinaV3.Users {
 
             return parameters
         }
-        var parameterEncoding: NetworkAbstraction.ParameterEncoding { return .URL }
+        var parameterEncoding: MoyaX.ParameterEncoding { return .URL }
 
         typealias T = [User]
 
@@ -234,7 +234,7 @@ extension RubyChinaV3.Users {
 
         var baseURL: NSURL { return RubyChinaV3.BaseURL }
         var path: String { return "\(RubyChinaV3.Users.Path)/\(self.login)/followers" }
-        var method: NetworkAbstraction.Method { return .GET }
+        var method: MoyaX.Method { return .GET }
         var parameters: [String: AnyObject]? {
             var parameters = [String: AnyObject]()
 
@@ -243,7 +243,7 @@ extension RubyChinaV3.Users {
 
             return parameters
         }
-        var parameterEncoding: NetworkAbstraction.ParameterEncoding { return .URL }
+        var parameterEncoding: MoyaX.ParameterEncoding { return .URL }
 
         typealias T = [User]
 
@@ -265,7 +265,7 @@ extension RubyChinaV3.Users {
 
         var baseURL: NSURL { return RubyChinaV3.BaseURL }
         var path: String { return "\(RubyChinaV3.Users.Path)/\(self.login)/blocked" }
-        var method: NetworkAbstraction.Method { return .GET }
+        var method: MoyaX.Method { return .GET }
         var parameters: [String: AnyObject]? {
             var parameters = [String: AnyObject]()
 
@@ -274,7 +274,7 @@ extension RubyChinaV3.Users {
 
             return parameters
         }
-        var parameterEncoding: NetworkAbstraction.ParameterEncoding { return .URL }
+        var parameterEncoding: MoyaX.ParameterEncoding { return .URL }
 
         typealias T = [User]
 
@@ -292,9 +292,9 @@ extension RubyChinaV3.Users {
 
         var baseURL: NSURL { return RubyChinaV3.BaseURL }
         var path: String { return "\(RubyChinaV3.Users.Path)/\(self.login)/follow" }
-        var method: NetworkAbstraction.Method { return .POST }
+        var method: MoyaX.Method { return .POST }
         var parameters: [String: AnyObject]? { return nil }
-        var parameterEncoding: NetworkAbstraction.ParameterEncoding { return .URL }
+        var parameterEncoding: MoyaX.ParameterEncoding { return .URL }
 
         typealias T = AnyObject
     }
@@ -308,9 +308,9 @@ extension RubyChinaV3.Users {
 
         var baseURL: NSURL { return RubyChinaV3.BaseURL }
         var path: String { return "\(RubyChinaV3.Users.Path)/\(self.login)/unfollow" }
-        var method: NetworkAbstraction.Method { return .POST }
+        var method: MoyaX.Method { return .POST }
         var parameters: [String: AnyObject]? { return nil }
-        var parameterEncoding: NetworkAbstraction.ParameterEncoding { return .URL }
+        var parameterEncoding: MoyaX.ParameterEncoding { return .URL }
 
         typealias T = AnyObject
     }
@@ -324,9 +324,9 @@ extension RubyChinaV3.Users {
 
         var baseURL: NSURL { return RubyChinaV3.BaseURL }
         var path: String { return "\(RubyChinaV3.Users.Path)/\(self.login)/block" }
-        var method: NetworkAbstraction.Method { return .POST }
+        var method: MoyaX.Method { return .POST }
         var parameters: [String: AnyObject]? { return nil }
-        var parameterEncoding: NetworkAbstraction.ParameterEncoding { return .URL }
+        var parameterEncoding: MoyaX.ParameterEncoding { return .URL }
 
         typealias T = AnyObject
     }
@@ -340,9 +340,9 @@ extension RubyChinaV3.Users {
 
         var baseURL: NSURL { return RubyChinaV3.BaseURL }
         var path: String { return "\(RubyChinaV3.Users.Path)/\(self.login)/unblock" }
-        var method: NetworkAbstraction.Method { return .POST }
+        var method: MoyaX.Method { return .POST }
         var parameters: [String: AnyObject]? { return nil }
-        var parameterEncoding: NetworkAbstraction.ParameterEncoding { return .URL }
+        var parameterEncoding: MoyaX.ParameterEncoding { return .URL }
 
         typealias T = AnyObject
     }

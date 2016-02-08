@@ -45,7 +45,6 @@
 		C441C0551C1468180035AD6E /* RubyChinaAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C441C0541C1468180035AD6E /* RubyChinaAppTests.swift */; };
 		C441C0601C1468180035AD6E /* RubyChinaAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C441C05F1C1468180035AD6E /* RubyChinaAppUITests.swift */; };
 		C45CBF6D1C2AD733001B6400 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C45CBF6C1C2AD733001B6400 /* Main.storyboard */; };
-		C4BBE17D1C1DFDA00029C7C4 /* NetworkAbstraction.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4BBE17C1C1DFDA00029C7C4 /* NetworkAbstraction.framework */; };
 		C4C009131C1ECEEA003226BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4C009111C1ECEEA003226BC /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -122,7 +121,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C4BBE17D1C1DFDA00029C7C4 /* NetworkAbstraction.framework in Frameworks */,
 				548643750A98163C2D4C90E7 /* Pods_RubyChinaApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

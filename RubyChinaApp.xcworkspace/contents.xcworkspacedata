@@ -5,9 +5,6 @@
       location = "group:RubyChinaApp.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:NetworkAbstraction/NetworkAbstraction.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>

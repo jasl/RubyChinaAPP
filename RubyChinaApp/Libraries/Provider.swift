@@ -4,14 +4,15 @@
 //
 
 import Foundation
-import NetworkAbstraction
+import MoyaX
 import p2_OAuth2
+import Alamofire
 
 class Provider {
     var timeOut: NSTimeInterval = 15
 
     private var oauthClient: OAuth2CodeGrant!
-    private var provider: APIProvider!
+    private var provider: MoyaXProvider!
 
     var afterAuthorizeSuccess: ((parameters: OAuth2JSON) -> Void)? {
         get { return oauthClient.onAuthorize }
@@ -46,24 +47,27 @@ class Provider {
                 "verbose": true,
         ] as OAuth2JSON)
 
-        provider = APIProvider(requestClosure: { (endpoint: Endpoint, done: NSURLRequest -> Void) in
-            let request = endpoint.mutableURLRequest
+        let beforeTransformToRequestClosure = { (var endpoint: Endpoint) -> (Endpoint) in
+            // Signing
+            if let accessToken = self.oauthClient!.clientConfig.accessToken where !accessToken.isEmpty {
+                endpoint.headerFields["Authorization"] = "Bearer \(accessToken)"
+            }
+            return endpoint
+        }
 
-            self.signingRequest(request)
-            self.setRequestTimeOutInterval(request)
-
-            done(request)
-        }, plugins: plugins)
+        provider = MoyaXProvider(backend: AlamofireBackend(manager: alamofireManager(self.timeOut)),
+                                 willTransformToRequest: beforeTransformToRequestClosure,
+                                 plugins: plugins)
 
         oauthClient.authConfig.authorizeEmbedded = authorizeEmbedded
     }
 
-    func request(target: TargetType, completion: NetworkAbstraction.Completion) -> Cancellable {
+    func request(target: TargetType, completion: MoyaX.Completion) -> Cancellable {
         return provider.request(target, completion: completion)
     }
 
-    func authorize(params: OAuth2StringDict? = nil, autoDismiss: Bool = true) {
-        oauthClient.authorize(params: params, autoDismiss: autoDismiss)
+    func authorize(params: OAuth2StringDict? = nil) {
+        oauthClient.authorize(params: params)
     }
 
     func resetAuthorize() {
@@ -81,14 +85,14 @@ class Provider {
             return false
         }
     }
+}
 
-    private func signingRequest(request: NSMutableURLRequest) {
-        if let accessToken = self.oauthClient!.clientConfig.accessToken where !accessToken.isEmpty {
-            request.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
-        }
-    }
+func alamofireManager(timeOut: NSTimeInterval = 15) -> Manager {
+    let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+    configuration.HTTPAdditionalHeaders = Manager.defaultHTTPHeaders
+    configuration.timeoutIntervalForRequest = timeOut
+    configuration.timeoutIntervalForResource = timeOut
 
-    private func setRequestTimeOutInterval(request: NSMutableURLRequest) {
-        request.timeoutInterval = self.timeOut
-    }
+    let manager = Manager(configuration: configuration)
+    return manager
 }

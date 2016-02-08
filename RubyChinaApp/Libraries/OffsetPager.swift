@@ -4,7 +4,7 @@
 //
 
 import Foundation
-import NetworkAbstraction
+import MoyaX
 
 protocol OffsetPaginatable {
     var offset: Int { get set }
@@ -39,7 +39,7 @@ class OffsetPager<T: protocol<EndpointType, OffsetPaginatable>> {
         self.endpoint.limit = perPage
     }
 
-    func loadFresh(completion: (result: APIResult<T.T>) -> ()) -> NetworkAbstraction.Cancellable {
+    func loadFresh(completion: (result: APIResult<T.T>) -> ()) -> MoyaX.Cancellable {
         self.currentPage = 1
         self.isNoMoreData = false
 
@@ -56,7 +56,7 @@ class OffsetPager<T: protocol<EndpointType, OffsetPaginatable>> {
         }
     }
 
-    func loadMore(completion: (result: APIResult<T.T>) -> ()) -> NetworkAbstraction.Cancellable {
+    func loadMore(completion: (result: APIResult<T.T>) -> ()) -> MoyaX.Cancellable {
         return self.endpoint.doRequest() { result in
             if case .Success(let entities) = result {
                 if entities.isEmpty {

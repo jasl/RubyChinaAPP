@@ -1,10 +1,16 @@
 PODS:
-  - Alamofire (3.1.5)
-  - Kingfisher (2.0.0)
+  - Alamofire (3.2.0)
+  - Kingfisher (2.0.1)
   - MJRefresh (3.1.0)
-  - p2.OAuth2 (2.1.3):
+  - MoyaX (0.0.2):
+    - MoyaX/Core (= 0.0.2)
+  - MoyaX/Core (0.0.2):
+    - Alamofire (~> 3.0)
+    - Result (~> 1.0)
+  - p2.OAuth2 (2.2):
     - SwiftKeychain (~> 0.1.5)
-  - SwiftDate (2.0.2)
+  - Result (1.0.2)
+  - SwiftDate (3.0.1)
   - SwiftKeychain (0.1.5)
   - SwiftyJSON (2.3.2)
   - XCGLogger (3.2)
@@ -13,21 +19,31 @@ DEPENDENCIES:
   - Alamofire (~> 3.1)
   - Kingfisher
   - MJRefresh
+  - MoyaX (from `https://github.com/jasl/MoyaX.git`)
   - p2.OAuth2
   - SwiftDate
   - SwiftyJSON (~> 2.3)
   - XCGLogger (~> 3.1)
 
+EXTERNAL SOURCES:
+  MoyaX:
+    :git: https://github.com/jasl/MoyaX.git
+
+CHECKOUT OPTIONS:
+  MoyaX:
+    :commit: b61f03067d2cfa61c8a457ac4b5120369f274bde
+    :git: https://github.com/jasl/MoyaX.git
+
 SPEC CHECKSUMS:
-  Alamofire: 5f730ba29fd113b7ddd71c1e65d0c630acf5d7b0
-  Kingfisher: 67d280b39e878afbd467c80953924a61950c45e4
+  Alamofire: 4da478599fccddff361205c8929333d7fe18dceb
+  Kingfisher: 3af2020040453f710507819e6aa5f5721da03d9b
   MJRefresh: 743e6404967d1c2c688472ea3ecfde247d872db4
-  p2.OAuth2: ce5d6fe61f564354a8267ec3482f0316ae24cfa3
-  SwiftDate: b4f4d0962afe48365ad2800c9850a6626deb9359
+  MoyaX: 70ef92cb71010de1b298a4e18ba12280c32ab455
+  p2.OAuth2: 47b519c9da500af90b87101e0330c6278e1152c2
+  Result: dd3dd71af3fa2e262f1a999e14fba2c25ec14f16
+  SwiftDate: 0ffc7cdc4e4ddffe44cb9f4ee378e4d68eaba6e7
   SwiftKeychain: 1387edad8b56c659daa93d9ffc99526bac5b0088
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
   XCGLogger: da1f341f4bb8979db6e1df64232f04d9698402d4
 
-PODFILE CHECKSUM: 9bab5a06cc631a63e355e1364ff944c155df0847
-
-COCOAPODS: 1.0.0.beta.2
+COCOAPODS: 0.39.0

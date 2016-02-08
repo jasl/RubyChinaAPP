@@ -5,11 +5,11 @@
 
 import Foundation
 import SwiftyJSON
-import NetworkAbstraction
+import MoyaX
 
 enum APIResult<T> {
     case Ok
     case Success(T)
     case Failure(APIError)
-    case NetworkError(NetworkAbstraction.Error)
+    case NetworkError(MoyaX.Error)
 }

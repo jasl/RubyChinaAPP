@@ -5,7 +5,7 @@
 
 import Foundation
 import SwiftyJSON
-import NetworkAbstraction
+import MoyaX
 
 extension RubyChinaV3 {
     struct Nodes {
@@ -17,9 +17,9 @@ extension RubyChinaV3.Nodes {
     struct Listing: EndpointType {
         var baseURL: NSURL { return RubyChinaV3.BaseURL }
         var path: String { return RubyChinaV3.Nodes.Path }
-        var method: NetworkAbstraction.Method { return .GET }
+        var method: MoyaX.Method { return .GET }
         var parameters: [String: AnyObject]? { return nil }
-        var parameterEncoding: NetworkAbstraction.ParameterEncoding { return .URL }
+        var parameterEncoding: MoyaX.ParameterEncoding { return .URL }
 
         typealias T = [Node]
 
@@ -37,9 +37,9 @@ extension RubyChinaV3.Nodes {
 
         var baseURL: NSURL { return RubyChinaV3.BaseURL }
         var path: String { return "\(RubyChinaV3.Nodes.Path)/\(self.id)" }
-        var method: NetworkAbstraction.Method { return .GET }
+        var method: MoyaX.Method { return .GET }
         var parameters: [String: AnyObject]? { return nil }
-        var parameterEncoding: NetworkAbstraction.ParameterEncoding { return .URL }
+        var parameterEncoding: MoyaX.ParameterEncoding { return .URL }
 
         typealias T = Node
 

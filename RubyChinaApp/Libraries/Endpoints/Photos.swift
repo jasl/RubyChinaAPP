@@ -5,7 +5,7 @@
 
 import Foundation
 import SwiftyJSON
-import NetworkAbstraction
+import MoyaX
 
 extension RubyChinaV3 {
     struct Photos {

@@ -4,16 +4,17 @@
 //
 
 import Foundation
-import NetworkAbstraction
+import MoyaX
+import Result
 
 /// Logs network activity (outgoing requests and incoming responses).
 class NetworkLogger: PluginType {
 
-    func willSendRequest(request: RequestType, target: TargetType) {
-        logger.info("Sending request: \(request.request?.URL?.absoluteString ?? String())")
+    func willSendRequest(request: NSMutableURLRequest, target: TargetType) {
+        logger.info("Sending request: \(request.URL?.absoluteString ?? String())")
     }
 
-    func didReceiveResponse(result: Result<NetworkAbstraction.Response, NetworkAbstraction.Error>, target: TargetType) {
+    func didReceiveResponse(result: Result<MoyaX.Response, MoyaX.Error>, target: TargetType) {
         switch result {
         case let .Success(response):
             logger.info("Received response(\(response.statusCode ?? 0)) from \(response.response!.URL?.absoluteString ?? String()).")

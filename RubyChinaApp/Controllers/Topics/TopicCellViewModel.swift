@@ -22,14 +22,23 @@ struct TopicCellViewModel: ViewModelType {
         self.authorAvatarURL = entity.user.avatarUrl
     }
 
-    func applyToCell(cell: TopicsTableViewCell) {
+    func applyToCell(cell: TopicsTableViewCell, indexPath: Int) {
         cell.titleLabel.text = self.title
-        cell.authorNameLabel.text = self.authorName
-        cell.nodeNameLabel.text = self.nodeName
         cell.repliesCountLabel.text = String(self.repliesCount)
-        cell.authorAvatarImageView.kf_setImageWithURL(self.authorAvatarURL,
-                placeholderImage: nil,
-                optionsInfo: [.Transition(ImageTransition.Fade(0.1))])
+
+        cell.authorNameButton.setTitle(self.authorName, forState: .Normal)
+        cell.authorNameButton.titleLabel!.adjustsFontSizeToFitWidth = true
+        cell.authorNameButton.tag = indexPath
+
+        cell.nodeNameButton.setTitle(self.nodeName, forState: .Normal)
+        cell.nodeNameButton.titleLabel!.adjustsFontSizeToFitWidth = true
+        cell.nodeNameButton.tag = indexPath
+
+        cell.authorAvatarImageButton.kf_setImageWithURL(self.authorAvatarURL,
+                                                        forState: .Normal,
+                                                        placeholderImage: nil,
+                                                        optionsInfo: [.Transition(ImageTransition.Fade(0.1))])
+        cell.authorAvatarImageButton.tag = indexPath
     }
 }
 

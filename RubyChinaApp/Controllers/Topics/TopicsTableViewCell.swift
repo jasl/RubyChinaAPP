@@ -13,9 +13,9 @@ class TopicsTableViewCell: UITableViewCell {
     // MARK: Properties
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var repliesCountLabel: UILabel!
-    @IBOutlet weak var nodeNameLabel: UILabel!
-    @IBOutlet weak var authorNameLabel: UILabel!
-    @IBOutlet weak var authorAvatarImageView: UIImageView!
+    @IBOutlet weak var nodeNameButton: UIButton!
+    @IBOutlet weak var authorNameButton: UIButton!
+    @IBOutlet weak var authorAvatarImageButton: UIButton!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,6 +23,6 @@ class TopicsTableViewCell: UITableViewCell {
     }
 
     override func prepareForReuse() {
-        self.authorAvatarImageView.kf_cancelDownloadTask()
+        self.authorAvatarImageButton.kf_cancelImageDownloadTask()
     }
 }

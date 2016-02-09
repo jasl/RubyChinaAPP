@@ -163,7 +163,7 @@
             </objects>
             <point key="canvasLocation" x="407" y="-591"/>
         </scene>
-        <!--Item-->
+        <!--Test-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="RubyChinaApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -235,18 +235,18 @@
                             <constraint firstItem="KnG-5i-mf7" firstAttribute="top" secondItem="tf0-ta-9zh" secondAttribute="bottom" constant="8" symbolic="YES" id="vja-M3-ACC"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="Fre-oP-Fnw"/>
+                    <tabBarItem key="tabBarItem" title="Test" id="Fre-oP-Fnw"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1285" y="-307"/>
         </scene>
-        <!--Item 1-->
+        <!--Topics-->
         <scene sceneID="NvK-Bg-WaM">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBarsWhenKeyboardAppears="YES" hidesBarsWhenVerticallyCompact="YES" id="xGp-ZO-alG" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 1" id="cKd-aU-p8e"/>
+                    <tabBarItem key="tabBarItem" title="Topics" id="cKd-aU-p8e"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="XRw-cn-bwn">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

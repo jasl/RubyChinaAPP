@@ -55,12 +55,25 @@ class TopicsViewController: UIViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "ShowTopicDetailSegue" {
-            let index = self.topicsTableView.indexPathForSelectedRow!.row
-            let viewModel = self.topicViewModels[index]
+        guard let identifier = segue.identifier else {
+            return
+        }
 
+        guard let index = selectedRowAtIndexPathFor(self.topicsTableView, sender: sender as! UIView) else {
+            return
+        }
+
+        let viewModel = self.topicViewModels[index]
+
+        switch identifier {
+        case "ShowTopicDetailSegue":
             let destination = segue.destinationViewController as! TopicDetailViewController
             viewModel.applyTo(destination)
+        case "ShowUserDetailSegue":
+            let destination = segue.destinationViewController as! UIViewController
+            destination.title = viewModel.authorName
+        default:
+            return
         }
     }
 }

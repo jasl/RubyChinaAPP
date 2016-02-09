@@ -4,3 +4,16 @@
 //
 
 import Foundation
+import UIKit
+
+func selectedRowAtIndexPathFor(tableView: UITableView, sender: UIView) -> Int? {
+    switch sender {
+    case let sender as UITableViewCell:
+        return tableView.indexPathForCell(sender)?.row
+    case let sender as UIEmbedsInCellButton:
+        let cell = sender.superview?.superview as! UITableViewCell
+        return tableView.indexPathForCell(cell)?.row
+    default:
+        return nil
+    }
+}

@@ -8,6 +8,7 @@ import UIKit
 import Kingfisher
 
 struct TopicCellViewModel: ViewModelType {
+    let id: String
     let title: String
     let repliesCount: Int
     let nodeName: String
@@ -15,6 +16,7 @@ struct TopicCellViewModel: ViewModelType {
     let authorAvatarURL: NSURL
 
     init(byEntity entity: Topic) {
+        self.id = entity.id
         self.title = entity.title
         self.repliesCount = entity.repliesCount
         self.nodeName = entity.nodeName
@@ -22,23 +24,25 @@ struct TopicCellViewModel: ViewModelType {
         self.authorAvatarURL = entity.user.avatarUrl
     }
 
-    func applyToCell(cell: TopicsTableViewCell, indexPath: Int) {
+    func applyTo(cell: TopicsTableViewCell) {
         cell.titleLabel.text = self.title
         cell.repliesCountLabel.text = String(self.repliesCount)
 
         cell.authorNameButton.setTitle(self.authorName, forState: .Normal)
         cell.authorNameButton.titleLabel!.adjustsFontSizeToFitWidth = true
-        cell.authorNameButton.tag = indexPath
 
         cell.nodeNameButton.setTitle(self.nodeName, forState: .Normal)
         cell.nodeNameButton.titleLabel!.adjustsFontSizeToFitWidth = true
-        cell.nodeNameButton.tag = indexPath
 
         cell.authorAvatarImageButton.kf_setImageWithURL(self.authorAvatarURL,
                                                         forState: .Normal,
                                                         placeholderImage: nil,
                                                         optionsInfo: [.Transition(ImageTransition.Fade(0.1))])
-        cell.authorAvatarImageButton.tag = indexPath
+    }
+
+    func applyTo(viewController: TopicDetailViewController) {
+        viewController.topicId = self.id
+        viewController.title = self.title
     }
 }
 

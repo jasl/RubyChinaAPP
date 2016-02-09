@@ -6,10 +6,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Topics Table View Controller-->
+        <!--Topics View Controller-->
         <scene sceneID="yFJ-Ex-2dO">
             <objects>
-                <viewController id="RY0-Lt-YN8" customClass="TopicsTableViewController" customModule="RubyChinaApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TopicsView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="RY0-Lt-YN8" customClass="TopicsViewController" customModule="RubyChinaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PYa-go-aY3"/>
                         <viewControllerLayoutGuide type="bottom" id="Ugz-Q6-8ph"/>
@@ -104,7 +104,7 @@
                                             <outlet property="nodeNameButton" destination="rse-dU-Esl" id="Fzp-vg-sIw"/>
                                             <outlet property="repliesCountLabel" destination="XwX-Ve-WQo" id="gYw-zA-lfQ"/>
                                             <outlet property="titleLabel" destination="t9m-bM-SVj" id="w7s-GP-1dV"/>
-                                            <segue destination="X3u-Vl-Vra" kind="show" id="bSr-yN-hiu"/>
+                                            <segue destination="X3u-Vl-Vra" kind="show" identifier="ShowTopicDetailSegue" id="FjA-O1-1Pu"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -127,10 +127,10 @@
             </objects>
             <point key="canvasLocation" x="2037" y="-1078"/>
         </scene>
-        <!--View Controller-->
+        <!--Topic Detail View Controller-->
         <scene sceneID="tmc-8L-j4H">
             <objects>
-                <viewController id="X3u-Vl-Vra" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TopicDetailView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="X3u-Vl-Vra" customClass="TopicDetailViewController" customModule="RubyChinaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tDr-oe-CXm"/>
                         <viewControllerLayoutGuide type="bottom" id="8ei-lz-UbB"/>
@@ -245,7 +245,7 @@
         <!--Item 1-->
         <scene sceneID="NvK-Bg-WaM">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xGp-ZO-alG" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBarsWhenKeyboardAppears="YES" hidesBarsWhenVerticallyCompact="YES" id="xGp-ZO-alG" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item 1" id="cKd-aU-p8e"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="XRw-cn-bwn">

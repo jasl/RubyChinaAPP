@@ -36,6 +36,9 @@
                                                         <constraint firstAttribute="height" constant="40" id="QYW-40-ese"/>
                                                     </constraints>
                                                     <state key="normal" image="avatarPlaceHolder"/>
+                                                    <connections>
+                                                        <segue destination="mcF-Af-yYw" kind="show" identifier="ShowUserDetailSegue" id="vta-ur-alg"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Topic Title" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t9m-bM-SVj">
                                                     <rect key="frame" x="72" y="16" width="472" height="17"/>
@@ -83,9 +86,6 @@
                                                     <state key="normal" title="Node">
                                                         <color key="titleColor" red="0.58431372550000005" green="0.58431372550000005" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
-                                                    <connections>
-                                                        <segue destination="2lh-sb-lI7" kind="show" id="VBH-Lo-KYQ"/>
-                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -131,25 +131,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yqc-UM-t0u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2037" y="-1078"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="zeO-0i-XrW">
-            <objects>
-                <viewController storyboardIdentifier="NodesView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2lh-sb-lI7" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="xna-TF-ePK"/>
-                        <viewControllerLayoutGuide type="bottom" id="deL-Vx-KZk"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="by9-Io-WaZ">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uF7-dR-Ogc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2759" y="-1764"/>
+            <point key="canvasLocation" x="2043" y="-1078"/>
         </scene>
         <!--Topic Detail View Controller-->
         <scene sceneID="tmc-8L-j4H">
@@ -167,12 +149,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qEM-aP-gOD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2759" y="-1078"/>
+            <point key="canvasLocation" x="2875" y="-1078"/>
         </scene>
-        <!--View Controller-->
+        <!--User Detail View Controller-->
         <scene sceneID="AQN-sn-hGO">
             <objects>
-                <viewController storyboardIdentifier="UserDetailView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mcF-Af-yYw" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UserDetailView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mcF-Af-yYw" customClass="UserDetailViewController" customModule="RubyChinaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vwd-S8-vSO"/>
                         <viewControllerLayoutGuide type="bottom" id="kBb-Hz-J6o"/>
@@ -185,7 +167,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XWc-gD-c8j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2759" y="-302"/>
+            <point key="canvasLocation" x="2875" y="-302"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="X1l-0p-vIw">
@@ -307,4 +289,7 @@
     <resources>
         <image name="avatarPlaceHolder" width="120" height="120"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="vta-ur-alg"/>
+    </inferredMetricsTieBreakers>
 </document>

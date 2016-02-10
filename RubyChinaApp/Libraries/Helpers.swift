@@ -20,20 +20,12 @@ func selectedRowAtIndexPathFor(tableView: UITableView, sender: AnyObject?) -> In
     }
 }
 
-func recurisiveSearchParentViewUntil<T: UIView>(_: T.Type, currentView: UIView, recursionLimit: Int = 10) -> T? {
-    var superView: UIView? = currentView
+func recurisiveSearchParentViewUntil<T: UIView>(type: T.Type, currentView: UIView?) -> T? {
+    guard let currentView = currentView else { return nil }
 
-    for _ in 1...recursionLimit {
-        superView = superView?.superview
-
-        if superView == nil {
-            return nil
-        }
-
-        if let view = superView as? T {
-            return view
-        }
+    if let view = currentView as? T {
+        return view
     }
 
-    return nil
+    return recurisiveSearchParentViewUntil(type, currentView: currentView.superview)
 }

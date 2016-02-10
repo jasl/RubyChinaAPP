@@ -13,9 +13,9 @@ class TopicsTableViewCell: UITableViewCell {
     // MARK: Properties
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var repliesCountLabel: UILabel!
-    @IBOutlet weak var nodeNameButton: UIButton!
-    @IBOutlet weak var authorNameButton: UIButton!
-    @IBOutlet weak var authorAvatarImageButton: UIButton!
+    @IBOutlet weak var nodeNameButton: EmbedsInTableViewCellUIButton!
+    @IBOutlet weak var authorNameButton: EmbedsInTableViewCellUIButton!
+    @IBOutlet weak var authorAvatarImageButton: EmbedsInTableViewCellUIButton!
 
     override func awakeFromNib() {
         super.awakeFromNib()

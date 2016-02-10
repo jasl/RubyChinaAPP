@@ -6,4 +6,4 @@
 import Foundation
 import UIKit
 
-class UIEmbedsInCellButton: UIButton { }
+class EmbedsInTableViewCellUIButton: UIButton {}

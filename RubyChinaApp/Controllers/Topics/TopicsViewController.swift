@@ -59,7 +59,11 @@ class TopicsViewController: UIViewController {
             return
         }
 
-        guard let index = selectedRowAtIndexPathFor(self.topicsTableView, sender: sender as! UIView) else {
+        guard let sender = sender as? UIView else {
+            return
+        }
+
+        guard let index = selectedRowAtIndexPathFor(self.topicsTableView, sender: sender) else {
             return
         }
 

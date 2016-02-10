@@ -29,7 +29,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="71"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A1z-qx-gZz" customClass="UIEmbedsInCellButton" customModule="RubyChinaApp" customModuleProvider="target">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A1z-qx-gZz" customClass="EmbedsInTableViewCellUIButton" customModule="RubyChinaApp" customModuleProvider="target">
                                                     <rect key="frame" x="16" y="16" width="40" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="40" id="1Ib-rw-zgS"/>
@@ -43,7 +43,7 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b50-xx-mN9" customClass="UIEmbedsInCellButton" customModule="RubyChinaApp" customModuleProvider="target">
+                                                <button opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b50-xx-mN9" customClass="EmbedsInTableViewCellUIButton" customModule="RubyChinaApp" customModuleProvider="target">
                                                     <rect key="frame" x="111" y="39" width="38" height="22"/>
                                                     <accessibility key="accessibilityConfiguration">
                                                         <accessibilityTraits key="traits" button="YES" staticText="YES"/>
@@ -70,7 +70,7 @@
                                                     <color key="textColor" red="0.58431372549019611" green="0.58431372549019611" blue="0.58431372549019611" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rse-dU-Esl" customClass="UIEmbedsInCellButton" customModule="RubyChinaApp" customModuleProvider="target">
+                                                <button opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rse-dU-Esl" customClass="EmbedsInTableViewCellUIButton" customModule="RubyChinaApp" customModuleProvider="target">
                                                     <rect key="frame" x="72" y="39" width="31" height="22"/>
                                                     <accessibility key="accessibilityConfiguration">
                                                         <accessibilityTraits key="traits" button="YES" staticText="YES"/>

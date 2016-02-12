@@ -13,9 +13,6 @@ extension RubyChinaV3 {
 
         var baseURL: NSURL { return RubyChinaV3.BaseURL }
         var path: String { return RubyChinaV3.Hello.Path }
-        var method: MoyaX.Method { return .GET }
-        var parameters: [String: AnyObject]? { return nil }
-        var parameterEncoding: MoyaX.ParameterEncoding { return .URL }
 
         typealias T = User
 

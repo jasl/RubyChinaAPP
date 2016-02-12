@@ -7,7 +7,7 @@ PODS:
   - MoyaX/Core (0.0.2):
     - Alamofire (~> 3.0)
     - Result (~> 1.0)
-  - p2.OAuth2 (2.2):
+  - p2.OAuth2 (2.2.1):
     - SwiftKeychain (~> 0.1.5)
   - Result (1.0.2)
   - SwiftDate (3.0.1)
@@ -31,7 +31,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   MoyaX:
-    :commit: b61f03067d2cfa61c8a457ac4b5120369f274bde
+    :commit: 8bd27f7ed2a209a0803bd45a1fcb1b85ad7e482b
     :git: https://github.com/jasl/MoyaX.git
 
 SPEC CHECKSUMS:
@@ -39,7 +39,7 @@ SPEC CHECKSUMS:
   Kingfisher: 3af2020040453f710507819e6aa5f5721da03d9b
   MJRefresh: 743e6404967d1c2c688472ea3ecfde247d872db4
   MoyaX: 70ef92cb71010de1b298a4e18ba12280c32ab455
-  p2.OAuth2: 47b519c9da500af90b87101e0330c6278e1152c2
+  p2.OAuth2: 7f5c44259ef83ea5b9ef8f9049310611788f86cb
   Result: dd3dd71af3fa2e262f1a999e14fba2c25ec14f16
   SwiftDate: 0ffc7cdc4e4ddffe44cb9f4ee378e4d68eaba6e7
   SwiftKeychain: 1387edad8b56c659daa93d9ffc99526bac5b0088

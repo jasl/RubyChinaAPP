@@ -37,8 +37,7 @@ extension RubyChinaV3.Topics {
 
         var baseURL: NSURL { return RubyChinaV3.BaseURL }
         var path: String { return Path }
-        var method: MoyaX.Method { return .GET }
-        var parameters: [String: AnyObject]? {
+        var parameters: [String: AnyObject] {
             var parameters = [String: AnyObject]()
 
             if let type = self.type {
@@ -53,7 +52,6 @@ extension RubyChinaV3.Topics {
 
             return parameters
         }
-        var parameterEncoding: MoyaX.ParameterEncoding { return .URL }
 
         typealias T = [Topic]
 
@@ -71,9 +69,6 @@ extension RubyChinaV3.Topics {
 
         var baseURL: NSURL { return RubyChinaV3.BaseURL }
         var path: String { return "\(RubyChinaV3.Topics.Path)/\(self.id)" }
-        var method: MoyaX.Method { return .GET }
-        var parameters: [String: AnyObject]? { return nil }
-        var parameterEncoding: MoyaX.ParameterEncoding { return .URL }
 
         typealias T = Topic
 
@@ -112,7 +107,7 @@ extension RubyChinaV3.Topics {
         var baseURL: NSURL { return RubyChinaV3.BaseURL }
         var path: String { return RubyChinaV3.Topics.Path }
         var method: MoyaX.Method { return .POST }
-        var parameters: [String: AnyObject]? {
+        var parameters: [String: AnyObject] {
             var parameters = [String: AnyObject]()
 
             parameters["title"] = self.title
@@ -121,7 +116,6 @@ extension RubyChinaV3.Topics {
 
             return parameters
         }
-        var parameterEncoding: MoyaX.ParameterEncoding { return .URL }
 
         typealias T = Topic
 
@@ -146,7 +140,7 @@ extension RubyChinaV3.Topics {
         var baseURL: NSURL { return RubyChinaV3.BaseURL }
         var path: String { return "\(RubyChinaV3.Topics.Path)/\(self.id)" }
         var method: MoyaX.Method { return .PUT }
-        var parameters: [String: AnyObject]? {
+        var parameters: [String: AnyObject] {
             var parameters = [String: AnyObject]()
 
             parameters["title"] = self.title
@@ -155,7 +149,6 @@ extension RubyChinaV3.Topics {
 
             return parameters
         }
-        var parameterEncoding: MoyaX.ParameterEncoding { return .URL }
 
         typealias T = Topic
 
@@ -174,8 +167,6 @@ extension RubyChinaV3.Topics {
         var baseURL: NSURL { return RubyChinaV3.BaseURL }
         var path: String { return "\(RubyChinaV3.Topics.Path)/\(self.id)" }
         var method: MoyaX.Method { return .DELETE }
-        var parameters: [String: AnyObject]? { return nil }
-        var parameterEncoding: MoyaX.ParameterEncoding { return .URL }
 
         typealias T = AnyObject
     }
@@ -191,7 +182,7 @@ extension RubyChinaV3.Topics {
         var baseURL: NSURL { return RubyChinaV3.BaseURL }
         var path: String { return RubyChinaV3.Topics.Like.Path }
         var method: MoyaX.Method { return .POST }
-        var parameters: [String: AnyObject]? {
+        var parameters: [String: AnyObject] {
             var parameters = [String: AnyObject]()
 
             parameters["obj_type"] = "topic"
@@ -199,7 +190,6 @@ extension RubyChinaV3.Topics {
 
             return parameters
         }
-        var parameterEncoding: MoyaX.ParameterEncoding { return .URL }
 
         typealias T = AnyObject
     }
@@ -215,7 +205,7 @@ extension RubyChinaV3.Topics {
         var baseURL: NSURL { return RubyChinaV3.BaseURL }
         var path: String { return RubyChinaV3.Topics.UndoLike.Path }
         var method: MoyaX.Method { return .DELETE }
-        var parameters: [String: AnyObject]? {
+        var parameters: [String: AnyObject] {
             var parameters = [String: AnyObject]()
 
             parameters["obj_type"] = "topic"
@@ -223,7 +213,6 @@ extension RubyChinaV3.Topics {
 
             return parameters
         }
-        var parameterEncoding: MoyaX.ParameterEncoding { return .URL }
 
         typealias T = AnyObject
     }
@@ -238,8 +227,6 @@ extension RubyChinaV3.Topics {
         var baseURL: NSURL { return RubyChinaV3.BaseURL }
         var path: String { return "\(RubyChinaV3.Topics.Path)/\(self.id)/favorite" }
         var method: MoyaX.Method { return .POST }
-        var parameters: [String: AnyObject]? { return nil }
-        var parameterEncoding: MoyaX.ParameterEncoding { return .URL }
 
         typealias T = AnyObject
     }
@@ -254,8 +241,6 @@ extension RubyChinaV3.Topics {
         var baseURL: NSURL { return RubyChinaV3.BaseURL }
         var path: String { return "\(RubyChinaV3.Topics.Path)/\(self.id)/unfavorite" }
         var method: MoyaX.Method { return .POST }
-        var parameters: [String: AnyObject]? { return nil }
-        var parameterEncoding: MoyaX.ParameterEncoding { return .URL }
 
         typealias T = AnyObject
     }
@@ -270,8 +255,6 @@ extension RubyChinaV3.Topics {
         var baseURL: NSURL { return RubyChinaV3.BaseURL }
         var path: String { return "\(RubyChinaV3.Topics.Path)/\(self.id)/follow" }
         var method: MoyaX.Method { return .POST }
-        var parameters: [String: AnyObject]? { return nil }
-        var parameterEncoding: MoyaX.ParameterEncoding { return .URL }
 
         typealias T = AnyObject
     }
@@ -286,8 +269,6 @@ extension RubyChinaV3.Topics {
         var baseURL: NSURL { return RubyChinaV3.BaseURL }
         var path: String { return "\(RubyChinaV3.Topics.Path)/\(self.id)/unfollow" }
         var method: MoyaX.Method { return .POST }
-        var parameters: [String: AnyObject]? { return nil }
-        var parameterEncoding: MoyaX.ParameterEncoding { return .URL }
 
         typealias T = AnyObject
     }

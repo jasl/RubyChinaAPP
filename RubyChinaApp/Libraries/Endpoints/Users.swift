@@ -23,8 +23,7 @@ extension RubyChinaV3.Users {
 
         var baseURL: NSURL { return RubyChinaV3.BaseURL }
         var path: String { return RubyChinaV3.Users.Path }
-        var method: MoyaX.Method { return .GET }
-        var parameters: [String: AnyObject]? {
+        var parameters: [String: AnyObject] {
             var parameters = [String: AnyObject]()
 
             if let limit = self.limit {
@@ -33,7 +32,6 @@ extension RubyChinaV3.Users {
 
             return parameters
         }
-        var parameterEncoding: MoyaX.ParameterEncoding { return .URL }
 
         typealias T = [User]
 
@@ -51,9 +49,6 @@ extension RubyChinaV3.Users {
 
         var baseURL: NSURL { return RubyChinaV3.BaseURL }
         var path: String { return "\(RubyChinaV3.Users.Path)/\(self.login)" }
-        var method: MoyaX.Method { return .GET }
-        var parameters: [String: AnyObject]? { return nil }
-        var parameterEncoding: MoyaX.ParameterEncoding { return .URL }
 
         typealias T = User
 
@@ -96,8 +91,7 @@ extension RubyChinaV3.Users {
 
         var baseURL: NSURL { return RubyChinaV3.BaseURL }
         var path: String { return "\(RubyChinaV3.Users.Path)/\(self.login)/topics" }
-        var method: MoyaX.Method { return .GET }
-        var parameters: [String: AnyObject]? {
+        var parameters: [String: AnyObject] {
             var parameters = [String: AnyObject]()
 
             if let orderBy = self.orderBy {
@@ -109,7 +103,6 @@ extension RubyChinaV3.Users {
 
             return parameters
         }
-        var parameterEncoding: MoyaX.ParameterEncoding { return .URL }
 
         typealias T = [Topic]
 
@@ -137,8 +130,7 @@ extension RubyChinaV3.Users {
 
         var baseURL: NSURL { return RubyChinaV3.BaseURL }
         var path: String { return "\(RubyChinaV3.Users.Path)/\(self.login)/replies" }
-        var method: MoyaX.Method { return .GET }
-        var parameters: [String: AnyObject]? {
+        var parameters: [String: AnyObject] {
             var parameters = [String: AnyObject]()
 
             if let orderBy = self.orderBy {
@@ -150,7 +142,6 @@ extension RubyChinaV3.Users {
 
             return parameters
         }
-        var parameterEncoding: MoyaX.ParameterEncoding { return .URL }
 
         typealias T = [Reply]
 
@@ -172,8 +163,7 @@ extension RubyChinaV3.Users {
 
         var baseURL: NSURL { return RubyChinaV3.BaseURL }
         var path: String { return "\(RubyChinaV3.Users.Path)/\(self.login)/favorites" }
-        var method: MoyaX.Method { return .GET }
-        var parameters: [String: AnyObject]? {
+        var parameters: [String: AnyObject] {
             var parameters = [String: AnyObject]()
 
             parameters["limit"] = self.limit
@@ -181,7 +171,6 @@ extension RubyChinaV3.Users {
 
             return parameters
         }
-        var parameterEncoding: MoyaX.ParameterEncoding { return .URL }
 
         typealias T = [Topic]
 
@@ -203,8 +192,7 @@ extension RubyChinaV3.Users {
 
         var baseURL: NSURL { return RubyChinaV3.BaseURL }
         var path: String { return "\(RubyChinaV3.Users.Path)/\(self.login)/following" }
-        var method: MoyaX.Method { return .GET }
-        var parameters: [String: AnyObject]? {
+        var parameters: [String: AnyObject] {
             var parameters = [String: AnyObject]()
 
             parameters["limit"] = self.limit
@@ -212,7 +200,6 @@ extension RubyChinaV3.Users {
 
             return parameters
         }
-        var parameterEncoding: MoyaX.ParameterEncoding { return .URL }
 
         typealias T = [User]
 
@@ -234,8 +221,7 @@ extension RubyChinaV3.Users {
 
         var baseURL: NSURL { return RubyChinaV3.BaseURL }
         var path: String { return "\(RubyChinaV3.Users.Path)/\(self.login)/followers" }
-        var method: MoyaX.Method { return .GET }
-        var parameters: [String: AnyObject]? {
+        var parameters: [String: AnyObject] {
             var parameters = [String: AnyObject]()
 
             parameters["limit"] = self.limit
@@ -243,7 +229,6 @@ extension RubyChinaV3.Users {
 
             return parameters
         }
-        var parameterEncoding: MoyaX.ParameterEncoding { return .URL }
 
         typealias T = [User]
 
@@ -265,8 +250,7 @@ extension RubyChinaV3.Users {
 
         var baseURL: NSURL { return RubyChinaV3.BaseURL }
         var path: String { return "\(RubyChinaV3.Users.Path)/\(self.login)/blocked" }
-        var method: MoyaX.Method { return .GET }
-        var parameters: [String: AnyObject]? {
+        var parameters: [String: AnyObject] {
             var parameters = [String: AnyObject]()
 
             parameters["limit"] = self.limit
@@ -274,7 +258,6 @@ extension RubyChinaV3.Users {
 
             return parameters
         }
-        var parameterEncoding: MoyaX.ParameterEncoding { return .URL }
 
         typealias T = [User]
 
@@ -293,8 +276,6 @@ extension RubyChinaV3.Users {
         var baseURL: NSURL { return RubyChinaV3.BaseURL }
         var path: String { return "\(RubyChinaV3.Users.Path)/\(self.login)/follow" }
         var method: MoyaX.Method { return .POST }
-        var parameters: [String: AnyObject]? { return nil }
-        var parameterEncoding: MoyaX.ParameterEncoding { return .URL }
 
         typealias T = AnyObject
     }
@@ -309,8 +290,6 @@ extension RubyChinaV3.Users {
         var baseURL: NSURL { return RubyChinaV3.BaseURL }
         var path: String { return "\(RubyChinaV3.Users.Path)/\(self.login)/unfollow" }
         var method: MoyaX.Method { return .POST }
-        var parameters: [String: AnyObject]? { return nil }
-        var parameterEncoding: MoyaX.ParameterEncoding { return .URL }
 
         typealias T = AnyObject
     }
@@ -325,8 +304,6 @@ extension RubyChinaV3.Users {
         var baseURL: NSURL { return RubyChinaV3.BaseURL }
         var path: String { return "\(RubyChinaV3.Users.Path)/\(self.login)/block" }
         var method: MoyaX.Method { return .POST }
-        var parameters: [String: AnyObject]? { return nil }
-        var parameterEncoding: MoyaX.ParameterEncoding { return .URL }
 
         typealias T = AnyObject
     }
@@ -341,8 +318,6 @@ extension RubyChinaV3.Users {
         var baseURL: NSURL { return RubyChinaV3.BaseURL }
         var path: String { return "\(RubyChinaV3.Users.Path)/\(self.login)/unblock" }
         var method: MoyaX.Method { return .POST }
-        var parameters: [String: AnyObject]? { return nil }
-        var parameterEncoding: MoyaX.ParameterEncoding { return .URL }
 
         typealias T = AnyObject
     }

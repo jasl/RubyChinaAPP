@@ -9,7 +9,12 @@
 import UIKit
 import MJRefresh
 
-class TopicsViewController: UIViewController {
+class TopicsViewController: UIViewController, SegueHandlerType {
+
+    enum SegueIdentifier: String {
+        case ShowTopicDetailSegue = "ShowTopicDetailSegue"
+        case ShowUserDetailSegue = "ShowUserDetailSegue"
+    }
 
     // MARK: Properties
     var topicsPager = TopicsPager(withPerPage: 10)
@@ -55,29 +60,24 @@ class TopicsViewController: UIViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        guard let identifier = segue.identifier else {
-            return
-        }
-
         guard let sender = sender as? UIView else {
-            return
+            fatalError("Sender is nil")
         }
 
         guard let index = selectedRowAtIndexPathFor(self.topicsTableView, sender: sender) else {
-            return
+            fatalError("Invalid index")
         }
 
+        let identifier = segueIdentifierForSegue(segue)
         let viewModel = self.topicViewModels[index]
 
         switch identifier {
-        case "ShowTopicDetailSegue":
+        case .ShowTopicDetailSegue:
             let destination = segue.destinationViewController as! TopicDetailViewController
             viewModel.applyTo(destination)
-        case "ShowUserDetailSegue":
+        case .ShowUserDetailSegue:
             let destination = segue.destinationViewController as! UIViewController
             destination.title = viewModel.authorName
-        default:
-            return
         }
     }
 }

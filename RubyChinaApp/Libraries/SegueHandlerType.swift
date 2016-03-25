@@ -8,7 +8,7 @@ import UIKit
 
 // From WWDC2015-414
 protocol SegueHandlerType {
-    typealias SegueIdentifier: RawRepresentable
+    associatedtype SegueIdentifier: RawRepresentable
 }
 
 extension SegueHandlerType where Self: UIViewController, SegueIdentifier.RawValue == String {

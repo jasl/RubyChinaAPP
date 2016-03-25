@@ -12,7 +12,7 @@ extension Provider {
             static let instance: Provider = Provider(clientID: GlobalConstant.clientId,
                                                      clientSecret: GlobalConstant.clientSecret,
                                                      redirect_uris: GlobalConstant.redirectURIs,
-                                                     plugins: [NetworkLogger()])
+                                                     middlewares: [NetworkLogger()])
         }
 
         return statics.instance

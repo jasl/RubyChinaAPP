@@ -48,7 +48,7 @@ extension CustomDebugStringConvertible {
                 }
             }
 
-            index++
+            index += 1
         }
 
         str += ">"

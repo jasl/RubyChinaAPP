@@ -8,7 +8,7 @@ import SwiftyJSON
 import MoyaX
 
 protocol EndpointType: TargetType {
-    typealias T
+    associatedtype T
 
     func parseResponse(json: JSON) -> T?
     func doRequest(provider: Provider, completion: (result: APIResult<T>) -> ()) -> MoyaX.Cancellable

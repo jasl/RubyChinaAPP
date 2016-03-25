@@ -37,8 +37,8 @@ struct Reply: CustomDebugStringConvertible, ModelType {
         self.id = json["id"].stringValue
         self.topicId = json["topic_id"].stringValue
 
-        self.createdAt = json["created_at"].stringValue.toDate(DateFormat.ISO8601)!
-        self.updatedAt = json["updated_at"].stringValue.toDate(DateFormat.ISO8601)!
+        self.createdAt = json["created_at"].stringValue.toDate(DateFormat.ISO8601Format(.Extended))!
+        self.updatedAt = json["updated_at"].stringValue.toDate(DateFormat.ISO8601Format(.Extended))!
 
         self.likesCount = json["likes_count"].intValue
 

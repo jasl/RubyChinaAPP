@@ -7,7 +7,7 @@ target 'RubyChinaApp' do
 
   # networking
   pod 'Alamofire', '~> 3.1'
-  pod 'MoyaX', git: 'https://github.com/jasl/MoyaX.git'
+  pod 'MoyaX', git: 'https://github.com/jasl/MoyaX.git', branch: 'new-age'
   # pod 'ReachabilitySwift', git: 'https://github.com/ashleymills/Reachability.swift'
 
   # serializing

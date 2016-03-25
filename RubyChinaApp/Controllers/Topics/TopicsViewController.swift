@@ -33,12 +33,12 @@ class TopicsViewController: UIViewController, SegueHandlerType {
         self.topicsTableView.estimatedRowHeight = 72
         self.topicsTableView.rowHeight = UITableViewAutomaticDimension
 
-        let tableViewHeader = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: "pullDownRefreshingAction")
+        let tableViewHeader = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: #selector(TopicsViewController.pullDownRefreshingAction))
         tableViewHeader.lastUpdatedTimeLabel!.hidden = true
 
         self.topicsTableView.mj_header = tableViewHeader
 
-        let tableViewFooter = MJRefreshAutoNormalFooter(refreshingTarget: self, refreshingAction: "pullUpRefreshingAction")
+        let tableViewFooter = MJRefreshAutoNormalFooter(refreshingTarget: self, refreshingAction: #selector(TopicsViewController.pullUpRefreshingAction))
 
         self.topicsTableView.mj_footer = tableViewFooter
 

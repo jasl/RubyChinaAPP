@@ -8,31 +8,18 @@ import MoyaX
 import Result
 
 /// Logs network activity (outgoing requests and incoming responses).
-class NetworkLogger: PluginType {
+class NetworkLogger: MiddlewareType {
 
-    func willSendRequest(request: NSMutableURLRequest, target: TargetType) {
-        logger.info("Sending request: \(request.URL?.absoluteString ?? String())")
+    func willSendRequest(target: TargetType, endpoint: Endpoint) {
+        logger.info("Sending request: \(endpoint.URL.absoluteString)")
     }
 
-    func didReceiveResponse(result: Result<MoyaX.Response, MoyaX.Error>, target: TargetType) {
-        switch result {
+    func didReceiveResponse(target: TargetType, response: Result<Response, Error>) {
+        switch response {
         case let .Success(response):
             logger.info("Received response(\(response.statusCode ?? 0)) from \(response.response!.URL?.absoluteString ?? String()).")
-        case let .Failure(error):
-            switch error {
-            case let .ImageMapping(response):
-                logger.warning("Received response(\(response.statusCode ?? 0)) but got 'Image Mapping Error' from \(response.response!.URL?.absoluteString ?? String()).")
-            case let .JSONMapping(response):
-                logger.warning("Received response(\(response.statusCode ?? 0)) but got 'JSON Mapping Error' from \(response.response!.URL?.absoluteString ?? String()).")
-            case let .StringMapping(response):
-                logger.warning("Received response(\(response.statusCode ?? 0)) but got 'String Mapping Error' from \(response.response!.URL?.absoluteString ?? String()).")
-            case let .StatusCode(response):
-                logger.warning("Received response(\(response.statusCode ?? 0)) but got 'Status Code Error' from \(response.response!.URL?.absoluteString ?? String()).")
-            case let .Data(response):
-                logger.warning("Received response(\(response.statusCode ?? 0)) but got 'Data Error' from \(response.response!.URL?.absoluteString ?? String()).")
-            case let .Underlying(errorType):
-                logger.warning("Underlying Error \(errorType).")
-            }
+        case .Failure(_):
+            logger.error("Got error")
         }
 
     }

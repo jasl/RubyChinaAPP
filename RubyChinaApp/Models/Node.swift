@@ -39,6 +39,6 @@ struct Node: CustomDebugStringConvertible, ModelType {
 
         self.name = json["name"].stringValue
         self.summary = json["summary"].stringValue
-        self.updatedAt = json["updated_at"].stringValue.toDate(DateFormat.ISO8601)!
+        self.updatedAt = json["updated_at"].stringValue.toDate(DateFormat.ISO8601Format(.Extended))!
     }
 }

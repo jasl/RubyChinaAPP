@@ -49,9 +49,9 @@ struct Topic: CustomDebugStringConvertible, ModelType {
 
         self.id = json["id"].stringValue
 
-        self.createdAt = json["created_at"].stringValue.toDate(DateFormat.ISO8601)!
-        self.updatedAt = json["updated_at"].stringValue.toDate(DateFormat.ISO8601)!
-        self.repliedAt = json["replied_at"].string?.toDate(DateFormat.ISO8601)
+        self.createdAt = json["created_at"].stringValue.toDate(DateFormat.ISO8601Format(.Extended))!
+        self.updatedAt = json["updated_at"].stringValue.toDate(DateFormat.ISO8601Format(.Extended))!
+        self.repliedAt = json["replied_at"].string?.toDate(DateFormat.ISO8601Format(.Extended))
 
         self.repliesCount = json["replies_count"].intValue
 
@@ -70,7 +70,7 @@ struct Topic: CustomDebugStringConvertible, ModelType {
         self.abilities = Ability(byJSON: json["abilities"])!
 
         // details
-        self.suggestedAt = json["suggested_at"].string?.toDate(DateFormat.ISO8601)
+        self.suggestedAt = json["suggested_at"].string?.toDate(DateFormat.ISO8601Format(.Extended))
         self.hits = json["hits"].int
         self.likesCount = json["likes_count"].int
         self.body = json["body"].string

@@ -35,7 +35,7 @@ class Provider {
     init(clientID: String, clientSecret: String, redirect_uris: [String],
          scope: String = "",
          authorizeEmbedded: Bool = true,
-         plugins: [PluginType] = []) {
+         middlewares: [MiddlewareType] = []) {
         oauthClient = OAuth2CodeGrant(settings: [
                 "client_id": clientID,
                 "client_secret": clientSecret,
@@ -47,17 +47,16 @@ class Provider {
                 "verbose": true,
         ] as OAuth2JSON)
 
-        let beforeTransformToRequestClosure = { (var endpoint: Endpoint) -> (Endpoint) in
+        let prepareForEndpointClosure: Endpoint -> () = { endpoint in
             // Signing
             if let accessToken = self.oauthClient!.clientConfig.accessToken where !accessToken.isEmpty {
                 endpoint.headerFields["Authorization"] = "Bearer \(accessToken)"
             }
-            return endpoint
         }
 
         provider = MoyaXProvider(backend: AlamofireBackend(manager: alamofireManager(self.timeOut)),
-                                 willTransformToRequest: beforeTransformToRequestClosure,
-                                 plugins: plugins)
+                                 prepareForEndpoint: prepareForEndpointClosure,
+                                 middlewares: middlewares)
 
         oauthClient.authConfig.authorizeEmbedded = authorizeEmbedded
     }

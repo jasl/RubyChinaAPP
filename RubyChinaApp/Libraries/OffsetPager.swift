@@ -10,7 +10,7 @@ protocol OffsetPaginatable {
     var offset: Int { get set }
     var limit: Int { get set }
 
-    typealias T: CollectionType
+    associatedtype T: CollectionType
 }
 
 // Abstract class

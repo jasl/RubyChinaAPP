@@ -73,7 +73,7 @@ struct User: CustomDebugStringConvertible, ModelType {
         self.level = LevelValue(byJSON: json["level"])
         self.levelName = json["level_name"].string
 
-        self.createdAt = json["created_at"].string?.toDate(DateFormat.ISO8601)
+        self.createdAt = json["created_at"].string?.toDate(DateFormat.ISO8601Format(.Extended))
     }
 }
 

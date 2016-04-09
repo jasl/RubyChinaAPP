@@ -64,7 +64,7 @@ extension RubyChinaV3.Replies {
 
         var baseURL: NSURL { return RubyChinaV3.BaseURL }
         var path: String { return "\(RubyChinaV3.Topics.Path)/\(self.topicId)/\(RubyChinaV3.Replies.Path)" }
-        var method: MoyaX.Method { return .POST }
+        var method: HTTPMethod { return .POST }
         var parameters: [String: AnyObject] {
             var parameters = [String: AnyObject]()
 
@@ -106,7 +106,7 @@ extension RubyChinaV3.Replies {
 
         var baseURL: NSURL { return RubyChinaV3.BaseURL }
         var path: String { return "\(RubyChinaV3.Replies.Path)/\(self.id)" }
-        var method: MoyaX.Method { return .DELETE }
+        var method: HTTPMethod { return .DELETE }
 
         typealias T = AnyObject
     }
@@ -122,7 +122,7 @@ extension RubyChinaV3.Replies {
 
         var baseURL: NSURL { return RubyChinaV3.BaseURL }
         var path: String { return "\(RubyChinaV3.Replies.Path)/\(self.id)" }
-        var method: MoyaX.Method { return .PUT }
+        var method: HTTPMethod { return .PUT }
         var parameters: [String: AnyObject] {
             var parameters = [String: AnyObject]()
 
@@ -148,7 +148,7 @@ extension RubyChinaV3.Replies {
 
         var baseURL: NSURL { return RubyChinaV3.BaseURL }
         var path: String { return RubyChinaV3.Replies.Like.Path }
-        var method: MoyaX.Method { return .POST }
+        var method: HTTPMethod { return .POST }
         var parameters: [String: AnyObject] {
             var parameters = [String: AnyObject]()
 
@@ -171,7 +171,7 @@ extension RubyChinaV3.Replies {
 
         var baseURL: NSURL { return RubyChinaV3.BaseURL }
         var path: String { return RubyChinaV3.Replies.UndoLike.Path }
-        var method: MoyaX.Method { return .DELETE }
+        var method: HTTPMethod { return .DELETE }
         var parameters: [String: AnyObject] {
             var parameters = [String: AnyObject]()
 

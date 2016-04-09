@@ -5,20 +5,19 @@
 
 import Foundation
 import MoyaX
-import Result
 
 /// Logs network activity (outgoing requests and incoming responses).
-class NetworkLogger: MiddlewareType {
+class NetworkLogger: Middleware {
 
-    func willSendRequest(target: TargetType, endpoint: Endpoint) {
+    func willSendRequest(target: Target, endpoint: Endpoint) {
         logger.info("Sending request: \(endpoint.URL.absoluteString)")
     }
 
-    func didReceiveResponse(target: TargetType, response: Result<Response, Error>) {
+    func didReceiveResponse(target: Target, response: Result<Response, Error>) {
         switch response {
-        case let .Success(response):
+        case let .Response(response):
             logger.info("Received response(\(response.statusCode ?? 0)) from \(response.response!.URL?.absoluteString ?? String()).")
-        case .Failure(_):
+        case .Incomplete(_):
             logger.error("Got error")
         }
 

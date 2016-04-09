@@ -275,7 +275,7 @@ extension RubyChinaV3.Users {
 
         var baseURL: NSURL { return RubyChinaV3.BaseURL }
         var path: String { return "\(RubyChinaV3.Users.Path)/\(self.login)/follow" }
-        var method: MoyaX.Method { return .POST }
+        var method: HTTPMethod { return .POST }
 
         typealias T = AnyObject
     }
@@ -289,7 +289,7 @@ extension RubyChinaV3.Users {
 
         var baseURL: NSURL { return RubyChinaV3.BaseURL }
         var path: String { return "\(RubyChinaV3.Users.Path)/\(self.login)/unfollow" }
-        var method: MoyaX.Method { return .POST }
+        var method: HTTPMethod { return .POST }
 
         typealias T = AnyObject
     }
@@ -303,7 +303,7 @@ extension RubyChinaV3.Users {
 
         var baseURL: NSURL { return RubyChinaV3.BaseURL }
         var path: String { return "\(RubyChinaV3.Users.Path)/\(self.login)/block" }
-        var method: MoyaX.Method { return .POST }
+        var method: HTTPMethod { return .POST }
 
         typealias T = AnyObject
     }
@@ -317,7 +317,7 @@ extension RubyChinaV3.Users {
 
         var baseURL: NSURL { return RubyChinaV3.BaseURL }
         var path: String { return "\(RubyChinaV3.Users.Path)/\(self.login)/unblock" }
-        var method: MoyaX.Method { return .POST }
+        var method: HTTPMethod { return .POST }
 
         typealias T = AnyObject
     }

@@ -35,7 +35,7 @@ class Provider {
     init(clientID: String, clientSecret: String, redirect_uris: [String],
          scope: String = "",
          authorizeEmbedded: Bool = true,
-         middlewares: [MiddlewareType] = []) {
+         middlewares: [Middleware] = []) {
         oauthClient = OAuth2CodeGrant(settings: [
                 "client_id": clientID,
                 "client_secret": clientSecret,
@@ -61,7 +61,7 @@ class Provider {
         oauthClient.authConfig.authorizeEmbedded = authorizeEmbedded
     }
 
-    func request(target: TargetType, completion: MoyaX.Completion) -> Cancellable {
+    func request(target: Target, completion: MoyaX.Completion) -> CancellableToken {
         return provider.request(target, completion: completion)
     }
 

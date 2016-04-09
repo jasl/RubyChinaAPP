@@ -7,20 +7,20 @@ import Foundation
 import SwiftyJSON
 import MoyaX
 
-protocol EndpointType: TargetType {
+protocol EndpointType: Target {
     associatedtype T
 
     func parseResponse(json: JSON) -> T?
-    func doRequest(provider: Provider, completion: (result: APIResult<T>) -> ()) -> MoyaX.Cancellable
+    func doRequest(provider: Provider, completion: (result: APIResult<T>) -> ()) -> CancellableToken
 }
 
 extension EndpointType {
-    func doRequest(provider: Provider = Provider.defaultInstance(), completion: (result: APIResult<T>) -> ()) -> MoyaX.Cancellable {
+    func doRequest(provider: Provider = Provider.defaultInstance(), completion: (result: APIResult<T>) -> ()) -> CancellableToken {
         return provider.request(self) { result in
             var apiResult: APIResult<T>
 
             switch result {
-            case let .Success(response):
+            case let .Response(response):
                 let json = response.mapSwiftyJSON()
 
                 if json["ok"].int != nil {
@@ -32,7 +32,7 @@ extension EndpointType {
                 } else {
                     apiResult = .Ok
                 }
-            case let .Failure(error):
+            case let .Incomplete(error):
                 apiResult = .NetworkError(error)
             }
 

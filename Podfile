@@ -3,18 +3,18 @@ use_frameworks!
 
 target 'RubyChinaApp' do
   # arch
-  # pod 'RxSwift', '~> 1.8'
+  # pod 'RxSwift'
 
   # networking
-  pod 'Alamofire', '~> 3.1'
-  pod 'MoyaX', git: 'https://github.com/jasl/MoyaX.git', branch: 'new-age'
+  pod 'Alamofire'
+  pod 'MoyaX'
   # pod 'ReachabilitySwift', git: 'https://github.com/ashleymills/Reachability.swift'
 
   # serializing
-  pod 'SwiftyJSON', '~> 2.3'
+  pod 'SwiftyJSON'
 
   # logging
-  pod 'XCGLogger', '~> 3.1'
+  pod 'XCGLogger'
 
   # OAuth
   pod 'p2.OAuth2'

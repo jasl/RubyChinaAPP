@@ -2,7 +2,7 @@ PODS:
   - Alamofire (3.3.1)
   - Kingfisher (2.2.2)
   - MJRefresh (3.1.0)
-  - MoyaX (0.0.3):
+  - MoyaX (0.0.6):
     - Alamofire (~> 3.0)
   - p2.OAuth2 (2.2.5):
     - SwiftKeychain (~> 1.0)
@@ -25,7 +25,7 @@ SPEC CHECKSUMS:
   Alamofire: 369bc67b6f5ac33ded3648d7bd21c5bfb91c2ecc
   Kingfisher: 7e8de5b0cf7b5dc8ec559d193029a0859df93ef1
   MJRefresh: 743e6404967d1c2c688472ea3ecfde247d872db4
-  MoyaX: 3a722c062eb87834847c42cb148ce79d022396dd
+  MoyaX: 582fb12040dba8d628f180c82204affefecb44e5
   p2.OAuth2: 99c2683594a86770f31240d57a162569f1ef0743
   SwiftDate: 971f8b9394f664f2226b9c3ab64e801a7291c612
   SwiftKeychain: fd9ad69f7b3ff7a0c7ba579da508bbaa89a395b2

@@ -15,7 +15,7 @@ extension RubyChinaV3 {
 
 extension RubyChinaV3.Replies {
     struct Listing: EndpointType, OffsetPaginatable {
-        var topicId: String
+        let topicId: String
         var offset: Int
         var limit: Int
 
@@ -25,7 +25,7 @@ extension RubyChinaV3.Replies {
             self.limit = limit
         }
 
-        var baseURL: NSURL { return RubyChinaV3.BaseURL }
+        let baseURL = RubyChinaV3.BaseURL
         var path: String { return "\(RubyChinaV3.Topics.Path)/\(self.topicId)/\(RubyChinaV3.Replies.Path)" }
         var parameters: [String: AnyObject] {
             var parameters = [String: AnyObject]()
@@ -36,10 +36,10 @@ extension RubyChinaV3.Replies {
             return parameters
         }
 
-        typealias T = [Reply]
+        typealias DeserializedType = [Reply]
 
-        func parseResponse(json: JSON) -> T? {
-            var topics = T(byJSON: json["replies"])
+        func parseResponse(json: JSON) -> DeserializedType? {
+            var topics = DeserializedType(byJSON: json["replies"])
 
             if let userLikedReplyIDs = json["meta"]["user_liked_reply_ids"].array?.map({ $0.stringValue }) where !userLikedReplyIDs.isEmpty {
                 for (index, topic) in topics.enumerate() {
@@ -54,17 +54,17 @@ extension RubyChinaV3.Replies {
     }
 
     struct Create: EndpointType {
-        var topicId: String
-        var body: String
+        let topicId: String
+        let body: String
 
         init(topicId: String, body: String) {
             self.topicId = topicId
             self.body = body
         }
 
-        var baseURL: NSURL { return RubyChinaV3.BaseURL }
+        let baseURL = RubyChinaV3.BaseURL
         var path: String { return "\(RubyChinaV3.Topics.Path)/\(self.topicId)/\(RubyChinaV3.Replies.Path)" }
-        var method: HTTPMethod { return .POST }
+        let method = HTTPMethod.POST
         var parameters: [String: AnyObject] {
             var parameters = [String: AnyObject]()
 
@@ -73,56 +73,56 @@ extension RubyChinaV3.Replies {
             return parameters
         }
 
-        typealias T = Reply
+        typealias DeserializedType = Reply
 
-        func parseResponse(json: JSON) -> T? {
-            return T(byJSON: json["reply"])
+        func parseResponse(json: JSON) -> DeserializedType? {
+            return DeserializedType(byJSON: json["reply"])
         }
     }
 
     struct Get: EndpointType {
-        var id: String
+        let id: String
 
         init(id: String) {
             self.id = id
         }
 
-        var baseURL: NSURL { return RubyChinaV3.BaseURL }
+        let baseURL = RubyChinaV3.BaseURL
         var path: String { return "\(RubyChinaV3.Replies.Path)/\(self.id)" }
 
-        typealias T = Reply
+        typealias DeserializedType = Reply
 
-        func parseResponse(json: JSON) -> T? {
-            return T(byJSON: json["reply"])
+        func parseResponse(json: JSON) -> DeserializedType? {
+            return DeserializedType(byJSON: json["reply"])
         }
     }
 
     struct Destroy: EndpointType {
-        var id: String
+        let id: String
 
         init(id: String) {
             self.id = id
         }
 
-        var baseURL: NSURL { return RubyChinaV3.BaseURL }
+        let baseURL = RubyChinaV3.BaseURL
         var path: String { return "\(RubyChinaV3.Replies.Path)/\(self.id)" }
-        var method: HTTPMethod { return .DELETE }
+        let method = HTTPMethod.DELETE
 
-        typealias T = AnyObject
+        typealias DeserializedType = AnyObject
     }
 
     struct Update: EndpointType {
-        var id: String
-        var body: String
+        let id: String
+        let body: String
 
         init(id: String, body: String) {
             self.id = id
             self.body = body
         }
 
-        var baseURL: NSURL { return RubyChinaV3.BaseURL }
+        let baseURL = RubyChinaV3.BaseURL
         var path: String { return "\(RubyChinaV3.Replies.Path)/\(self.id)" }
-        var method: HTTPMethod { return .PUT }
+        let method = HTTPMethod.PUT
         var parameters: [String: AnyObject] {
             var parameters = [String: AnyObject]()
 
@@ -131,24 +131,23 @@ extension RubyChinaV3.Replies {
             return parameters
         }
 
-        typealias T = Reply
+        typealias DeserializedType = Reply
 
-        func parseResponse(json: JSON) -> T? {
-            return T(byJSON: json["reply"])
+        func parseResponse(json: JSON) -> DeserializedType? {
+            return DeserializedType(byJSON: json["reply"])
         }
     }
 
     struct Like: EndpointType {
-        static let Path = "likes"
-        var id: String
+        let id: String
 
         init(id: String) {
             self.id = id
         }
 
-        var baseURL: NSURL { return RubyChinaV3.BaseURL }
-        var path: String { return RubyChinaV3.Replies.Like.Path }
-        var method: HTTPMethod { return .POST }
+        let baseURL = RubyChinaV3.BaseURL
+        let path = "likes"
+        let method = HTTPMethod.POST
         var parameters: [String: AnyObject] {
             var parameters = [String: AnyObject]()
 
@@ -158,20 +157,19 @@ extension RubyChinaV3.Replies {
             return parameters
         }
 
-        typealias T = AnyObject
+        typealias DeserializedType = AnyObject
     }
 
-    struct UndoLike: EndpointType {
-        static let Path = "likes"
-        var id: String
+    struct UnLike: EndpointType {
+        let id: String
 
         init(id: String) {
             self.id = id
         }
 
-        var baseURL: NSURL { return RubyChinaV3.BaseURL }
-        var path: String { return RubyChinaV3.Replies.UndoLike.Path }
-        var method: HTTPMethod { return .DELETE }
+        let baseURL = RubyChinaV3.BaseURL
+        let path = "likes"
+        let method = HTTPMethod.DELETE
         var parameters: [String: AnyObject] {
             var parameters = [String: AnyObject]()
 
@@ -181,6 +179,6 @@ extension RubyChinaV3.Replies {
             return parameters
         }
 
-        typealias T = AnyObject
+        typealias DeserializedType = AnyObject
     }
 }

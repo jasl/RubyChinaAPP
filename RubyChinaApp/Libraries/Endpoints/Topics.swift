@@ -23,8 +23,8 @@ extension RubyChinaV3.Topics {
             case Excellent = "excellent"
         }
 
-        var type: TypeFieldValue?
-        var nodeId: String?
+        let type: TypeFieldValue?
+        let nodeId: String?
         var offset: Int
         var limit: Int
 
@@ -35,8 +35,8 @@ extension RubyChinaV3.Topics {
             self.limit = limit
         }
 
-        var baseURL: NSURL { return RubyChinaV3.BaseURL }
-        var path: String { return Path }
+        let baseURL = RubyChinaV3.BaseURL
+        let path = RubyChinaV3.Topics.Path
         var parameters: [String: AnyObject] {
             var parameters = [String: AnyObject]()
 
@@ -53,31 +53,31 @@ extension RubyChinaV3.Topics {
             return parameters
         }
 
-        typealias T = [Topic]
+        typealias DeserializedType = [Topic]
 
-        func parseResponse(json: JSON) -> T? {
-            return T(byJSON: json["topics"])
+        func parseResponse(json: JSON) -> DeserializedType? {
+            return DeserializedType(byJSON: json["topics"])
         }
     }
 
     struct Get: EndpointType {
-        var id: String
+        let id: String
 
         init(id: String) {
             self.id = id
         }
 
-        var baseURL: NSURL { return RubyChinaV3.BaseURL }
+        let baseURL = RubyChinaV3.BaseURL
         var path: String { return "\(RubyChinaV3.Topics.Path)/\(self.id)" }
 
-        typealias T = Topic
+        typealias DeserializedType = Topic
 
-        func parseResponse(json: JSON) -> T? {
+        func parseResponse(json: JSON) -> DeserializedType? {
             if json["topic"].type == .Null {
                 return nil
             }
 
-            var topic = T(byJSON: json["topic"])!
+            var topic = DeserializedType(byJSON: json["topic"])!
 
             if let isFollowed = json["meta"]["followed"].bool {
                 topic.isFollowed = isFollowed
@@ -94,9 +94,9 @@ extension RubyChinaV3.Topics {
     }
 
     struct Create: EndpointType {
-        var nodeId: String
-        var title: String
-        var body: String
+        let nodeId: String
+        let title: String
+        let body: String
 
         init(title: String, body: String, nodeId: String) {
             self.title = title
@@ -104,9 +104,9 @@ extension RubyChinaV3.Topics {
             self.nodeId = nodeId
         }
 
-        var baseURL: NSURL { return RubyChinaV3.BaseURL }
-        var path: String { return RubyChinaV3.Topics.Path }
-        var method: HTTPMethod { return .POST }
+        let baseURL = RubyChinaV3.BaseURL
+        let path = RubyChinaV3.Topics.Path
+        let method = HTTPMethod.POST
         var parameters: [String: AnyObject] {
             var parameters = [String: AnyObject]()
 
@@ -117,18 +117,18 @@ extension RubyChinaV3.Topics {
             return parameters
         }
 
-        typealias T = Topic
+        typealias DeserializedType = Topic
 
-        func parseResponse(json: JSON) -> T? {
-            return T(byJSON: json["topic"])
+        func parseResponse(json: JSON) -> DeserializedType? {
+            return DeserializedType(byJSON: json["topic"])
         }
     }
 
     struct Update: EndpointType {
-        var id: String
-        var nodeId: String
-        var title: String
-        var body: String
+        let id: String
+        let nodeId: String
+        let title: String
+        let body: String
 
         init(id: String, title: String, body: String, nodeId: String) {
             self.id = id
@@ -137,9 +137,9 @@ extension RubyChinaV3.Topics {
             self.nodeId = nodeId
         }
 
-        var baseURL: NSURL { return RubyChinaV3.BaseURL }
+        let baseURL = RubyChinaV3.BaseURL
         var path: String { return "\(RubyChinaV3.Topics.Path)/\(self.id)" }
-        var method: HTTPMethod { return .PUT }
+        let method = HTTPMethod.PUT
         var parameters: [String: AnyObject] {
             var parameters = [String: AnyObject]()
 
@@ -150,10 +150,10 @@ extension RubyChinaV3.Topics {
             return parameters
         }
 
-        typealias T = Topic
+        typealias DeserializedType = Topic
 
-        func parseResponse(json: JSON) -> T? {
-            return T(byJSON: json["topic"])
+        func parseResponse(json: JSON) -> DeserializedType? {
+            return DeserializedType(byJSON: json["topic"])
         }
     }
 
@@ -164,24 +164,23 @@ extension RubyChinaV3.Topics {
             self.id = id
         }
 
-        var baseURL: NSURL { return RubyChinaV3.BaseURL }
+        let baseURL = RubyChinaV3.BaseURL
         var path: String { return "\(RubyChinaV3.Topics.Path)/\(self.id)" }
-        var method: HTTPMethod { return .DELETE }
+        let method = HTTPMethod.DELETE
 
-        typealias T = AnyObject
+        typealias DeserializedType = AnyObject
     }
 
     struct Like: EndpointType {
-        static let Path = "likes"
         var id: String
 
         init(id: String) {
             self.id = id
         }
 
-        var baseURL: NSURL { return RubyChinaV3.BaseURL }
-        var path: String { return RubyChinaV3.Topics.Like.Path }
-        var method: HTTPMethod { return .POST }
+        let baseURL = RubyChinaV3.BaseURL
+        let path = "likes"
+        let method = HTTPMethod.POST
         var parameters: [String: AnyObject] {
             var parameters = [String: AnyObject]()
 
@@ -191,20 +190,19 @@ extension RubyChinaV3.Topics {
             return parameters
         }
 
-        typealias T = AnyObject
+        typealias DeserializedType = AnyObject
     }
 
-    struct UndoLike: EndpointType {
-        static let Path = "likes"
-        var id: String
+    struct UnLike: EndpointType {
+        let id: String
 
         init(id: String) {
             self.id = id
         }
 
-        var baseURL: NSURL { return RubyChinaV3.BaseURL }
-        var path: String { return RubyChinaV3.Topics.UndoLike.Path }
-        var method: HTTPMethod { return .DELETE }
+        let baseURL = RubyChinaV3.BaseURL
+        let path = "likes"
+        let method = HTTPMethod.DELETE
         var parameters: [String: AnyObject] {
             var parameters = [String: AnyObject]()
 
@@ -214,7 +212,7 @@ extension RubyChinaV3.Topics {
             return parameters
         }
 
-        typealias T = AnyObject
+        typealias DeserializedType = AnyObject
     }
 
     struct Favorite: EndpointType {
@@ -224,52 +222,52 @@ extension RubyChinaV3.Topics {
             self.id = id
         }
 
-        var baseURL: NSURL { return RubyChinaV3.BaseURL }
+        let baseURL = RubyChinaV3.BaseURL
         var path: String { return "\(RubyChinaV3.Topics.Path)/\(self.id)/favorite" }
-        var method: HTTPMethod { return .POST }
+        let method = HTTPMethod.POST
 
-        typealias T = AnyObject
+        typealias DeserializedType = AnyObject
     }
 
-    struct UndoFavorite: EndpointType {
+    struct UnFavorite: EndpointType {
         var id: String
 
         init(id: String) {
             self.id = id
         }
 
-        var baseURL: NSURL { return RubyChinaV3.BaseURL }
+        let baseURL = RubyChinaV3.BaseURL
         var path: String { return "\(RubyChinaV3.Topics.Path)/\(self.id)/unfavorite" }
-        var method: HTTPMethod { return .POST }
+        var method = HTTPMethod.POST
 
-        typealias T = AnyObject
+        typealias DeserializedType = AnyObject
     }
 
     struct Follow: EndpointType {
-        var id: String
+        let id: String
 
         init(id: String) {
             self.id = id
         }
 
-        var baseURL: NSURL { return RubyChinaV3.BaseURL }
+        let baseURL = RubyChinaV3.BaseURL
         var path: String { return "\(RubyChinaV3.Topics.Path)/\(self.id)/follow" }
-        var method: HTTPMethod { return .POST }
+        let method = HTTPMethod.POST
 
-        typealias T = AnyObject
+        typealias DeserializedType = AnyObject
     }
 
-    struct UndoFollow: EndpointType {
+    struct UnFollow: EndpointType {
         var id: String
 
         init(id: String) {
             self.id = id
         }
 
-        var baseURL: NSURL { return RubyChinaV3.BaseURL }
+        let baseURL = RubyChinaV3.BaseURL
         var path: String { return "\(RubyChinaV3.Topics.Path)/\(self.id)/unfollow" }
-        var method: HTTPMethod { return .POST }
+        let method = HTTPMethod.POST
 
-        typealias T = AnyObject
+        typealias DeserializedType = AnyObject
     }
 }

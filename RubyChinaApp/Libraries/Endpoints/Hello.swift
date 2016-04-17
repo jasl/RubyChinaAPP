@@ -9,15 +9,13 @@ import MoyaX
 
 extension RubyChinaV3 {
     struct Hello: EndpointType {
-        static let Path = "hello"
+        let baseURL = RubyChinaV3.BaseURL
+        let path = "hello"
 
-        var baseURL: NSURL { return RubyChinaV3.BaseURL }
-        var path: String { return RubyChinaV3.Hello.Path }
+        typealias DeserializedType = User
 
-        typealias T = User
-
-        func parseResponse(json: JSON) -> T? {
-            return T(byJSON: json["user"])
+        func parseResponse(json: JSON) -> DeserializedType? {
+            return DeserializedType(byJSON: json["user"])
         }
     }
 }

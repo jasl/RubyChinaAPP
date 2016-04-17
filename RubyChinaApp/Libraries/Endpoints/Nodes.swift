@@ -15,30 +15,30 @@ extension RubyChinaV3 {
 
 extension RubyChinaV3.Nodes {
     struct Listing: EndpointType {
-        var baseURL: NSURL { return RubyChinaV3.BaseURL }
-        var path: String { return RubyChinaV3.Nodes.Path }
+        let baseURL = RubyChinaV3.BaseURL
+        let path = RubyChinaV3.Nodes.Path
 
-        typealias T = [Node]
+        typealias DeserializedType = [Node]
 
-        func parseResponse(json: JSON) -> T? {
-            return T(byJSON: json["nodes"])
+        func parseResponse(json: JSON) -> DeserializedType? {
+            return DeserializedType(byJSON: json["nodes"])
         }
     }
 
     struct Get: EndpointType {
-        var id: String
+        let id: String
 
         init(id: String) {
             self.id = id
         }
 
-        var baseURL: NSURL { return RubyChinaV3.BaseURL }
+        let baseURL = RubyChinaV3.BaseURL
         var path: String { return "\(RubyChinaV3.Nodes.Path)/\(self.id)" }
 
-        typealias T = Node
+        typealias DeserializedType = Node
 
-        func parseResponse(json: JSON) -> T? {
-            return T(byJSON: json["node"])
+        func parseResponse(json: JSON) -> DeserializedType? {
+            return DeserializedType(byJSON: json["node"])
         }
     }
 }

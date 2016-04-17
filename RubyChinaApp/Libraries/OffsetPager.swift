@@ -10,7 +10,7 @@ protocol OffsetPaginatable {
     var offset: Int { get set }
     var limit: Int { get set }
 
-    associatedtype T: CollectionType
+    associatedtype DeserializedType: CollectionType
 }
 
 // Abstract class
@@ -39,7 +39,7 @@ class OffsetPager<T: protocol<EndpointType, OffsetPaginatable>> {
         self.endpoint.limit = perPage
     }
 
-    func loadFresh(completion: (result: APIResult<T.T>) -> ()) -> CancellableToken {
+    func loadFresh(completion: (result: APIResult<T.DeserializedType>) -> ()) -> CancellableToken {
         self.currentPage = 1
         self.isNoMoreData = false
 
@@ -56,7 +56,7 @@ class OffsetPager<T: protocol<EndpointType, OffsetPaginatable>> {
         }
     }
 
-    func loadMore(completion: (result: APIResult<T.T>) -> ()) -> CancellableToken {
+    func loadMore(completion: (result: APIResult<T.DeserializedType>) -> ()) -> CancellableToken {
         return self.endpoint.doRequest() { result in
             if case .Success(let entities) = result {
                 if entities.isEmpty {

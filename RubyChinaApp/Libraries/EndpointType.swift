@@ -8,16 +8,16 @@ import SwiftyJSON
 import MoyaX
 
 protocol EndpointType: Target {
-    associatedtype T
+    associatedtype DeserializedType
 
-    func parseResponse(json: JSON) -> T?
-    func doRequest(provider: Provider, completion: (result: APIResult<T>) -> ()) -> CancellableToken
+    func parseResponse(json: JSON) -> DeserializedType?
+    func doRequest(provider: Provider, completion: (result: APIResult<DeserializedType>) -> ()) -> CancellableToken
 }
 
 extension EndpointType {
-    func doRequest(provider: Provider = Provider.defaultInstance(), completion: (result: APIResult<T>) -> ()) -> CancellableToken {
+    func doRequest(provider: Provider = Provider.defaultInstance(), completion: (result: APIResult<DeserializedType>) -> ()) -> CancellableToken {
         return provider.request(self) { result in
-            var apiResult: APIResult<T>
+            var apiResult: APIResult<DeserializedType>
 
             switch result {
             case let .Response(response):
@@ -42,7 +42,7 @@ extension EndpointType {
 }
 
 extension EndpointType {
-    func parseResponse(json: JSON) -> T? {
+    func parseResponse(json: JSON) -> DeserializedType? {
         return nil
     }
 }

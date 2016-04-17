@@ -15,14 +15,14 @@ extension RubyChinaV3 {
 
 extension RubyChinaV3.Users {
     struct Listing: EndpointType {
-        var limit: Int?
+        let limit: Int?
 
         init(limit: Int? = nil) {
             self.limit = limit
         }
 
-        var baseURL: NSURL { return RubyChinaV3.BaseURL }
-        var path: String { return RubyChinaV3.Users.Path }
+        let baseURL = RubyChinaV3.BaseURL
+        let path = RubyChinaV3.Users.Path
         var parameters: [String: AnyObject] {
             var parameters = [String: AnyObject]()
 
@@ -33,31 +33,31 @@ extension RubyChinaV3.Users {
             return parameters
         }
 
-        typealias T = [User]
+        typealias DeserializedType = [User]
 
-        func parseResponse(json: JSON) -> T? {
-            return T(byJSON: json["users"])
+        func parseResponse(json: JSON) -> DeserializedType? {
+            return DeserializedType(byJSON: json["users"])
         }
     }
 
     struct Get: EndpointType {
-        var login: String
+        let login: String
 
         init(login: String) {
             self.login = login
         }
 
-        var baseURL: NSURL { return RubyChinaV3.BaseURL }
+        let baseURL = RubyChinaV3.BaseURL
         var path: String { return "\(RubyChinaV3.Users.Path)/\(self.login)" }
 
-        typealias T = User
+        typealias DeserializedType = User
 
-        func parseResponse(json: JSON) -> T? {
+        func parseResponse(json: JSON) -> DeserializedType? {
             if json["user"].type == .Null {
                 return nil
             }
 
-            var user = T(byJSON: json["user"])!
+            var user = DeserializedType(byJSON: json["user"])!
 
             if let isFollowed = json["meta"]["followed"].bool {
                 user.isFollowed = isFollowed
@@ -71,25 +71,25 @@ extension RubyChinaV3.Users {
     }
 
     struct Topics: EndpointType, OffsetPaginatable {
-        enum OrderByValue: String {
+        enum OrderBy: String {
             case Recent = "recent"
             case Likes = "likes"
             case Replies = "replies"
         }
 
-        var login: String
-        var orderBy: OrderByValue?
+        let login: String
+        let orderBy: OrderBy?
         var offset: Int
         var limit: Int
 
-        init(login: String, orderBy: OrderByValue? = nil, offset: Int = 0, limit: Int = 20) {
+        init(login: String, orderBy: OrderBy? = nil, offset: Int = 0, limit: Int = 20) {
             self.login = login
             self.orderBy = orderBy
             self.offset = offset
             self.limit = limit
         }
 
-        var baseURL: NSURL { return RubyChinaV3.BaseURL }
+        let baseURL = RubyChinaV3.BaseURL
         var path: String { return "\(RubyChinaV3.Users.Path)/\(self.login)/topics" }
         var parameters: [String: AnyObject] {
             var parameters = [String: AnyObject]()
@@ -104,31 +104,31 @@ extension RubyChinaV3.Users {
             return parameters
         }
 
-        typealias T = [Topic]
+        typealias DeserializedType = [Topic]
 
-        func parseResponse(json: JSON) -> T? {
-            return T(byJSON: json["topics"])
+        func parseResponse(json: JSON) -> DeserializedType? {
+            return DeserializedType(byJSON: json["topics"])
         }
     }
 
     struct Replies: EndpointType, OffsetPaginatable {
-        enum OrderByValue: String {
+        enum OrderBy: String {
             case Recent = "recent"
         }
 
-        var login: String
-        var orderBy: OrderByValue?
+        let login: String
+        let orderBy: OrderBy?
         var offset: Int
         var limit: Int
 
-        init(login: String, orderBy: OrderByValue? = nil, offset: Int = 0, limit: Int = 20) {
+        init(login: String, orderBy: OrderBy? = nil, offset: Int = 0, limit: Int = 20) {
             self.login = login
             self.orderBy = orderBy
             self.offset = offset
             self.limit = limit
         }
 
-        var baseURL: NSURL { return RubyChinaV3.BaseURL }
+        let baseURL = RubyChinaV3.BaseURL
         var path: String { return "\(RubyChinaV3.Users.Path)/\(self.login)/replies" }
         var parameters: [String: AnyObject] {
             var parameters = [String: AnyObject]()
@@ -143,15 +143,15 @@ extension RubyChinaV3.Users {
             return parameters
         }
 
-        typealias T = [Reply]
+        typealias DeserializedType = [Reply]
 
-        func parseResponse(json: JSON) -> T? {
-            return T(byJSON: json["replies"])
+        func parseResponse(json: JSON) -> DeserializedType? {
+            return DeserializedType(byJSON: json["replies"])
         }
     }
 
     struct Favorites: EndpointType, OffsetPaginatable {
-        var login: String
+        let login: String
         var offset: Int
         var limit: Int
 
@@ -161,7 +161,7 @@ extension RubyChinaV3.Users {
             self.limit = limit
         }
 
-        var baseURL: NSURL { return RubyChinaV3.BaseURL }
+        let baseURL = RubyChinaV3.BaseURL
         var path: String { return "\(RubyChinaV3.Users.Path)/\(self.login)/favorites" }
         var parameters: [String: AnyObject] {
             var parameters = [String: AnyObject]()
@@ -172,15 +172,15 @@ extension RubyChinaV3.Users {
             return parameters
         }
 
-        typealias T = [Topic]
+        typealias DeserializedType = [Topic]
 
-        func parseResponse(json: JSON) -> T? {
-            return T(byJSON: json["topics"])
+        func parseResponse(json: JSON) -> DeserializedType? {
+            return DeserializedType(byJSON: json["topics"])
         }
     }
 
     struct Following: EndpointType, OffsetPaginatable {
-        var login: String
+        let login: String
         var offset: Int
         var limit: Int
 
@@ -190,7 +190,7 @@ extension RubyChinaV3.Users {
             self.limit = limit
         }
 
-        var baseURL: NSURL { return RubyChinaV3.BaseURL }
+        let baseURL = RubyChinaV3.BaseURL
         var path: String { return "\(RubyChinaV3.Users.Path)/\(self.login)/following" }
         var parameters: [String: AnyObject] {
             var parameters = [String: AnyObject]()
@@ -201,15 +201,15 @@ extension RubyChinaV3.Users {
             return parameters
         }
 
-        typealias T = [User]
+        typealias DeserializedType = [User]
 
-        func parseResponse(json: JSON) -> T? {
-            return T(byJSON: json["users"])
+        func parseResponse(json: JSON) -> DeserializedType? {
+            return DeserializedType(byJSON: json["users"])
         }
     }
 
     struct Followers: EndpointType, OffsetPaginatable {
-        var login: String
+        let login: String
         var offset: Int
         var limit: Int
 
@@ -219,7 +219,7 @@ extension RubyChinaV3.Users {
             self.limit = limit
         }
 
-        var baseURL: NSURL { return RubyChinaV3.BaseURL }
+        let baseURL = RubyChinaV3.BaseURL
         var path: String { return "\(RubyChinaV3.Users.Path)/\(self.login)/followers" }
         var parameters: [String: AnyObject] {
             var parameters = [String: AnyObject]()
@@ -230,15 +230,15 @@ extension RubyChinaV3.Users {
             return parameters
         }
 
-        typealias T = [User]
+        typealias DeserializedType = [User]
 
-        func parseResponse(json: JSON) -> T? {
-            return T(byJSON: json["users"])
+        func parseResponse(json: JSON) -> DeserializedType? {
+            return DeserializedType(byJSON: json["users"])
         }
     }
 
     struct Blocked: EndpointType, OffsetPaginatable {
-        var login: String
+        let login: String
         var offset: Int
         var limit: Int
 
@@ -248,7 +248,7 @@ extension RubyChinaV3.Users {
             self.limit = limit
         }
 
-        var baseURL: NSURL { return RubyChinaV3.BaseURL }
+        let baseURL = RubyChinaV3.BaseURL
         var path: String { return "\(RubyChinaV3.Users.Path)/\(self.login)/blocked" }
         var parameters: [String: AnyObject] {
             var parameters = [String: AnyObject]()
@@ -259,66 +259,66 @@ extension RubyChinaV3.Users {
             return parameters
         }
 
-        typealias T = [User]
+        typealias DeserializedType = [User]
 
-        func parseResponse(json: JSON) -> T? {
-            return T(byJSON: json["users"])
+        func parseResponse(json: JSON) -> DeserializedType? {
+            return DeserializedType(byJSON: json["users"])
         }
     }
 
     struct Follow: EndpointType {
-        var login: String
+        let login: String
 
         init(login: String) {
             self.login = login
         }
 
-        var baseURL: NSURL { return RubyChinaV3.BaseURL }
+        let baseURL = RubyChinaV3.BaseURL
         var path: String { return "\(RubyChinaV3.Users.Path)/\(self.login)/follow" }
-        var method: HTTPMethod { return .POST }
+        let method = HTTPMethod.POST
 
-        typealias T = AnyObject
+        typealias DeserializedType = AnyObject
     }
 
-    struct UndoFollow: EndpointType {
-        var login: String
+    struct UnFollow: EndpointType {
+        let login: String
 
         init(login: String) {
             self.login = login
         }
 
-        var baseURL: NSURL { return RubyChinaV3.BaseURL }
+        let baseURL = RubyChinaV3.BaseURL
         var path: String { return "\(RubyChinaV3.Users.Path)/\(self.login)/unfollow" }
-        var method: HTTPMethod { return .POST }
+        let method = HTTPMethod.POST
 
-        typealias T = AnyObject
+        typealias DeserializedType = AnyObject
     }
 
     struct Block: EndpointType {
-        var login: String
+        let login: String
 
         init(login: String) {
             self.login = login
         }
 
-        var baseURL: NSURL { return RubyChinaV3.BaseURL }
+        let baseURL = RubyChinaV3.BaseURL
         var path: String { return "\(RubyChinaV3.Users.Path)/\(self.login)/block" }
-        var method: HTTPMethod { return .POST }
+        let method = HTTPMethod.POST
 
-        typealias T = AnyObject
+        typealias DeserializedType = AnyObject
     }
 
-    struct UndoBlock: EndpointType {
-        var login: String
+    struct UnBlock: EndpointType {
+        let login: String
 
         init(login: String) {
             self.login = login
         }
 
-        var baseURL: NSURL { return RubyChinaV3.BaseURL }
+        let baseURL = RubyChinaV3.BaseURL
         var path: String { return "\(RubyChinaV3.Users.Path)/\(self.login)/unblock" }
-        var method: HTTPMethod { return .POST }
+        let method = HTTPMethod.POST
 
-        typealias T = AnyObject
+        typealias DeserializedType = AnyObject
     }
 }
